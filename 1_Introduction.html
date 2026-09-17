@@ -1,0 +1,426 @@
+<!-- ===================================================== -->
+
+<!--                    HTML BASICS                         -->
+
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+
+<!-- 1. INTRODUCTION TO HTML                                -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+HTML stands for HyperText Markup Language.
+
+* HTML is used to create the structure of web pages.
+* It is a markup language, not a programming language.
+* HTML uses tags and elements to define content.
+* HTML files usually have the `.html` extension.
+* HTML works together with:
+
+  * HTML → Structure
+  * CSS → Styling
+  * JavaScript → Behaviour and functionality
+
+Example:
+
+<h1>Hello World</h1>
+
+<!-- ===================================================== -->
+
+<!-- 2. HTML DOCUMENT STRUCTURE                             -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+A basic HTML document contains:
+
+1. `<!DOCTYPE html>`
+
+   * Declares that the document uses HTML5.
+
+2. `<html>`
+
+   * Root element of the HTML document.
+
+3. `<head>`
+
+   * Contains information about the webpage.
+   * Includes title, metadata, CSS links, etc.
+
+4. `<title>`
+
+   * Defines the title shown in the browser tab.
+
+5. `<body>`
+
+   * Contains the visible content of the webpage.
+
+Basic structure:
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>My Page</title>
+</head>
+<body>
+    Content goes here
+</body>
+</html>
+
+<!-- ===================================================== -->
+
+<!-- 3. HTML SYNTAX                                        -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+HTML syntax is based on tags and elements.
+
+General syntax:
+
+<tag>Content</tag>
+
+Example:
+
+<p>Hello</p>
+
+* Opening tag → `<p>`
+* Content → `Hello`
+* Closing tag → `</p>`
+
+Some HTML elements do not require a closing tag.
+
+Example:
+
+<br>
+<hr>
+<img>
+
+<!-- ===================================================== -->
+
+<!-- 4. HTML TAGS                                          -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Tags are keywords enclosed inside angle brackets `< >`.
+
+Examples:
+
+<h1>Heading</h1>
+<p>Paragraph</p>
+<b>Bold</b>
+<i>Italic</i>
+
+Types of tags:
+
+1. Opening tags
+   Example: `<p>`
+
+2. Closing tags
+   Example: `</p>`
+
+3. Empty/Void tags
+   Example: `<br>`, `<img>`, `<hr>`
+
+Tags tell the browser how to interpret the content.
+
+<!-- ===================================================== -->
+
+<!-- 5. HTML ELEMENTS                                     -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+An HTML element generally consists of:
+
+Opening Tag + Content + Closing Tag
+
+Example:
+
+<p>Hello HTML</p>
+
+Here:
+
+* `<p>` → Opening tag
+* `Hello HTML` → Content
+* `</p>` → Closing tag
+* Complete `<p>Hello HTML</p>` → HTML element
+
+Nested elements are elements placed inside other elements.
+
+Example:
+
+<p>
+    This is <b>important</b> text.
+</p>
+
+<!-- ===================================================== -->
+
+<!-- 6. HTML ATTRIBUTES                                    -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Attributes provide additional information about an HTML element.
+
+Attributes are written inside the opening tag.
+
+Syntax:
+
+<tag attribute="value">Content</tag>
+
+Example:
+
+<p id="intro">Hello</p>
+
+Common attributes:
+
+* id
+* class
+* style
+* title
+* href
+* src
+* alt
+* width
+* height
+
+Example:
+
+<img src="image.jpg" alt="Sample Image">
+
+<!-- ===================================================== -->
+
+<!-- 7. HTML COMMENTS                                     -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Comments are used to write notes inside HTML code.
+
+Comments are not displayed on the webpage.
+
+Syntax:
+
+<!-- This is a comment -->
+
+Example:
+
+<!-- Main heading -->
+
+<h1>Welcome</h1>
+
+Comments are useful for:
+
+* Explaining code
+* Organizing code
+* Temporarily disabling code
+
+<!-- ===================================================== -->
+
+<!-- 8. HTML BOILERPLATE                                  -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+HTML boilerplate is the standard basic structure used when creating an HTML page.
+
+Standard HTML5 boilerplate:
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+
+Important parts:
+
+* `<!DOCTYPE html>` → HTML5 declaration
+* `lang="en"` → Specifies English as the document language
+* `charset="UTF-8"` → Supports a wide range of characters
+* `viewport` → Helps make the page responsive
+* `<title>` → Browser tab title
+* `<body>` → Visible webpage content
+
+<!-- ===================================================== -->
+
+<!--                    COMBINED CODE                      -->
+
+<!-- ===================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<!-- Character encoding -->
+<meta charset="UTF-8">
+
+<!-- Responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Page title -->
+<title>HTML Basics</title>
+```
+
+</head>
+
+<body>
+
+```
+<!-- Main Heading -->
+<h1>Welcome to HTML</h1>
+
+<!-- Paragraph element -->
+<p id="intro">
+    HTML is used to create the structure of web pages.
+</p>
+
+<!-- Attribute example -->
+<p title="HTML Introduction">
+    This paragraph has a title attribute.
+</p>
+
+<!-- Nested elements -->
+<p>
+    HTML is <b>easy</b> to learn and
+    <i>important</i> for web development.
+</p>
+
+<!-- Void element -->
+<hr>
+
+<!-- Another heading -->
+<h2>HTML Elements</h2>
+
+<!-- Comment -->
+<!-- This is an HTML comment -->
+
+<p>
+    HTML elements are created using tags.
+</p>
+```
+
+</body>
+
+</html>
+
+<!-- ===================================================== -->
+
+<!-- QUESTIONS                                             -->
+
+<!-- ===================================================== -->
+
+// Q1. What is HTML?
+
+// SOLUTION
+HTML stands for HyperText Markup Language.
+It is used to create the structure of web pages.
+
+// Q2. What is the difference between an HTML tag and an HTML element?
+
+// SOLUTION
+A tag is the keyword written inside angle brackets.
+
+Example:
+
+<p>
+
+An element consists of the complete structure including the opening tag,
+content and closing tag.
+
+Example:
+
+<p>Hello</p>
+
+// Q3. What is an HTML attribute?
+
+// SOLUTION
+An attribute provides additional information about an HTML element.
+
+Example:
+
+<p id="intro">Hello</p>
+
+Here, `id` is an attribute and `intro` is its value.
+
+// Q4. What is the purpose of <!DOCTYPE html>?
+
+// SOLUTION
+It tells the browser that the document is an HTML5 document.
+
+// Q5. What is the purpose of the <head> section?
+
+// SOLUTION
+The `<head>` contains information about the webpage such as:
+
+* Title
+* Metadata
+* Character encoding
+* CSS links
+* Other page information
+
+// Q6. What is the purpose of the <body> section?
+
+// SOLUTION
+The `<body>` contains the visible content of the webpage.
+
+// Q7. What are HTML comments?
+
+// SOLUTION
+HTML comments are notes written in the source code that are not displayed
+on the webpage.
+
+Syntax:
+
+<!-- Comment -->
+
+// Q8. What is HTML boilerplate?
+
+// SOLUTION
+HTML boilerplate is the standard basic structure used to create an HTML5
+document.
+
+<!-- ===================================================== -->
+
+<!-- FOR REFERENCE                                        -->
+
+<!-- ===================================================== -->
+
+HTML → Structure of webpage
+CSS → Styling of webpage
+JavaScript → Behaviour/functionality
+
+Basic HTML:
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Title</title>
+</head>
+<body>
+    Content
+</body>
+</html>
