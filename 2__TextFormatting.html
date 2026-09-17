@@ -1,0 +1,509 @@
+<!-- ===================================================== -->
+
+<!--                  TEXT FORMATTING                      -->
+
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+
+<!-- 1. HEADINGS (h1–h6)                                   -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+HTML provides six levels of headings:
+
+<h1> to <h6>
+
+* `<h1>` is the largest and most important heading.
+* `<h6>` is the smallest heading.
+* Headings are used to organize webpage content.
+* `<h1>` is generally used for the main heading.
+* `<h2>` to `<h6>` are used for subheadings.
+
+Example:
+
+<h1>Main Heading</h1>
+<h2>Subheading</h2>
+<h3>Sub-subheading</h3>
+
+<!-- ===================================================== -->
+
+<!-- 2. PARAGRAPHS                                         -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<p>` tag is used to define a paragraph.
+
+Syntax:
+
+<p>Content</p>
+
+* Browsers automatically add some space before and after paragraphs.
+* Multiple paragraphs can be created using multiple `<p>` elements.
+
+Example:
+
+<p>This is the first paragraph.</p>
+<p>This is the second paragraph.</p>
+
+<!-- ===================================================== -->
+
+<!-- 3. LINE BREAKS                                        -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<br>` tag is used to insert a line break.
+
+Syntax:
+
+<br>
+
+* `<br>` is a void/empty element.
+* It does not require a closing tag.
+* It moves the following content to a new line.
+* It should be used for an actual line break, not for creating large spaces.
+
+Example:
+
+Hello<br>
+World
+
+<!-- ===================================================== -->
+
+<!-- 4. HORIZONTAL RULES                                   -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<hr>` tag creates a horizontal line in a webpage.
+
+Syntax:
+
+<hr>
+
+* `<hr>` is a void/empty element.
+* It is commonly used to separate sections of content.
+* It represents a thematic break between sections.
+
+Example:
+
+<h2>Section 1</h2>
+<p>Content</p>
+
+<hr>
+
+<h2>Section 2</h2>
+
+<!-- ===================================================== -->
+
+<!-- 5. BOLD AND ITALIC TEXT                               -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+### Bold Text
+
+The `<b>` tag displays text in bold.
+
+Syntax:
+
+<b>Bold Text</b>
+
+`<b>` is mainly used for visual styling.
+
+### Italic Text
+
+The `<i>` tag displays text in italic.
+
+Syntax:
+
+<i>Italic Text</i>
+
+`<i>` is mainly used for visual styling.
+
+Example:
+
+<b>This is bold.</b> <i>This is italic.</i>
+
+<!-- ===================================================== -->
+
+<!-- 6. UNDERLINE                                          -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<u>` tag is used to underline text.
+
+Syntax:
+
+<u>Underlined Text</u>
+
+Example:
+
+<p>This is <u>underlined</u> text.</p>
+
+Note:
+
+* `<u>` represents text that is stylistically different from normal text.
+* CSS is generally preferred when the purpose is purely visual styling.
+
+<!-- ===================================================== -->
+
+<!-- 7. SUPERSCRIPT AND SUBSCRIPT                          -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+### Superscript
+
+The `<sup>` tag displays text slightly above the normal line.
+
+Syntax:
+
+<sup>text</sup>
+
+Example:
+
+x<sup>2</sup>
+
+Used for:
+
+* Mathematical powers
+* Ordinal numbers
+* Footnote references
+
+### Subscript
+
+The `<sub>` tag displays text slightly below the normal line.
+
+Syntax:
+
+<sub>text</sub>
+
+Example:
+
+H<sub>2</sub>O
+
+Used for:
+
+* Chemical formulas
+* Mathematical notation
+
+<!-- ===================================================== -->
+
+<!-- 8. STRONG AND EMPHASIS                                -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+### Strong
+
+The `<strong>` tag indicates that the content has strong importance.
+
+Syntax:
+
+<strong>Important Text</strong>
+
+Browsers normally display `<strong>` text in bold.
+
+### Emphasis
+
+The `<em>` tag indicates emphasized text.
+
+Syntax:
+
+<em>Emphasized Text</em>
+
+Browsers normally display `<em>` text in italic.
+
+Difference between `<b>` and `<strong>`:
+
+* `<b>` → visual bold styling
+* `<strong>` → indicates importance/strong meaning
+
+Difference between `<i>` and `<em>`:
+
+* `<i>` → visual/alternate voice styling
+* `<em>` → indicates emphasis
+
+<!-- ===================================================== -->
+
+<!-- 9. PREFORMATTED TEXT                                 -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<pre>` tag displays preformatted text.
+
+Syntax:
+
+<pre>
+    Text
+</pre>
+
+* Spaces and line breaks inside `<pre>` are preserved.
+* Text is normally displayed using a monospace font.
+* Useful for displaying code, poems, or text where spacing matters.
+
+Example:
+
+<pre>
+Name: Shubhangi
+Age: 20
+Course: Computer Science
+</pre>
+
+<!-- ===================================================== -->
+
+<!--                    COMBINED CODE                      -->
+
+<!-- ===================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Text Formatting</title>
+</head>
+
+<body>
+
+```
+<!-- Headings -->
+<h1>HTML Text Formatting</h1>
+<h2>Headings</h2>
+<h3>Heading Level 3</h3>
+<h4>Heading Level 4</h4>
+<h5>Heading Level 5</h5>
+<h6>Heading Level 6</h6>
+
+<!-- Paragraphs -->
+<h2>Paragraphs</h2>
+
+<p>
+    This is the first paragraph.
+</p>
+
+<p>
+    This is the second paragraph.
+</p>
+
+<!-- Line Break -->
+<h2>Line Break</h2>
+
+<p>
+    Hello<br>
+    Welcome to HTML<br>
+    Learn Web Development
+</p>
+
+<!-- Horizontal Rule -->
+<hr>
+
+<!-- Bold and Italic -->
+<h2>Bold and Italic</h2>
+
+<p>
+    This is <b>bold text</b>.
+</p>
+
+<p>
+    This is <i>italic text</i>.
+</p>
+
+<!-- Underline -->
+<h2>Underline</h2>
+
+<p>
+    This is <u>underlined text</u>.
+</p>
+
+<!-- Superscript -->
+<h2>Superscript</h2>
+
+<p>
+    Mathematical expression: x<sup>2</sup> + y<sup>2</sup>
+</p>
+
+<!-- Subscript -->
+<h2>Subscript</h2>
+
+<p>
+    Chemical formula: H<sub>2</sub>O
+</p>
+
+<!-- Strong and Emphasis -->
+<h2>Strong and Emphasis</h2>
+
+<p>
+    <strong>This text is important.</strong>
+</p>
+
+<p>
+    <em>This text is emphasized.</em>
+</p>
+
+<!-- Combining formatting -->
+<p>
+    This is <strong>very important</strong> information.
+</p>
+
+<!-- Preformatted Text -->
+<h2>Preformatted Text</h2>
+
+<pre>
+```
+
+Name: Shubhangi
+Course: Computer Science
+Subject: Web Development </pre>
+
+</body>
+
+</html>
+
+<!-- ===================================================== -->
+
+<!-- QUESTIONS                                             -->
+
+<!-- ===================================================== -->
+
+// Q1. How many heading levels are available in HTML?
+
+// SOLUTION
+
+There are six heading levels:
+
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6>
+
+// Q2. Which tag is used to create a paragraph?
+
+// SOLUTION
+
+The `<p>` tag is used to create a paragraph.
+
+Example:
+
+<p>This is a paragraph.</p>
+
+// Q3. Which tag is used to insert a line break?
+
+// SOLUTION
+
+The `<br>` tag is used to insert a line break.
+
+Example:
+
+Hello<br>World
+
+// Q4. Which tag is used to create a horizontal line?
+
+// SOLUTION
+
+The `<hr>` tag is used to create a horizontal/thematic break.
+
+// Q5. What is the difference between <b> and <strong>?
+
+// SOLUTION
+
+`<b>` is mainly used to make text visually bold.
+
+`<strong>` indicates that the text has strong importance.
+
+// Q6. What is the difference between <i> and <em>?
+
+// SOLUTION
+
+`<i>` is mainly used for alternate voice or stylistically different text.
+
+`<em>` indicates emphasis.
+
+// Q7. Which tags are used for superscript and subscript?
+
+// SOLUTION
+
+`<sup>` → Superscript
+
+`<sub>` → Subscript
+
+Example:
+
+x<sup>2</sup>
+H<sub>2</sub>O
+
+// Q8. What is the purpose of the <pre> tag?
+
+// SOLUTION
+
+The `<pre>` tag displays preformatted text while preserving spaces
+and line breaks.
+
+// Q9. Which tag is used to underline text?
+
+// SOLUTION
+
+The `<u>` tag is used to underline text.
+
+Example:
+
+<u>Underlined Text</u>
+
+// Q10. Which HTML tags are void/empty elements from this topic?
+
+// SOLUTION
+
+<br>
+<hr>
+
+<!-- ===================================================== -->
+
+<!-- FOR REFERENCE                                        -->
+
+<!-- ===================================================== -->
+
+Headings:
+
+<h1> to <h6>
+
+Paragraph:
+
+<p>Text</p>
+
+Line Break: <br>
+
+Horizontal Rule:
+
+<hr>
+
+Bold: <b>Text</b>
+
+Italic: <i>Text</i>
+
+Underline: <u>Text</u>
+
+Superscript: <sup>Text</sup>
+
+Subscript: <sub>Text</sub>
+
+Strong: <strong>Text</strong>
+
+Emphasis: <em>Text</em>
+
+Preformatted:
+
+<pre>Text</pre>
