@@ -1,0 +1,578 @@
+<!-- ===================================================== -->
+
+<!--                       LINKS                            -->
+
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+
+<!-- 1. ANCHOR TAGS                                        -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<a>` tag is called the Anchor tag.
+
+* It is used to create hyperlinks.
+* It allows users to navigate from one webpage to another.
+* The `href` attribute specifies the destination URL.
+
+Syntax:
+
+<a href="URL">Link Text</a>
+
+Example:
+
+<a href="https://www.google.com">Google</a>
+
+Important attribute:
+
+* `href` → Specifies the destination of the link.
+
+<!-- ===================================================== -->
+
+<!-- 2. ABSOLUTE LINKS                                     -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+An absolute link contains the complete URL of a webpage.
+
+It includes:
+
+* Protocol
+* Domain name
+* Path (if required)
+
+Example:
+
+<a href="https://www.google.com">Google</a>
+
+Other examples:
+
+<a href="https://www.youtube.com">YouTube</a>
+
+<a href="https://www.github.com">GitHub</a>
+
+Absolute links are generally used when linking to external websites.
+
+<!-- ===================================================== -->
+
+<!-- 3. RELATIVE LINKS                                     -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+A relative link specifies the location of another file relative to
+the current webpage.
+
+It does not contain the complete domain name.
+
+Example:
+
+<a href="about.html">About Us</a>
+
+If the file is inside a folder:
+
+<a href="pages/contact.html">Contact</a>
+
+To move one directory up:
+
+<a href="../index.html">Home</a>
+
+Common forms:
+
+* `page.html` → File in the current folder
+* `folder/page.html` → File inside a folder
+* `../page.html` → File in the parent folder
+* `/page.html` → Root-relative path
+
+<!-- ===================================================== -->
+
+<!-- 4. EMAIL LINKS                                        -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Email links are created using the `mailto:` scheme.
+
+When the user clicks the link, the default email application can
+open with the specified email address.
+
+Syntax:
+
+<a href="mailto:example@gmail.com">Send Email</a>
+
+Example:
+
+<a href="mailto:student@example.com">
+    Email Me
+</a>
+
+A subject can also be included:
+
+<a href="mailto:student@example.com?subject=Hello">
+    Send Email
+</a>
+
+<!-- ===================================================== -->
+
+<!-- 5. TELEPHONE LINKS                                    -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Telephone links use the `tel:` scheme.
+
+They allow users to click a phone number and initiate a call on
+supported devices.
+
+Syntax:
+
+<a href="tel:+911234567890">Call Us</a>
+
+Example:
+
+<a href="tel:+911234567890">
+    +91 12345 67890
+</a>
+
+The `tel:` link is especially useful on mobile devices.
+
+<!-- ===================================================== -->
+
+<!-- 6. TARGET ATTRIBUTE                                   -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `target` attribute specifies where the linked page should open.
+
+Common values:
+
+1. `_self`
+
+   * Opens the link in the current tab.
+   * This is the default.
+
+2. `_blank`
+
+   * Opens the link in a new tab/window.
+
+3. `_parent`
+
+   * Opens the link in the parent browsing context.
+
+4. `_top`
+
+   * Opens the link in the full browser window.
+
+Example:
+
+<a href="https://www.google.com" target="_blank">
+    Open Google
+</a>
+
+For external links using `_blank`, it is common to use:
+
+rel="noopener"
+
+Example:
+
+<a href="https://www.google.com"
+target="_blank"
+rel="noopener">
+Google </a>
+
+<!-- ===================================================== -->
+
+<!-- 7. BOOKMARK / SECTION LINKS                           -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Bookmark or section links allow users to jump to a specific section
+of the same webpage.
+
+Steps:
+
+1. Give the destination element a unique `id`.
+2. Use `#id` in the `href` attribute.
+
+Example:
+
+<a href="#contact">Go to Contact</a>
+
+<h2 id="contact">Contact Us</h2>
+
+The `#contact` points to the element whose `id` is `contact`.
+
+Example:
+
+<a href="#about">About</a> <a href="#services">Services</a> <a href="#contact">Contact</a>
+
+<h2 id="about">About</h2>
+<h2 id="services">Services</h2>
+<h2 id="contact">Contact</h2>
+
+<!-- ===================================================== -->
+
+<!--                    COMBINED CODE                      -->
+
+<!-- ===================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>HTML Links</title>
+```
+
+</head>
+
+<body>
+
+```
+<h1 id="top">HTML Links</h1>
+
+
+<!-- ================================================= -->
+<!-- Anchor Tag -->
+<!-- ================================================= -->
+
+<h2>Anchor Tag</h2>
+
+<a href="https://www.google.com">
+    Visit Google
+</a>
+
+
+<!-- ================================================= -->
+<!-- Absolute Link -->
+<!-- ================================================= -->
+
+<h2>Absolute Link</h2>
+
+<p>
+    An absolute link contains the complete URL.
+</p>
+
+<a href="https://www.youtube.com">
+    Visit YouTube
+</a>
+
+
+<!-- ================================================= -->
+<!-- Relative Link -->
+<!-- ================================================= -->
+
+<h2>Relative Link</h2>
+
+<a href="about.html">
+    Open About Page
+</a>
+
+<br><br>
+
+<a href="pages/contact.html">
+    Open Contact Page
+</a>
+
+
+<!-- ================================================= -->
+<!-- Email Link -->
+<!-- ================================================= -->
+
+<h2>Email Link</h2>
+
+<a href="mailto:student@example.com">
+    Send Email
+</a>
+
+<br><br>
+
+<a href="mailto:student@example.com?subject=HTML%20Question">
+    Send Email with Subject
+</a>
+
+
+<!-- ================================================= -->
+<!-- Telephone Link -->
+<!-- ================================================= -->
+
+<h2>Telephone Link</h2>
+
+<a href="tel:+911234567890">
+    Call +91 12345 67890
+</a>
+
+
+<!-- ================================================= -->
+<!-- Target Attribute -->
+<!-- ================================================= -->
+
+<h2>Target Attribute</h2>
+
+<!-- Opens in current tab -->
+<a href="https://www.google.com" target="_self">
+    Open in Same Tab
+</a>
+
+<br><br>
+
+<!-- Opens in new tab -->
+<a href="https://www.youtube.com"
+   target="_blank"
+   rel="noopener">
+    Open in New Tab
+</a>
+
+
+<!-- ================================================= -->
+<!-- Bookmark / Section Links -->
+<!-- ================================================= -->
+
+<h2>Bookmarks</h2>
+
+<a href="#about">
+    Go to About
+</a>
+
+<br>
+
+<a href="#services">
+    Go to Services
+</a>
+
+<br>
+
+<a href="#contact">
+    Go to Contact
+</a>
+
+
+<!-- Some content to create space -->
+
+<br><br><br><br>
+
+<h2 id="about">About Us</h2>
+
+<p>
+    This is the About section.
+</p>
+
+<br><br><br><br>
+
+<h2 id="services">Services</h2>
+
+<p>
+    This is the Services section.
+</p>
+
+<br><br><br><br>
+
+<h2 id="contact">Contact Us</h2>
+
+<p>
+    This is the Contact section.
+</p>
+
+<br><br>
+
+<!-- Link back to top -->
+
+<a href="#top">
+    Back to Top
+</a>
+```
+
+</body>
+
+</html>
+
+<!-- ===================================================== -->
+
+<!-- QUESTIONS                                             -->
+
+<!-- ===================================================== -->
+
+// Q1. Which HTML tag is used to create a hyperlink?
+
+// SOLUTION
+
+The `<a>` (anchor) tag is used to create hyperlinks.
+
+Example:
+
+<a href="https://www.google.com">Google</a>
+
+// Q2. What is the purpose of the href attribute?
+
+// SOLUTION
+
+The `href` attribute specifies the destination of a hyperlink.
+
+Example:
+
+<a href="https://www.google.com">Google</a>
+
+// Q3. What is an absolute link?
+
+// SOLUTION
+
+An absolute link contains the complete URL of a webpage.
+
+Example:
+
+<a href="https://www.google.com">Google</a>
+
+// Q4. What is a relative link?
+
+// SOLUTION
+
+A relative link specifies the path of a file relative to the current
+webpage.
+
+Example:
+
+<a href="about.html">About</a>
+
+// Q5. What is the difference between absolute and relative links?
+
+// SOLUTION
+
+Absolute Link:
+
+* Contains the complete URL.
+* Commonly used for external websites.
+
+Example:
+https://www.google.com
+
+Relative Link:
+
+* Contains a path relative to the current webpage.
+* Commonly used for pages within the same website.
+
+Example:
+about.html
+
+// Q6. How do you create an email link?
+
+// SOLUTION
+
+Use `mailto:` with the `href` attribute.
+
+Example:
+
+<a href="mailto:student@example.com">
+    Send Email
+</a>
+
+// Q7. How do you create a telephone link?
+
+// SOLUTION
+
+Use `tel:` with the `href` attribute.
+
+Example:
+
+<a href="tel:+911234567890">
+    Call Us
+</a>
+
+// Q8. What is the purpose of the target attribute?
+
+// SOLUTION
+
+The `target` attribute specifies where the linked document should
+open.
+
+Example:
+
+<a href="https://www.google.com" target="_blank">
+    Google
+</a>
+
+// Q9. What is the difference between _self and _blank?
+
+// SOLUTION
+
+`_self`:
+
+* Opens the link in the current tab.
+* Default target.
+
+`_blank`:
+
+* Opens the link in a new tab/window.
+
+// Q10. What are bookmark/section links?
+
+// SOLUTION
+
+Bookmark links are used to navigate directly to a specific section
+of the same webpage.
+
+They use an element's `id` and `#id` in the link.
+
+Example:
+
+<a href="#contact">Contact</a>
+
+<h2 id="contact">Contact Us</h2>
+
+// Q11. How do you create a link that goes back to the top of a page?
+
+// SOLUTION
+
+Give an element an `id`:
+
+<h1 id="top">My Page</h1>
+
+Then create:
+
+<a href="#top">Back to Top</a>
+
+<!-- ===================================================== -->
+
+<!-- FOR REFERENCE                                        -->
+
+<!-- ===================================================== -->
+
+Anchor: <a href="URL">Link</a>
+
+Absolute Link: <a href="https://example.com">Example</a>
+
+Relative Link: <a href="about.html">About</a>
+
+Email: <a href="mailto:example@gmail.com">Email</a>
+
+Telephone: <a href="tel:+911234567890">Call</a>
+
+New Tab: <a href="URL" target="_blank">Open</a>
+
+Same Tab: <a href="URL" target="_self">Open</a>
+
+Bookmark: <a href="#section">Go to Section</a>
+
+Destination:
+
+<h2 id="section">Section</h2>
+
+Back to Top: <a href="#top">Back to Top</a>
