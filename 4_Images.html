@@ -1,0 +1,524 @@
+<!-- ===================================================== -->
+
+<!--                       IMAGES                           -->
+
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+
+<!-- 1. IMAGE TAG                                          -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<img>` tag is used to display an image on a webpage.
+
+Syntax:
+
+<img src="image.jpg" alt="Description">
+
+* `<img>` is a void/empty element.
+* It does not require a closing tag.
+* The `src` attribute specifies the image location.
+* The `alt` attribute provides alternative text.
+
+Example:
+
+<img src="cat.jpg" alt="A cat">
+
+<!-- ===================================================== -->
+
+<!-- 2. IMAGE ATTRIBUTES                                   -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Common attributes of the `<img>` tag:
+
+1. `src`
+
+   * Specifies the path or URL of the image.
+
+2. `alt`
+
+   * Specifies alternative text for the image.
+
+3. `width`
+
+   * Specifies the width of the image.
+
+4. `height`
+
+   * Specifies the height of the image.
+
+5. `title`
+
+   * Provides additional information when the user hovers over
+     the image.
+
+Example:
+
+<img src="photo.jpg"
+  alt="My Photo"
+  width="300"
+  height="200"
+  title="Sample Photo">
+
+<!-- ===================================================== -->
+
+<!-- 3. IMAGE PATHS                                        -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `src` attribute can contain different types of image paths.
+
+### 1. Image in the same folder
+
+If the image and HTML file are in the same folder:
+
+<img src="photo.jpg" alt="Photo">
+
+### 2. Image inside a folder
+
+If the image is inside an `images` folder:
+
+<img src="images/photo.jpg" alt="Photo">
+
+### 3. Image in a parent folder
+
+Use `../` to move one directory up.
+
+<img src="../photo.jpg" alt="Photo">
+
+### 4. Absolute Image URL
+
+An image can also be loaded from an external website.
+
+<img src="https://example.com/image.jpg"
+  alt="Example Image">
+
+Relative paths are generally preferred for images that are part of
+your own website.
+
+<!-- ===================================================== -->
+
+<!-- 4. ALTERNATIVE TEXT                                   -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `alt` attribute provides alternative text for an image.
+
+Example:
+
+<img src="flower.jpg" alt="Red flower">
+
+The alternative text is useful when:
+
+* The image cannot be loaded.
+* A screen reader is being used.
+* The image provides meaningful information.
+
+Good alt text should describe the important content or purpose of
+the image.
+
+Example:
+
+<img src="student.jpg" alt="Student studying at a desk">
+
+For purely decorative images, the `alt` attribute should normally
+be empty:
+
+<img src="design.png" alt="">
+
+<!-- ===================================================== -->
+
+<!-- 5. IMAGE DIMENSIONS                                   -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `width` and `height` attributes can be used to specify image
+dimensions.
+
+Example:
+
+<img src="photo.jpg"
+  alt="Photo"
+  width="400"
+  height="300">
+
+* `width` controls the image width.
+* `height` controls the image height.
+* Values are commonly specified in pixels when using HTML
+  attributes.
+
+Example:
+
+<img src="photo.jpg" alt="Photo" width="500">
+
+If only one dimension is specified, the browser can preserve the
+image's aspect ratio.
+
+<!-- ===================================================== -->
+
+<!-- 6. IMAGE AS A LINK                                    -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+An image can be made clickable by placing the `<img>` tag inside
+an `<a>` tag.
+
+Syntax:
+
+<a href="URL">
+    <img src="image.jpg" alt="Description">
+</a>
+
+Example:
+
+<a href="https://www.google.com">
+    <img src="google.png" alt="Google">
+</a>
+
+When the user clicks the image, the browser navigates to the
+destination specified by `href`.
+
+An image link can also open in a new tab:
+
+<a href="https://www.google.com" target="_blank">
+    <img src="google.png" alt="Google">
+</a>
+
+<!-- ===================================================== -->
+
+<!--                    COMBINED CODE                      -->
+
+<!-- ===================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>HTML Images</title>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================================================= -->
+<!-- Image Tag                                         -->
+<!-- ================================================= -->
+
+<h1>HTML Images</h1>
+
+<h2>Image Tag</h2>
+
+<img src="photo.jpg"
+     alt="Sample Photo">
+
+
+<!-- ================================================= -->
+<!-- Image Attributes                                  -->
+<!-- ================================================= -->
+
+<h2>Image Attributes</h2>
+
+<img src="photo.jpg"
+     alt="Sample Photo"
+     title="This is a sample image"
+     width="300"
+     height="200">
+
+
+<!-- ================================================= -->
+<!-- Image Paths                                       -->
+<!-- ================================================= -->
+
+<h2>Image Paths</h2>
+
+<!-- Image in the same folder -->
+<img src="photo.jpg"
+     alt="Image from same folder">
+
+<br><br>
+
+<!-- Image inside a folder -->
+<img src="images/photo.jpg"
+     alt="Image from images folder">
+
+<br><br>
+
+<!-- Image from parent folder -->
+<img src="../photo.jpg"
+     alt="Image from parent folder">
+
+
+<!-- ================================================= -->
+<!-- Alternative Text                                  -->
+<!-- ================================================= -->
+
+<h2>Alternative Text</h2>
+
+<img src="student.jpg"
+     alt="Student studying at a desk">
+
+
+<!-- ================================================= -->
+<!-- Decorative Image                                  -->
+<!-- ================================================= -->
+
+<img src="decoration.png"
+     alt="">
+
+
+<!-- ================================================= -->
+<!-- Image Dimensions                                  -->
+<!-- ================================================= -->
+
+<h2>Image Dimensions</h2>
+
+<img src="photo.jpg"
+     alt="Sample Photo"
+     width="400"
+     height="300">
+
+
+<!-- ================================================= -->
+<!-- Image as a Link                                   -->
+<!-- ================================================= -->
+
+<h2>Image as a Link</h2>
+
+<a href="https://www.google.com">
+
+    <img src="google.png"
+         alt="Google"
+         width="200">
+
+</a>
+
+
+<!-- ================================================= -->
+<!-- Image Link in New Tab                             -->
+<!-- ================================================= -->
+
+<h2>Image Link - New Tab</h2>
+
+<a href="https://www.youtube.com"
+   target="_blank"
+   rel="noopener">
+
+    <img src="youtube.png"
+         alt="YouTube"
+         width="200">
+
+</a>
+```
+
+</body>
+
+</html>
+
+<!-- ===================================================== -->
+
+<!-- QUESTIONS                                             -->
+
+<!-- ===================================================== -->
+
+// Q1. Which tag is used to display an image in HTML?
+
+// SOLUTION
+
+The `<img>` tag is used to display an image.
+
+Example:
+
+<img src="photo.jpg" alt="Photo">
+
+// Q2. Is the <img> tag a container element?
+
+// SOLUTION
+
+No. `<img>` is a void/empty element and does not require a closing
+tag.
+
+// Q3. What is the purpose of the src attribute?
+
+// SOLUTION
+
+The `src` attribute specifies the location or URL of the image.
+
+Example:
+
+<img src="photo.jpg" alt="Photo">
+
+// Q4. What is the purpose of the alt attribute?
+
+// SOLUTION
+
+The `alt` attribute provides alternative text for an image.
+
+It is useful when:
+
+* The image cannot be displayed.
+* A screen reader is being used.
+* The image has meaningful content.
+
+// Q5. What is the difference between src and alt?
+
+// SOLUTION
+
+`src`:
+
+* Specifies the image location.
+
+`alt`:
+
+* Specifies alternative text describing the image.
+
+Example:
+
+<img src="cat.jpg" alt="A white cat">
+
+// Q6. How do you specify the width and height of an image?
+
+// SOLUTION
+
+Use the `width` and `height` attributes.
+
+Example:
+
+<img src="photo.jpg"
+  alt="Photo"
+  width="400"
+  height="300">
+
+// Q7. What is a relative image path?
+
+// SOLUTION
+
+A relative image path specifies the image location relative to the
+current HTML file.
+
+Example:
+
+<img src="images/photo.jpg" alt="Photo">
+
+// Q8. How do you access an image from the parent folder?
+
+// SOLUTION
+
+Use `../` in the path.
+
+Example:
+
+<img src="../photo.jpg" alt="Photo">
+
+// Q9. How can you make an image clickable?
+
+// SOLUTION
+
+Place the `<img>` tag inside an `<a>` tag.
+
+Example:
+
+<a href="https://www.google.com">
+    <img src="google.png" alt="Google">
+</a>
+
+// Q10. What happens when an image link is clicked?
+
+// SOLUTION
+
+The browser navigates to the URL specified in the `href` attribute
+of the `<a>` tag.
+
+// Q11. Write HTML code to display an image with alternative text,
+// width 300 and height 200.
+
+// SOLUTION
+
+<img src="photo.jpg"
+  alt="Sample Photo"
+  width="300"
+  height="200">
+
+// Q12. Write HTML code to make an image open a website in a new tab.
+
+// SOLUTION
+
+<a href="https://www.google.com" target="_blank" rel="noopener">
+    <img src="google.png" alt="Google">
+</a>
+
+<!-- ===================================================== -->
+
+<!-- FOR REFERENCE                                        -->
+
+<!-- ===================================================== -->
+
+Basic Image:
+
+<img src="image.jpg" alt="Description">
+
+Image with Dimensions:
+
+<img src="image.jpg"
+  alt="Description"
+  width="300"
+  height="200">
+
+Image in Folder:
+
+<img src="images/image.jpg" alt="Image">
+
+Image from Parent Folder:
+
+<img src="../image.jpg" alt="Image">
+
+Absolute Image URL:
+
+<img src="https://example.com/image.jpg"
+  alt="Image">
+
+Image as Link:
+
+<a href="https://example.com">
+    <img src="image.jpg" alt="Image">
+</a>
+
+Image Link in New Tab:
+
+<a href="https://example.com"
+target="_blank"
+rel="noopener"> <img src="image.jpg" alt="Image"> </a>
+
+<!-- QUICK REFERENCE -->
+<!--
+<img>       → Display image
+src         → Image location
+alt         → Alternative text
+width       → Image width
+height      → Image height
+title       → Extra information/tooltip
+../         → Parent folder <a> + <img> → Image as a link
+-->
