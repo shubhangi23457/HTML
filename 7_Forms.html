@@ -1,0 +1,1232 @@
+<!-- ===================================================== -->
+
+<!--                       FORMS                            -->
+
+<!-- ===================================================== -->
+
+<!-- ===================================================== -->
+
+<!-- 1. FORM ELEMENT                                      -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<form>` element is used to create an HTML form.
+
+Forms are used to collect information from users.
+
+Examples:
+
+* Name
+* Email
+* Password
+* Age
+* Gender
+* Address
+* Files
+
+Syntax:
+
+<form>
+    Form elements
+</form>
+
+Example:
+
+<form>
+    <input type="text">
+</form>
+
+<!-- ===================================================== -->
+
+<!-- 2. INPUT FIELDS                                      -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<input>` element is used to create different types of input
+fields.
+
+Syntax:
+
+<input type="text">
+
+Common input types:
+
+* text
+* password
+* email
+* number
+* url
+* date
+* time
+* radio
+* checkbox
+* file
+* submit
+* reset
+* button
+
+Example:
+
+<input type="text" name="username">
+
+<!-- ===================================================== -->
+
+<!-- 3. TEXTAREA                                          -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<textarea>` element is used to accept multi-line text.
+
+It is commonly used for:
+
+* Addresses
+* Comments
+* Feedback
+* Messages
+* Descriptions
+
+Syntax:
+
+<textarea name="message"></textarea>
+
+Attributes:
+
+* rows → Number of visible rows
+* cols → Number of visible columns
+* placeholder → Hint displayed inside the field
+* required → Makes the field mandatory
+
+Example:
+
+<textarea
+    name="message"
+    rows="5"
+    cols="30"
+    placeholder="Enter your message">
+</textarea>
+
+<!-- ===================================================== -->
+
+<!-- 4. BUTTONS                                           -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Buttons are used to perform actions in a form.
+
+The `<button>` element can be used to create a button.
+
+Syntax:
+
+<button type="submit">Submit</button>
+
+Common button types:
+
+1. `submit`
+
+   * Submits the form.
+
+2. `reset`
+
+   * Resets form fields to their initial values.
+
+3. `button`
+
+   * General-purpose button.
+
+Example:
+
+<button type="submit">Submit</button> <button type="reset">Reset</button> <button type="button">Click Me</button>
+
+<!-- ===================================================== -->
+
+<!-- 5. LABELS                                            -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<label>` element defines a label for a form control.
+
+Labels make forms easier to understand and improve accessibility.
+
+Syntax:
+
+<label for="name">Name:</label> <input type="text" id="name">
+
+The `for` attribute of `<label>` should match the `id` of the
+corresponding input.
+
+Example:
+
+<label for="email">Email:</label> <input type="email" id="email">
+
+<!-- ===================================================== -->
+
+<!-- 6. CHECKBOXES                                        -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+A checkbox allows the user to select zero or more options.
+
+Syntax:
+
+<input type="checkbox">
+
+Example:
+
+<input type="checkbox" id="html" name="skills" value="HTML">
+<label for="html">HTML</label>
+
+Multiple checkboxes can be selected at the same time.
+
+<!-- ===================================================== -->
+
+<!-- 7. RADIO BUTTONS                                     -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Radio buttons are used when the user should select one option
+from a group.
+
+Syntax:
+
+<input type="radio" name="gender" value="male">
+
+Radio buttons in the same group must have the same `name`.
+
+Example:
+
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+
+Only one option from the same radio group can normally be selected.
+
+<!-- ===================================================== -->
+
+<!-- 8. DROPDOWN LISTS                                    -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+A dropdown list is created using the `<select>` element.
+
+Individual choices are created using the `<option>` element.
+
+Syntax:
+
+<select name="course">
+    <option value="java">Java</option>
+    <option value="python">Python</option>
+</select>
+
+The user can select an option from the dropdown.
+
+<!-- ===================================================== -->
+
+<!-- 9. OPTION GROUPS                                     -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The `<optgroup>` element is used to group related options inside
+a dropdown list.
+
+Syntax:
+
+<select>
+
+```
+<optgroup label="Programming">
+    <option>Java</option>
+    <option>Python</option>
+</optgroup>
+
+<optgroup label="Web">
+    <option>HTML</option>
+    <option>CSS</option>
+</optgroup>
+```
+
+</select>
+
+The `label` attribute specifies the name of the group.
+
+<!-- ===================================================== -->
+
+<!-- 10. FILE UPLOAD                                      -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+The input type `file` allows the user to select a file from their
+device.
+
+Syntax:
+
+<input type="file">
+
+Example:
+
+<label for="resume">Upload Resume:</label> <input type="file" id="resume" name="resume">
+
+The `accept` attribute can be used to specify allowed file types.
+
+Example:
+
+<input type="file"
+    accept=".pdf,.doc,.docx">
+
+<!-- ===================================================== -->
+
+<!-- 11. DATE AND TIME INPUTS                             -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+HTML provides input types for dates and times.
+
+### Date
+
+<input type="date">
+
+Used to select a date.
+
+### Time
+
+<input type="time">
+
+Used to select a time.
+
+### Date and Time
+
+<input type="datetime-local">
+
+Used to select a local date and time.
+
+Other related types:
+
+* month
+* week
+
+Example:
+
+<input type="date" name="dob">
+
+<input type="time" name="appointment">
+
+<input type="datetime-local" name="meeting">
+
+<!-- ===================================================== -->
+
+<!-- 12. EMAIL, NUMBER, PASSWORD, URL INPUTS              -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+### Email
+
+`type="email"` is used to accept an email address.
+
+Example:
+
+<input type="email" name="email">
+
+### Number
+
+`type="number"` is used to accept numeric input.
+
+Example:
+
+<input type="number" name="age" min="1" max="100">
+
+### Password
+
+`type="password"` hides the entered characters.
+
+Example:
+
+<input type="password" name="password">
+
+### URL
+
+`type="url"` is used to accept a web address.
+
+Example:
+
+<input type="url" name="website">
+
+<!-- ===================================================== -->
+
+<!-- 13. FORM ATTRIBUTES                                  -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Important attributes of the `<form>` element:
+
+### action
+
+Specifies where the form data should be sent.
+
+Example:
+
+<form action="/submit">
+
+### method
+
+Specifies how form data is sent.
+
+Common values:
+
+* GET
+* POST
+
+Example:
+
+<form action="/submit" method="post">
+
+### autocomplete
+
+Specifies whether the browser can automatically complete
+form values.
+
+Example:
+
+<form autocomplete="on">
+
+### novalidate
+
+Disables browser's built-in form validation.
+
+Example:
+
+<form novalidate>
+
+Important attributes of form controls:
+
+* name
+* id
+* value
+* placeholder
+* required
+* disabled
+* readonly
+* checked
+* selected
+* min
+* max
+* minlength
+* maxlength
+* pattern
+
+<!-- ===================================================== -->
+
+<!-- 14. FORM VALIDATION                                  -->
+
+<!-- ===================================================== -->
+
+// NOTES
+
+Form validation checks whether the entered data meets the required
+conditions before the form is submitted.
+
+HTML provides built-in validation using attributes.
+
+### required
+
+Makes a field mandatory.
+
+Example:
+
+<input type="text" required>
+
+### minlength
+
+Specifies the minimum number of characters.
+
+Example:
+
+<input type="password" minlength="8">
+
+### maxlength
+
+Specifies the maximum number of characters.
+
+Example:
+
+<input type="text" maxlength="20">
+
+### min and max
+
+Used mainly with number and date inputs.
+
+Example:
+
+<input type="number" min="18" max="60">
+
+### pattern
+
+Specifies a regular expression that the input must match.
+
+Example:
+
+<input type="text"
+    pattern="[A-Za-z]+">
+
+### type validation
+
+Some input types automatically provide basic validation.
+
+Example:
+
+<input type="email" required>
+
+The browser checks whether the entered value has a valid email
+format.
+
+<!-- ===================================================== -->
+
+<!--                    COMBINED CODE                      -->
+
+<!-- ===================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>HTML Forms</title>
+```
+
+</head>
+
+<body>
+
+```
+<h1>Student Registration Form</h1>
+
+<form action="/submit" method="post">
+
+    <!-- ============================================= -->
+    <!-- Input Fields                                  -->
+    <!-- ============================================= -->
+
+    <h2>Basic Information</h2>
+
+    <label for="name">Name:</label>
+    <input type="text"
+           id="name"
+           name="name"
+           placeholder="Enter your name"
+           required>
+
+    <br><br>
+
+
+    <!-- Email -->
+
+    <label for="email">Email:</label>
+    <input type="email"
+           id="email"
+           name="email"
+           placeholder="Enter your email"
+           required>
+
+    <br><br>
+
+
+    <!-- Password -->
+
+    <label for="password">Password:</label>
+    <input type="password"
+           id="password"
+           name="password"
+           minlength="8"
+           required>
+
+    <br><br>
+
+
+    <!-- Number -->
+
+    <label for="age">Age:</label>
+    <input type="number"
+           id="age"
+           name="age"
+           min="18"
+           max="60"
+           required>
+
+    <br><br>
+
+
+    <!-- URL -->
+
+    <label for="website">Website:</label>
+    <input type="url"
+           id="website"
+           name="website"
+           placeholder="https://example.com">
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Date and Time                                 -->
+    <!-- ============================================= -->
+
+    <h2>Date and Time</h2>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date"
+           id="dob"
+           name="dob">
+
+    <br><br>
+
+    <label for="time">Preferred Time:</label>
+    <input type="time"
+           id="time"
+           name="time">
+
+    <br><br>
+
+    <label for="meeting">Meeting:</label>
+    <input type="datetime-local"
+           id="meeting"
+           name="meeting">
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Radio Buttons                                 -->
+    <!-- ============================================= -->
+
+    <h2>Gender</h2>
+
+    <input type="radio"
+           id="male"
+           name="gender"
+           value="male">
+
+    <label for="male">Male</label>
+
+
+    <input type="radio"
+           id="female"
+           name="gender"
+           value="female">
+
+    <label for="female">Female</label>
+
+
+    <input type="radio"
+           id="other"
+           name="gender"
+           value="other">
+
+    <label for="other">Other</label>
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Checkboxes                                    -->
+    <!-- ============================================= -->
+
+    <h2>Skills</h2>
+
+    <input type="checkbox"
+           id="html"
+           name="skills"
+           value="HTML">
+
+    <label for="html">HTML</label>
+
+
+    <input type="checkbox"
+           id="css"
+           name="skills"
+           value="CSS">
+
+    <label for="css">CSS</label>
+
+
+    <input type="checkbox"
+           id="java"
+           name="skills"
+           value="Java">
+
+    <label for="java">Java</label>
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Dropdown List                                -->
+    <!-- ============================================= -->
+
+    <h2>Course</h2>
+
+    <label for="course">Select Course:</label>
+
+    <select id="course" name="course">
+
+        <option value="">--Select--</option>
+
+        <option value="java">Java</option>
+        <option value="dbms">DBMS</option>
+        <option value="html">HTML</option>
+
+    </select>
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Option Groups                                 -->
+    <!-- ============================================= -->
+
+    <h2>Technology</h2>
+
+    <label for="technology">Select Technology:</label>
+
+    <select id="technology" name="technology">
+
+        <optgroup label="Programming">
+
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+            <option value="cpp">C++</option>
+
+        </optgroup>
+
+        <optgroup label="Web Development">
+
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+
+        </optgroup>
+
+    </select>
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Textarea                                     -->
+    <!-- ============================================= -->
+
+    <h2>Address</h2>
+
+    <label for="address">Address:</label>
+
+    <br>
+
+    <textarea id="address"
+              name="address"
+              rows="5"
+              cols="40"
+              placeholder="Enter your address"></textarea>
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- File Upload                                   -->
+    <!-- ============================================= -->
+
+    <h2>File Upload</h2>
+
+    <label for="resume">Upload Resume:</label>
+
+    <input type="file"
+           id="resume"
+           name="resume"
+           accept=".pdf,.doc,.docx">
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Form Validation                               -->
+    <!-- ============================================= -->
+
+    <h2>Validation</h2>
+
+    <label for="username">Username:</label>
+
+    <input type="text"
+           id="username"
+           name="username"
+           minlength="3"
+           maxlength="15"
+           pattern="[A-Za-z0-9]+"
+           required>
+
+    <br><br>
+
+
+    <!-- ============================================= -->
+    <!-- Buttons                                       -->
+    <!-- ============================================= -->
+
+    <button type="submit">
+        Submit
+    </button>
+
+    <button type="reset">
+        Reset
+    </button>
+
+    <button type="button">
+        Normal Button
+    </button>
+
+</form>
+```
+
+</body>
+
+</html>
+
+<!-- ===================================================== -->
+
+<!-- QUESTIONS                                             -->
+
+<!-- ===================================================== -->
+
+// Q1. What is the purpose of the <form> element?
+
+// SOLUTION
+
+The `<form>` element is used to create a form for collecting user
+input.
+
+// Q2. Which tag is used to create an input field?
+
+// SOLUTION
+
+The `<input>` element is used to create different types of input
+fields.
+
+// Q3. What is the purpose of the type attribute in <input>?
+
+// SOLUTION
+
+The `type` attribute specifies the type of input field.
+
+Examples:
+
+text
+email
+password
+number
+date
+radio
+checkbox
+file
+url
+
+// Q4. What is the purpose of <textarea>?
+
+// SOLUTION
+
+`<textarea>` is used to accept multi-line text.
+
+Example:
+
+<textarea rows="5" cols="30"></textarea>
+
+// Q5. What is the purpose of the <label> element?
+
+// SOLUTION
+
+The `<label>` element provides a text label for a form control
+and improves form usability and accessibility.
+
+Example:
+
+<label for="email">Email:</label> <input type="email" id="email">
+
+// Q6. What is the difference between checkbox and radio button?
+
+// SOLUTION
+
+Checkbox:
+
+* Allows zero or more options to be selected.
+* Uses `type="checkbox"`.
+
+Radio Button:
+
+* Used to select one option from a group.
+* Uses `type="radio"`.
+* Radio buttons in the same group should have the same `name`.
+
+// Q7. Which tag is used to create a dropdown list?
+
+// SOLUTION
+
+The `<select>` tag creates a dropdown list.
+
+`<option>` defines individual choices.
+
+Example:
+
+<select>
+    <option>Java</option>
+    <option>Python</option>
+</select>
+
+// Q8. What is the purpose of <optgroup>?
+
+// SOLUTION
+
+`<optgroup>` groups related options inside a dropdown list.
+
+Example:
+
+<select>
+
+```
+<optgroup label="Programming">
+    <option>Java</option>
+    <option>Python</option>
+</optgroup>
+```
+
+</select>
+
+// Q9. How do you create a file upload field?
+
+// SOLUTION
+
+Use:
+
+<input type="file">
+
+Example:
+
+<input type="file" name="resume">
+
+// Q10. Name some date and time input types.
+
+// SOLUTION
+
+Common date and time input types are:
+
+* date
+* time
+* datetime-local
+* month
+* week
+
+// Q11. What is the purpose of the email input type?
+
+// SOLUTION
+
+`type="email"` is used to accept an email address and provides
+built-in browser validation for email format.
+
+Example:
+
+<input type="email" name="email">
+
+// Q12. What is the purpose of the number input type?
+
+// SOLUTION
+
+`type="number"` is used to accept numeric values.
+
+Example:
+
+<input type="number" min="1" max="100">
+
+// Q13. What is the purpose of the password input type?
+
+// SOLUTION
+
+`type="password"` hides the characters entered by the user.
+
+Example:
+
+<input type="password" name="password">
+
+// Q14. What is the purpose of the URL input type?
+
+// SOLUTION
+
+`type="url"` is used to accept a web address.
+
+Example:
+
+<input type="url" name="website">
+
+// Q15. What is the purpose of the action attribute?
+
+// SOLUTION
+
+The `action` attribute specifies where the form data should be
+sent when the form is submitted.
+
+Example:
+
+<form action="/submit">
+
+// Q16. What is the purpose of the method attribute?
+
+// SOLUTION
+
+The `method` attribute specifies how form data is sent.
+
+Common methods:
+
+* GET
+* POST
+
+Example:
+
+<form action="/submit" method="post">
+
+// Q17. What is form validation?
+
+// SOLUTION
+
+Form validation checks whether the data entered by the user
+satisfies specified conditions before submission.
+
+// Q18. What is the purpose of the required attribute?
+
+// SOLUTION
+
+The `required` attribute makes a form field mandatory.
+
+Example:
+
+<input type="text" required>
+
+// Q19. What are minlength and maxlength?
+
+// SOLUTION
+
+`minlength` specifies the minimum number of characters.
+
+`maxlength` specifies the maximum number of characters.
+
+Example:
+
+<input type="text" minlength="3" maxlength="20">
+
+// Q20. What are min and max?
+
+// SOLUTION
+
+`min` specifies the minimum allowed value.
+
+`max` specifies the maximum allowed value.
+
+Example:
+
+<input type="number" min="18" max="60">
+
+// Q21. What is the purpose of the pattern attribute?
+
+// SOLUTION
+
+The `pattern` attribute specifies a regular expression that the
+input must match.
+
+Example:
+
+<input type="text" pattern="[A-Za-z]+">
+
+// Q22. Write HTML code for a registration form containing:
+// Name, Email, Password, Gender and Submit button.
+
+// SOLUTION
+
+<form>
+
+```
+<label for="name">Name:</label>
+<input type="text" id="name" name="name" required>
+
+<br><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
+<br><br>
+
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+
+<br><br>
+
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+
+<br><br>
+
+<button type="submit">Register</button>
+```
+
+</form>
+
+<!-- ===================================================== -->
+
+<!-- FOR REFERENCE                                        -->
+
+<!-- ===================================================== -->
+
+Form:
+
+<form action="/submit" method="post">
+    ...
+</form>
+
+Text:
+
+<input type="text">
+
+Email:
+
+<input type="email">
+
+Password:
+
+<input type="password">
+
+Number:
+
+<input type="number">
+
+URL:
+
+<input type="url">
+
+Date:
+
+<input type="date">
+
+Time:
+
+<input type="time">
+
+Radio:
+
+<input type="radio" name="gender">
+
+Checkbox:
+
+<input type="checkbox">
+
+File:
+
+<input type="file">
+
+Textarea:
+
+<textarea></textarea>
+
+Dropdown:
+
+<select>
+    <option>Java</option>
+</select>
+
+Option Group:
+
+<optgroup label="Programming">
+    <option>Java</option>
+</optgroup>
+
+Label:
+
+<label for="name">Name</label>
+
+Submit:
+
+<button type="submit">Submit</button>
+
+Reset:
+
+<button type="reset">Reset</button>
+
+Required:
+
+<input required>
+
+Minimum:
+
+<input minlength="3">
+
+Maximum:
+
+<input maxlength="20">
+
+Value Range:
+
+<input type="number" min="1" max="100">
+
+Pattern:
+
+<input pattern="[A-Za-z]+">
+
+<!-- QUICK REFERENCE -->
+<!-- 
+<form>          → Creates form
+<input>         → Input field
+<textarea>      → Multi-line input
+<label>         → Form label
+<button>        → Button
+<input radio>   → Single-choice selection
+<input checkbox>→ Multiple-choice selection
+<select>        → Dropdown
+<option>        → Dropdown option
+<optgroup>      → Groups dropdown options
+<input file>    → File upload
+
+action          → Form submission destination
+method          → GET/POST
+required        → Mandatory field
+placeholder     → Input hint
+minlength       → Minimum characters
+maxlength       → Maximum characters
+min              → Minimum value
+max              → Maximum value
+pattern         → Pattern validation -->
