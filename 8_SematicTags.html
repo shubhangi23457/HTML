@@ -1,0 +1,591 @@
+# 8. SEMANTIC HTML
+
+// ==================================================
+// NOTES
+// ==================================================
+
+// 1. SEMANTIC HTML
+// Semantic HTML uses HTML elements that clearly describe
+// the meaning and purpose of their content.
+//
+// Examples:
+// <header>  -> introductory/header content
+// <nav>     -> navigation links
+// <main>    -> main content of the page
+// <section> -> thematic section of content
+// <article> -> independent/self-contained content
+// <aside>   -> related or secondary content
+// <footer>  -> footer information
+// <figure>  -> self-contained media/content
+// <figcaption> -> caption for a figure
+// <details> -> expandable content
+// <summary> -> visible heading of details
+//
+// Advantages:
+// - Makes HTML easier to understand
+// - Improves accessibility
+// - Helps search engines understand page structure
+// - Makes code easier to maintain
+//
+// ==================================================
+
+// 2. HEADER
+// <header> represents introductory content for a page
+// or a particular section/article.
+//
+// It commonly contains:
+// - Logo
+// - Website title
+// - Heading
+// - Introductory information
+//
+// Example:
+// <header>
+//     <h1>My Website</h1>
+// </header>
+
+// ==================================================
+
+// 3. NAVIGATION
+// <nav> contains the main navigation links of a website.
+//
+// Example:
+// <nav>
+//     <a href="index.html">Home</a>
+//     <a href="about.html">About</a>
+//     <a href="contact.html">Contact</a>
+// </nav>
+//
+// Usually used for:
+// - Main menu
+// - Website navigation
+// - Important page links
+
+// ==================================================
+
+// 4. MAIN
+// <main> contains the primary/main content of a webpage.
+//
+// A page should normally have only one <main> element.
+//
+// Example:
+// <main>
+//     <h2>Welcome</h2>
+//     <p>This is the main content.</p>
+// </main>
+
+// ==================================================
+
+// 5. SECTION
+// <section> represents a thematic grouping of content.
+//
+// A section usually has a heading.
+//
+// Example:
+// <section>
+//     <h2>Our Services</h2>
+//     <p>We provide web development services.</p>
+// </section>
+//
+// Difference:
+// <section> -> groups related content around a theme
+// <div>     -> generic container without semantic meaning
+
+// ==================================================
+
+// 6. ARTICLE
+// <article> represents independent, self-contained content.
+//
+// Examples:
+// - Blog post
+// - News article
+// - Product review
+// - Forum post
+// - Social media post
+//
+// Example:
+// <article>
+//     <h2>HTML Basics</h2>
+//     <p>HTML is used to structure webpages.</p>
+// </article>
+
+// ==================================================
+
+// 7. ASIDE
+// <aside> contains content related to the main content
+// but not essential to understanding it.
+//
+// Examples:
+// - Sidebar
+// - Related articles
+// - Advertisements
+// - Tips
+// - Additional information
+//
+// Example:
+// <aside>
+//     <h3>Related Topics</h3>
+//     <p>Learn more about CSS.</p>
+// </aside>
+
+// ==================================================
+
+// 8. FOOTER
+// <footer> represents footer information for a page
+// or a section/article.
+//
+// Common contents:
+// - Copyright
+// - Contact information
+// - Social media links
+// - Privacy policy
+// - Terms and conditions
+//
+// Example:
+// <footer>
+//     <p>© 2026 My Website</p>
+// </footer>
+
+// ==================================================
+
+// 9. FIGURE AND FIGCAPTION
+// <figure> represents self-contained content such as:
+// - Image
+// - Diagram
+// - Chart
+// - Illustration
+// - Code example
+//
+// <figcaption> provides a caption/description for the figure.
+//
+// Example:
+//
+// <figure>
+//     <img src="laptop.jpg" alt="Laptop">
+//     <figcaption>My new laptop.</figcaption>
+// </figure>
+
+// ==================================================
+
+// 10. DETAILS AND SUMMARY
+// <details> creates an expandable/collapsible section.
+//
+// <summary> provides the visible heading that the user
+// clicks to open or close the details.
+//
+// Example:
+//
+// <details>
+//     <summary>What is HTML?</summary>
+//     <p>HTML is a markup language used to structure webpages.</p>
+// </details>
+//
+// The "open" attribute keeps the details expanded by default.
+//
+// Example:
+// <details open>
+//     <summary>Important Information</summary>
+//     <p>This content is visible initially.</p>
+// </details>
+
+// ==================================================
+// COMBINED CODE
+// ==================================================
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Example</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+
+    header, footer {
+        background-color: #222;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav {
+        background-color: #444;
+        padding: 12px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        margin: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    section {
+        margin-bottom: 25px;
+        padding: 15px;
+        border: 1px solid #ccc;
+    }
+
+    article {
+        padding: 15px;
+        margin: 10px 0;
+        background-color: #f2f2f2;
+    }
+
+    aside {
+        padding: 15px;
+        background-color: #eee;
+        margin-top: 20px;
+    }
+
+    figure {
+        text-align: center;
+    }
+
+    figure img {
+        width: 300px;
+    }
+
+    figcaption {
+        font-style: italic;
+    }
+
+    details {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #aaa;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- HEADER -->
+<header>
+    <h1>My Technology Website</h1>
+    <p>Learn HTML, CSS and JavaScript</p>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="#home">Home</a>
+    <a href="#articles">Articles</a>
+    <a href="#about">About</a>
+</nav>
+
+<!-- MAIN -->
+<main>
+
+    <!-- SECTION -->
+    <section id="home">
+        <h2>Welcome</h2>
+        <p>
+            Welcome to my technology website.
+            This section contains introductory information.
+        </p>
+    </section>
+
+    <!-- ARTICLE -->
+    <section id="articles">
+        <h2>Latest Articles</h2>
+
+        <article>
+            <h3>Introduction to HTML</h3>
+            <p>
+                HTML is used to structure content on webpages.
+            </p>
+        </article>
+
+        <article>
+            <h3>Introduction to CSS</h3>
+            <p>
+                CSS is used to style and design webpages.
+            </p>
+        </article>
+    </section>
+
+    <!-- FIGURE AND FIGCAPTION -->
+    <section>
+        <h2>Website Image</h2>
+
+        <figure>
+            <img src="images/laptop.jpg"
+                 alt="Laptop used for web development">
+            <figcaption>
+                A laptop used for web development.
+            </figcaption>
+        </figure>
+    </section>
+
+    <!-- ASIDE -->
+    <aside>
+        <h3>Did You Know?</h3>
+        <p>
+            Semantic HTML makes webpages easier to understand
+            for browsers, developers and assistive technologies.
+        </p>
+    </aside>
+
+    <!-- DETAILS AND SUMMARY -->
+    <section id="about">
+        <h2>Frequently Asked Questions</h2>
+
+        <details>
+            <summary>What is Semantic HTML?</summary>
+            <p>
+                Semantic HTML uses meaningful elements to describe
+                the purpose of webpage content.
+            </p>
+        </details>
+
+        <details>
+            <summary>Why use semantic elements?</summary>
+            <p>
+                They improve structure, readability, accessibility
+                and search engine understanding.
+            </p>
+        </details>
+
+        <details open>
+            <summary>Is &lt;div&gt; a semantic element?</summary>
+            <p>
+                No. The div element is a generic container and does
+                not describe the meaning of its content.
+            </p>
+        </details>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 My Technology Website</p>
+    <p>All Rights Reserved.</p>
+</footer>
+```
+
+</body>
+</html>
+
+// ==================================================
+// QUESTIONS
+// ==================================================
+
+// Q1. What is Semantic HTML?
+// Q2. What is the purpose of the <header> element?
+// Q3. What is the purpose of the <nav> element?
+// Q4. What is the difference between <main> and <section>?
+// Q5. What is the purpose of the <article> element?
+// Q6. What is the use of <aside>?
+// Q7. What is the purpose of the <footer> element?
+// Q8. What is the difference between <figure> and <figcaption>?
+// Q9. What is the use of <details> and <summary>?
+// Q10. What is the difference between <section> and <div>?
+// Q11. Create a webpage using header, nav, main and footer.
+// Q12. Create an article containing a heading and paragraph.
+// Q13. Create a figure containing an image and caption.
+// Q14. Create an expandable FAQ using details and summary.
+
+// ==================================================
+// SOLUTIONS
+// ==================================================
+
+// Q1. What is Semantic HTML?
+// Semantic HTML uses meaningful HTML elements that describe
+// the purpose of the content.
+//
+// Examples:
+// <header>, <nav>, <main>, <section>, <article>,
+// <aside>, <footer>, <figure> and <details>.
+
+// --------------------------------------------------
+
+// Q2. What is the purpose of <header>?
+// <header> contains introductory or heading content
+// for a webpage or section.
+//
+// Example:
+// <header>
+//     <h1>My Website</h1>
+// </header>
+
+// --------------------------------------------------
+
+// Q3. What is the purpose of <nav>?
+// <nav> contains important navigation links.
+//
+// Example:
+// <nav>
+//     <a href="index.html">Home</a>
+//     <a href="about.html">About</a>
+// </nav>
+
+// --------------------------------------------------
+
+// Q4. Difference between <main> and <section>:
+//
+// <main> -> Contains the primary content of the webpage.
+// <section> -> Groups related content into a particular topic.
+//
+// Example:
+// <main>
+//     <section>
+//         <h2>About Us</h2>
+//     </section>
+// </main>
+
+// --------------------------------------------------
+
+// Q5. What is <article>?
+// <article> represents independent content that can make
+// sense on its own.
+//
+// Examples:
+// Blog post, news article, product review.
+
+// --------------------------------------------------
+
+// Q6. What is <aside>?
+// <aside> contains related or secondary content.
+//
+// Example:
+// <aside>
+//     <h3>Related Topics</h3>
+//     <p>Learn more about CSS.</p>
+// </aside>
+
+// --------------------------------------------------
+
+// Q7. What is <footer>?
+// <footer> contains footer information.
+//
+// Example:
+// <footer>
+//     <p>© 2026 My Website</p>
+// </footer>
+
+// --------------------------------------------------
+
+// Q8. Difference between <figure> and <figcaption>:
+//
+// <figure> -> Contains self-contained content such as an image.
+// <figcaption> -> Provides a caption for that content.
+//
+// Example:
+// <figure>
+//     <img src="photo.jpg" alt="Photo">
+//     <figcaption>My Photo</figcaption>
+// </figure>
+
+// --------------------------------------------------
+
+// Q9. What are <details> and <summary>?
+//
+// <details> creates expandable content.
+// <summary> provides the clickable heading.
+//
+// Example:
+// <details>
+//     <summary>Click Here</summary>
+//     <p>Hidden content appears here.</p>
+// </details>
+
+// --------------------------------------------------
+
+// Q10. Difference between <section> and <div>:
+//
+// <section> -> Semantic element used for a thematic section.
+// <div> -> Generic non-semantic container.
+//
+// Example:
+// <section>
+//     <h2>Services</h2>
+// </section>
+//
+// <div>
+//     <h2>Services</h2>
+// </div>
+
+// --------------------------------------------------
+
+// Q11. Basic Semantic Webpage:
+//
+// <header>
+//     <h1>My Website</h1>
+// </header>
+//
+// <nav>
+//     <a href="#">Home</a>
+//     <a href="#">About</a>
+// </nav>
+//
+// <main>
+//     <section>
+//         <h2>Welcome</h2>
+//         <p>Welcome to my website.</p>
+//     </section>
+// </main>
+//
+// <footer>
+//     <p>Copyright 2026</p>
+// </footer>
+
+// --------------------------------------------------
+
+// Q12. Article:
+//
+// <article>
+//     <h2>HTML Basics</h2>
+//     <p>HTML is used to structure webpages.</p>
+// </article>
+
+// --------------------------------------------------
+
+// Q13. Figure:
+//
+// <figure>
+//     <img src="laptop.jpg" alt="Laptop">
+//     <figcaption>Web development laptop</figcaption>
+// </figure>
+
+// --------------------------------------------------
+
+// Q14. FAQ:
+//
+// <details>
+//     <summary>What is HTML?</summary>
+//     <p>HTML is a markup language for creating webpages.</p>
+// </details>
+
+// ==================================================
+// FOR REFERENCE / QUICK REFERENCE
+// ==================================================
+//
+// <header>       -> Introductory/header content
+// <nav>          -> Navigation links
+// <main>         -> Main page content
+// <section>      -> Thematic grouping of content
+// <article>      -> Independent/self-contained content
+// <aside>        -> Related/secondary content
+// <footer>       -> Footer information
+// <figure>       -> Self-contained media/content
+// <figcaption>   -> Caption for figure
+// <details>      -> Expandable content
+// <summary>      -> Heading for expandable content
+//
+// Semantic HTML:
+// Meaningful structure + Accessibility + Better readability
+// ==================================================
