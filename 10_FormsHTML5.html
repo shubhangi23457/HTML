@@ -1,0 +1,1117 @@
+# 10. HTML5
+
+// ==================================================
+// NOTES
+// ==================================================
+
+// 1. HTML5 FEATURES
+// HTML5 is the modern version of HTML used to structure
+// and build web applications.
+//
+// Important HTML5 features:
+// - Semantic elements
+// - New form input types
+// - Form validation
+// - Audio and video
+// - Canvas
+// - SVG
+// - Geolocation
+// - Web Storage
+// - Better support for modern web applications
+//
+// HTML5 reduces the need for external plugins for many
+// common web features.
+
+// ==================================================
+
+// 2. NEW SEMANTIC ELEMENTS
+// HTML5 introduced semantic elements that describe
+// the purpose of webpage content.
+//
+// Important semantic elements:
+//
+// <header>  -> Header/introduction
+// <nav>     -> Navigation links
+// <main>    -> Main page content
+// <section> -> Thematic section
+// <article> -> Independent content
+// <aside>   -> Related/secondary content
+// <footer>  -> Footer information
+// <figure>  -> Self-contained content
+// <figcaption> -> Figure caption
+// <details> -> Expandable information
+// <summary> -> Heading for details
+//
+// Example:
+//
+// <header>
+//     <h1>My Website</h1>
+// </header>
+//
+// <nav>
+//     <a href="#home">Home</a>
+// </nav>
+//
+// <main>
+//     <section>
+//         <h2>About</h2>
+//         <p>About the website.</p>
+//     </section>
+// </main>
+//
+// <footer>
+//     <p>Copyright 2026</p>
+// </footer>
+
+// ==================================================
+
+// 3. HTML5 FORM INPUT TYPES
+// HTML5 introduced additional input types that provide
+// better input handling and browser support.
+//
+// Common HTML5 input types:
+//
+// email          -> Email address
+// number         -> Numeric value
+// url            -> Web address
+// date           -> Date
+// time           -> Time
+// datetime-local -> Local date and time
+// month          -> Month and year
+// week           -> Week
+// color          -> Color picker
+// range          -> Slider
+// search         -> Search field
+//
+// Example:
+//
+// <input type="email">
+// <input type="number">
+// <input type="date">
+// <input type="color">
+// <input type="range">
+
+// ==================================================
+
+// 4. HTML5 FORM VALIDATION
+// HTML5 provides built-in client-side validation.
+//
+// Common validation attributes:
+//
+// required   -> Field must be filled
+// minlength  -> Minimum number of characters
+// maxlength  -> Maximum number of characters
+// min        -> Minimum numeric/date value
+// max        -> Maximum numeric/date value
+// step       -> Allowed increments
+// pattern    -> Regular-expression pattern
+//
+// Input types such as email and url also provide
+// built-in format validation.
+//
+// Example:
+//
+// <input type="email" required>
+//
+// <input type="number" min="1" max="100">
+//
+// <input type="text" pattern="[A-Za-z]+">
+//
+// The browser normally checks these constraints when
+// the form is submitted.
+
+// ==================================================
+
+// 5. AUDIO AND VIDEO
+// HTML5 provides native multimedia elements.
+//
+// <audio> -> Adds audio
+// <video> -> Adds video
+//
+// Example:
+//
+// <audio controls>
+//     <source src="song.mp3" type="audio/mpeg">
+// </audio>
+//
+// <video controls width="500">
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+//
+// HTML5 multimedia reduces the need for third-party
+// plugins for basic audio/video playback.
+
+// ==================================================
+
+// 6. CANVAS
+// <canvas> provides a drawing area that can be controlled
+// using JavaScript.
+//
+// It can be used for:
+// - Shapes
+// - Lines
+// - Text
+// - Graphics
+// - Animations
+// - Games
+// - Data visualizations
+//
+// Basic syntax:
+//
+// <canvas id="myCanvas" width="400" height="200"></canvas>
+//
+// JavaScript is generally used to draw on the canvas.
+//
+// Example:
+//
+// const canvas = document.getElementById("myCanvas");
+// const ctx = canvas.getContext("2d");
+//
+// ctx.fillRect(50, 50, 100, 60);
+//
+// Canvas is pixel-based and its drawing is controlled
+// through JavaScript.
+
+// ==================================================
+
+// 7. SVG
+// SVG stands for Scalable Vector Graphics.
+//
+// SVG is used to create vector-based graphics.
+//
+// SVG can be used for:
+// - Shapes
+// - Icons
+// - Logos
+// - Diagrams
+// - Charts
+//
+// Common SVG elements:
+//
+// <svg>       -> SVG container
+// <circle>    -> Circle
+// <rect>      -> Rectangle
+// <line>      -> Line
+// <polygon>   -> Polygon
+// <path>      -> Complex paths
+// <text>      -> Text
+//
+// Example:
+//
+// <svg width="200" height="100">
+//     <circle cx="50" cy="50" r="30"/>
+// </svg>
+//
+// SVG graphics remain sharp when scaled because they
+// are vector-based.
+
+// ==================================================
+
+// 8. GEOLOCATION
+// The Geolocation API allows a webpage to request the
+// user's geographical location through the browser.
+//
+// JavaScript method:
+//
+// navigator.geolocation.getCurrentPosition()
+//
+// Example:
+//
+// navigator.geolocation.getCurrentPosition(
+//     function(position) {
+//         console.log(position.coords.latitude);
+//         console.log(position.coords.longitude);
+//     }
+// );
+//
+// Important:
+// - The browser normally asks the user for permission.
+// - HTTPS is generally required in modern browsers
+//   except for certain trusted/local development contexts.
+// - Location access should be handled carefully because
+//   it is sensitive information.
+//
+// Common properties:
+//
+// position.coords.latitude
+// position.coords.longitude
+// position.coords.accuracy
+
+// ==================================================
+
+// 9. WEB STORAGE
+// Web Storage allows webpages to store data in the browser.
+//
+// Two main types:
+//
+// localStorage
+// -> Data remains after the browser is closed.
+// -> Data remains until it is explicitly removed.
+//
+// sessionStorage
+// -> Data is associated with the current browser tab/session.
+// -> It is cleared when that page session ends.
+//
+// Important methods:
+//
+// setItem(key, value) -> Stores data
+// getItem(key)        -> Retrieves data
+// removeItem(key)     -> Removes one item
+// clear()             -> Removes all stored items
+//
+// Example:
+//
+// localStorage.setItem("name", "Alex");
+//
+// let name = localStorage.getItem("name");
+//
+// localStorage.removeItem("name");
+//
+// Storage values are stored as strings.
+// Objects/arrays can be stored by converting them
+// with JSON.stringify() and JSON.parse().
+
+// ==================================================
+// COMBINED CODE
+// ==================================================
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>HTML5 Features</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    header,
+    footer {
+        padding: 20px;
+        text-align: center;
+        background-color: #222;
+        color: white;
+    }
+
+    nav {
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 10px;
+    }
+
+    section {
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #ccc;
+    }
+
+    canvas,
+    svg {
+        border: 1px solid #888;
+        margin-top: 10px;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+
+    input {
+        padding: 6px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 8px 15px;
+    }
+
+    #output {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ==================================================
+     SEMANTIC HTML5 ELEMENTS
+     ================================================== -->
+
+<header>
+    <h1>HTML5 Features</h1>
+    <p>Learning modern HTML5 features</p>
+</header>
+
+<nav>
+    <a href="#forms">Forms</a>
+    <a href="#media">Media</a>
+    <a href="#graphics">Graphics</a>
+    <a href="#storage">Storage</a>
+</nav>
+
+<main>
+
+    <!-- ==================================================
+         HTML5 FORM INPUT TYPES AND VALIDATION
+         ================================================== -->
+
+    <section id="forms">
+        <h2>HTML5 Form Input Types</h2>
+
+        <form id="myForm">
+
+            <label for="email">Email:</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Enter email">
+
+            <label for="age">Age:</label>
+            <input
+                type="number"
+                id="age"
+                name="age"
+                min="18"
+                max="100"
+                required>
+
+            <label for="website">Website:</label>
+            <input
+                type="url"
+                id="website"
+                name="website"
+                placeholder="https://example.com">
+
+            <label for="birthdate">Birth Date:</label>
+            <input
+                type="date"
+                id="birthdate"
+                name="birthdate">
+
+            <label for="meeting">Meeting Time:</label>
+            <input
+                type="time"
+                id="meeting"
+                name="meeting">
+
+            <label for="color">Favorite Color:</label>
+            <input
+                type="color"
+                id="color"
+                name="color">
+
+            <label for="rating">Rating:</label>
+            <input
+                type="range"
+                id="rating"
+                name="rating"
+                min="1"
+                max="10"
+                value="5">
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </section>
+
+
+    <!-- ==================================================
+         AUDIO AND VIDEO
+         ================================================== -->
+
+    <section id="media">
+        <h2>HTML5 Audio</h2>
+
+        <audio controls>
+            <source src="audio/song.mp3" type="audio/mpeg">
+            <source src="audio/song.ogg" type="audio/ogg">
+
+            Your browser does not support audio.
+        </audio>
+
+        <h2>HTML5 Video</h2>
+
+        <video controls width="500">
+            <source src="video/sample.mp4" type="video/mp4">
+            <source src="video/sample.webm" type="video/webm">
+
+            Your browser does not support video.
+        </video>
+    </section>
+
+
+    <!-- ==================================================
+         CANVAS
+         ================================================== -->
+
+    <section id="graphics">
+        <h2>Canvas</h2>
+
+        <canvas
+            id="myCanvas"
+            width="400"
+            height="200">
+        </canvas>
+    </section>
+
+
+    <!-- ==================================================
+         SVG
+         ================================================== -->
+
+    <section>
+        <h2>SVG</h2>
+
+        <svg width="400" height="200">
+
+            <!-- Rectangle -->
+            <rect
+                x="20"
+                y="20"
+                width="120"
+                height="70"
+                fill="lightblue">
+            </rect>
+
+            <!-- Circle -->
+            <circle
+                cx="220"
+                cy="55"
+                r="35"
+                fill="orange">
+            </circle>
+
+            <!-- Text -->
+            <text
+                x="120"
+                y="150"
+                font-size="24">
+                HTML5 SVG
+            </text>
+
+        </svg>
+    </section>
+
+
+    <!-- ==================================================
+         GEOLOCATION
+         ================================================== -->
+
+    <section>
+        <h2>Geolocation</h2>
+
+        <button onclick="getLocation()">
+            Get My Location
+        </button>
+
+        <p id="locationOutput">
+            Location will appear here.
+        </p>
+    </section>
+
+
+    <!-- ==================================================
+         WEB STORAGE
+         ================================================== -->
+
+    <section id="storage">
+        <h2>Web Storage</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name">
+
+        <button onclick="saveName()">
+            Save Name
+        </button>
+
+        <button onclick="loadName()">
+            Load Name
+        </button>
+
+        <button onclick="removeName()">
+            Remove Name
+        </button>
+
+        <p id="storageOutput"></p>
+    </section>
+
+</main>
+
+
+<!-- ==================================================
+     FOOTER
+     ================================================== -->
+
+<footer>
+    <p>&copy; 2026 HTML5 Learning Page</p>
+</footer>
+
+
+<!-- ==================================================
+     JAVASCRIPT
+     ================================================== -->
+
+<script>
+
+    // ----------------------------------------------
+    // CANVAS
+    // ----------------------------------------------
+
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // Rectangle
+    ctx.fillStyle = "blue";
+    ctx.fillRect(40, 40, 120, 70);
+
+    // Circle
+    ctx.beginPath();
+    ctx.arc(260, 80, 40, 0, 2 * Math.PI);
+    ctx.fillStyle = "orange";
+    ctx.fill();
+
+    // Text
+    ctx.font = "20px Arial";
+    ctx.fillStyle = "black";
+    ctx.fillText("Canvas", 150, 170);
+
+
+    // ----------------------------------------------
+    // GEOLOCATION
+    // ----------------------------------------------
+
+    function getLocation() {
+
+        const output =
+            document.getElementById("locationOutput");
+
+        if (navigator.geolocation) {
+
+            output.textContent =
+                "Requesting location...";
+
+            navigator.geolocation.getCurrentPosition(
+
+                function(position) {
+
+                    output.innerHTML =
+                        "Latitude: " +
+                        position.coords.latitude +
+                        "<br>Longitude: " +
+                        position.coords.longitude +
+                        "<br>Accuracy: " +
+                        position.coords.accuracy +
+                        " meters";
+                },
+
+                function(error) {
+
+                    output.textContent =
+                        "Unable to get location.";
+                }
+            );
+
+        } else {
+
+            output.textContent =
+                "Geolocation is not supported.";
+        }
+    }
+
+
+    // ----------------------------------------------
+    // LOCAL STORAGE
+    // ----------------------------------------------
+
+    function saveName() {
+
+        const name =
+            document.getElementById("username").value;
+
+        localStorage.setItem("username", name);
+
+        document.getElementById("storageOutput")
+            .textContent =
+            "Name saved successfully.";
+    }
+
+
+    function loadName() {
+
+        const name =
+            localStorage.getItem("username");
+
+        document.getElementById("storageOutput")
+            .textContent =
+            name
+                ? "Saved Name: " + name
+                : "No name found.";
+    }
+
+
+    function removeName() {
+
+        localStorage.removeItem("username");
+
+        document.getElementById("storageOutput")
+            .textContent =
+            "Name removed.";
+    }
+
+
+    // ----------------------------------------------
+    // FORM VALIDATION
+    // ----------------------------------------------
+
+    document.getElementById("myForm")
+        .addEventListener("submit", function(event) {
+
+            if (!this.checkValidity()) {
+
+                event.preventDefault();
+
+                alert("Please enter valid information.");
+
+            } else {
+
+                event.preventDefault();
+
+                alert("Form submitted successfully.");
+            }
+
+        });
+
+</script>
+```
+
+</body>
+</html>
+
+// ==================================================
+// QUESTIONS
+// ==================================================
+
+// Q1. What is HTML5?
+// Q2. List some important features of HTML5.
+// Q3. What are semantic elements?
+// Q4. Name five HTML5 semantic elements.
+// Q5. Name five HTML5 form input types.
+// Q6. What is HTML5 form validation?
+// Q7. What is the purpose of the required attribute?
+// Q8. What is the difference between min and max?
+// Q9. What is the purpose of the <audio> element?
+// Q10. What is the purpose of the <video> element?
+// Q11. What is Canvas?
+// Q12. What is SVG?
+// Q13. What is the difference between Canvas and SVG?
+// Q14. What is Geolocation API?
+// Q15. What is Web Storage?
+// Q16. What is the difference between localStorage and sessionStorage?
+// Q17. Write JavaScript code to store a value in localStorage.
+// Q18. Write JavaScript code to retrieve a value from localStorage.
+// Q19. Create a canvas and draw a rectangle.
+// Q20. Create an SVG containing a circle.
+// Q21. Create a form using email and number input types.
+// Q22. Create a form with required and min/max validation.
+
+// ==================================================
+// SOLUTIONS
+// ==================================================
+
+// Q1. What is HTML5?
+//
+// HTML5 is the modern version of HTML that provides
+// semantic elements, multimedia support, improved forms,
+// graphics APIs, storage and other features for modern
+// web applications.
+
+// --------------------------------------------------
+
+// Q2. Important HTML5 features:
+//
+// - Semantic elements
+// - New form input types
+// - Form validation
+// - Audio and video
+// - Canvas
+// - SVG
+// - Geolocation
+// - Web Storage
+
+// --------------------------------------------------
+
+// Q3. What are semantic elements?
+//
+// Semantic elements clearly describe the purpose of
+// the content they contain.
+//
+// Examples:
+//
+// <header>
+// <nav>
+// <main>
+// <section>
+// <article>
+// <aside>
+// <footer>
+
+// --------------------------------------------------
+
+// Q4. Five HTML5 semantic elements:
+//
+// <header>
+// <nav>
+// <main>
+// <section>
+// <article>
+
+// --------------------------------------------------
+
+// Q5. Five HTML5 form input types:
+//
+// email
+// number
+// date
+// color
+// range
+
+// Example:
+//
+// <input type="email">
+// <input type="number">
+// <input type="date">
+
+// --------------------------------------------------
+
+// Q6. What is HTML5 form validation?
+//
+// HTML5 form validation checks whether user input
+// satisfies specified requirements before form submission.
+//
+// Example:
+//
+// <input type="email" required>
+
+// --------------------------------------------------
+
+// Q7. Purpose of required:
+//
+// The required attribute makes a form field mandatory.
+//
+// Example:
+//
+// <input type="text" required>
+
+// --------------------------------------------------
+
+// Q8. Difference between min and max:
+//
+// min -> Specifies the minimum allowed value.
+// max -> Specifies the maximum allowed value.
+//
+// Example:
+//
+// <input type="number" min="1" max="100">
+
+// --------------------------------------------------
+
+// Q9. Purpose of <audio>:
+//
+// <audio> is used to embed audio files.
+//
+// Example:
+//
+// <audio controls>
+//     <source src="song.mp3" type="audio/mpeg">
+// </audio>
+
+// --------------------------------------------------
+
+// Q10. Purpose of <video>:
+//
+// <video> is used to embed video files.
+//
+// Example:
+//
+// <video controls>
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+
+// --------------------------------------------------
+
+// Q11. What is Canvas?
+//
+// Canvas is an HTML element that provides a drawing area.
+// JavaScript is used to draw graphics on it.
+//
+// Example:
+//
+// <canvas id="c" width="300" height="200"></canvas>
+//
+// JavaScript:
+//
+// const canvas = document.getElementById("c");
+// const ctx = canvas.getContext("2d");
+// ctx.fillRect(20, 20, 100, 50);
+
+// --------------------------------------------------
+
+// Q12. What is SVG?
+//
+// SVG stands for Scalable Vector Graphics.
+//
+// It is used to create vector graphics such as
+// shapes, icons, diagrams and charts.
+//
+// Example:
+//
+// <svg width="200" height="100">
+//     <circle cx="50" cy="50" r="30"></circle>
+// </svg>
+
+// --------------------------------------------------
+
+// Q13. Difference between Canvas and SVG:
+//
+// Canvas:
+// - Pixel-based
+// - Drawing is usually controlled with JavaScript
+// - Suitable for dynamic graphics, games and animations
+//
+// SVG:
+// - Vector-based
+// - Elements can be represented individually in the DOM
+// - Suitable for scalable graphics, icons and diagrams
+
+// --------------------------------------------------
+
+// Q14. What is Geolocation API?
+//
+// The Geolocation API allows a webpage to request
+// the user's geographical location.
+//
+// Example:
+//
+// navigator.geolocation.getCurrentPosition(
+//     function(position) {
+//         console.log(position.coords.latitude);
+//         console.log(position.coords.longitude);
+//     }
+// );
+
+// --------------------------------------------------
+
+// Q15. What is Web Storage?
+//
+// Web Storage allows websites to store data in the
+// user's browser.
+//
+// Two types:
+//
+// localStorage
+// sessionStorage
+
+// --------------------------------------------------
+
+// Q16. Difference between localStorage and sessionStorage:
+//
+// localStorage:
+// - Data persists until it is removed.
+// - Can be available across browser sessions.
+//
+// sessionStorage:
+// - Data is associated with a particular page session.
+// - It is cleared when that session ends.
+//
+// Example:
+//
+// localStorage.setItem("name", "Alex");
+// sessionStorage.setItem("name", "Alex");
+
+// --------------------------------------------------
+
+// Q17. Store a value in localStorage:
+//
+// localStorage.setItem("username", "Alex");
+
+// --------------------------------------------------
+
+// Q18. Retrieve a value:
+//
+// let username = localStorage.getItem("username");
+//
+// console.log(username);
+
+// --------------------------------------------------
+
+// Q19. Canvas rectangle:
+//
+// <canvas id="myCanvas"
+//         width="300"
+//         height="200">
+// </canvas>
+//
+// JavaScript:
+//
+// const canvas = document.getElementById("myCanvas");
+// const ctx = canvas.getContext("2d");
+//
+// ctx.fillRect(30, 30, 100, 60);
+
+// --------------------------------------------------
+
+// Q20. SVG circle:
+//
+// <svg width="200" height="100">
+//     <circle
+//         cx="50"
+//         cy="50"
+//         r="30"
+//         fill="blue">
+//     </circle>
+// </svg>
+
+// --------------------------------------------------
+
+// Q21. Form using email and number:
+//
+// <form>
+//
+//     <input
+//         type="email"
+//         required
+//         placeholder="Email">
+//
+//     <input
+//         type="number"
+//         min="18"
+//         max="100"
+//         required>
+//
+//     <button type="submit">
+//         Submit
+//     </button>
+//
+// </form>
+
+// --------------------------------------------------
+
+// Q22. Form validation:
+//
+// <form>
+//
+//     <input
+//         type="text"
+//         required
+//         minlength="3"
+//         maxlength="20">
+//
+//     <input
+//         type="number"
+//         min="1"
+//         max="100"
+//         required>
+//
+//     <button type="submit">
+//         Submit
+//     </button>
+//
+// </form>
+
+// ==================================================
+// FOR REFERENCE / QUICK REFERENCE
+// ==================================================
+//
+// HTML5:
+// Modern HTML standard with semantic, multimedia,
+// graphics, storage and web API features.
+//
+// SEMANTIC ELEMENTS:
+//
+// <header>       -> Header
+// <nav>          -> Navigation
+// <main>         -> Main content
+// <section>      -> Section
+// <article>      -> Independent content
+// <aside>        -> Related content
+// <footer>       -> Footer
+//
+// FORM INPUT TYPES:
+//
+// email          -> Email
+// number         -> Number
+// url            -> URL
+// date           -> Date
+// time           -> Time
+// datetime-local -> Date + time
+// month          -> Month
+// week           -> Week
+// color          -> Color picker
+// range          -> Slider
+// search         -> Search
+//
+// VALIDATION:
+//
+// required       -> Mandatory field
+// minlength      -> Minimum characters
+// maxlength      -> Maximum characters
+// min            -> Minimum value
+// max            -> Maximum value
+// step           -> Allowed increment
+// pattern        -> Regular expression pattern
+//
+// MULTIMEDIA:
+//
+// <audio>        -> Audio
+// <video>        -> Video
+// <source>       -> Media source
+// <track>        -> Subtitles/captions
+//
+// GRAPHICS:
+//
+// <canvas>       -> Pixel-based drawing
+// <svg>          -> Vector-based graphics
+//
+// GEOLOCATION:
+//
+// navigator.geolocation
+// getCurrentPosition()
+//
+// WEB STORAGE:
+//
+// localStorage.setItem()
+// localStorage.getItem()
+// localStorage.removeItem()
+// localStorage.clear()
+//
+// sessionStorage.setItem()
+// sessionStorage.getItem()
+// sessionStorage.removeItem()
+// sessionStorage.clear()
+//
+// IMPORTANT DIFFERENCE:
+//
+// Canvas -> Pixel-based
+// SVG    -> Vector-based
+//
+// localStorage  -> Persists until removed
+// sessionStorage -> Persists for the page session
+// ==================================================
