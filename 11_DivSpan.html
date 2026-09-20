@@ -1,0 +1,699 @@
+# 11. DIV AND SPAN
+
+// ==================================================
+// NOTES
+// ==================================================
+
+// 1. DIV
+// <div> stands for "division".
+//
+// It is a generic container used to group HTML elements.
+//
+// <div> is a block-level element by default.
+//
+// It is commonly used for:
+// - Grouping content
+// - Creating page layouts
+// - Applying CSS styles
+// - Organizing sections of a webpage
+// - Creating containers for JavaScript
+//
+// Example:
+//
+// <div>
+//     <h2>Welcome</h2>
+//     <p>This content is inside a div.</p>
+// </div>
+//
+// IMPORTANT:
+// <div> does not provide semantic meaning.
+// For meaningful page sections, semantic elements such as
+// <section>, <article>, <header>, etc. are usually preferred.
+
+// ==================================================
+
+// 2. SPAN
+// <span> is a generic inline container.
+//
+// It is mainly used to style or manipulate a small
+// portion of text or other inline content.
+//
+// Example:
+//
+// <p>
+//     This is <span>important</span> text.
+// </p>
+//
+// <span> does not normally create a new line.
+//
+// It is commonly used with CSS:
+//
+// <span class="highlight">Important</span>
+
+// ==================================================
+
+// 3. BLOCK-LEVEL ELEMENTS
+// A block-level element normally starts on a new line
+// and occupies the available width of its parent.
+//
+// Examples:
+//
+// <div>
+// <p>
+// <h1> - <h6>
+// <section>
+// <article>
+// <header>
+// <footer>
+// <main>
+// <nav>
+// <ul>
+// <ol>
+// <table>
+//
+// Example:
+//
+// <div>First block</div>
+// <div>Second block</div>
+//
+// They normally appear on separate lines.
+//
+// NOTE:
+// Modern HTML/CSS allows the display behavior of elements
+// to be changed using CSS.
+
+// ==================================================
+
+// 4. INLINE ELEMENTS
+// An inline element normally does not start on a new line.
+// It takes only the space required by its content.
+//
+// Examples:
+//
+// <span>
+// <a>
+// <strong>
+// <em>
+// <b>
+// <i>
+// <label>
+//
+// Example:
+//
+// <p>
+//     This is <span>inline content</span> in a paragraph.
+// </p>
+//
+// Multiple inline elements can appear on the same line.
+
+// ==================================================
+
+// 5. DIFFERENCE BETWEEN DIV AND SPAN
+//
+// <div>:
+// - Block-level by default
+// - Used for larger groups of content
+// - Normally starts on a new line
+//
+// <span>:
+// - Inline by default
+// - Used for small portions of content
+// - Normally stays on the same line
+//
+// Example:
+//
+// <div>
+//     <p>This is a block container.</p>
+// </div>
+//
+// <p>
+//     This is <span>inline content</span>.
+// </p>
+
+// ==================================================
+
+// 6. DIV WITH CSS
+// <div> is commonly used as a CSS container.
+//
+// Example:
+//
+// <div class="box">
+//     <h2>Product</h2>
+//     <p>Electronics product information.</p>
+// </div>
+//
+// CSS:
+//
+// .box {
+//     border: 1px solid black;
+//     padding: 20px;
+// }
+
+// ==================================================
+
+// 7. SPAN WITH CSS
+// <span> can style a specific part of text without
+// creating a new line.
+//
+// Example:
+//
+// <p>
+//     Price:
+//     <span class="price">₹999</span>
+// </p>
+//
+// CSS:
+//
+// .price {
+//     font-weight: bold;
+// }
+
+// ==================================================
+
+// 8. DISPLAY PROPERTY
+// CSS can change how an element behaves.
+//
+// display: block;
+// -> Makes an element behave like a block element.
+//
+// display: inline;
+// -> Makes an element behave like an inline element.
+//
+// display: inline-block;
+// -> Behaves inline but allows width and height.
+//
+// Example:
+//
+// span {
+//     display: block;
+// }
+//
+// div {
+//     display: inline;
+// }
+
+// ==================================================
+// COMBINED CODE
+// ==================================================
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Div and Span</title>
+
+<style>
+
+    /* =========================================
+       GENERAL STYLING
+       ========================================= */
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    /* =========================================
+       DIV EXAMPLE
+       ========================================= */
+
+    .box {
+        border: 2px solid black;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .box1 {
+        background-color: lightblue;
+    }
+
+    .box2 {
+        background-color: lightgreen;
+    }
+
+    /* =========================================
+       SPAN EXAMPLE
+       ========================================= */
+
+    .highlight {
+        font-weight: bold;
+        color: red;
+    }
+
+    .price {
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    /* =========================================
+       BLOCK-LEVEL EXAMPLE
+       ========================================= */
+
+    .block {
+        display: block;
+        background-color: lightyellow;
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+    /* =========================================
+       INLINE EXAMPLE
+       ========================================= */
+
+    .inline {
+        background-color: lightpink;
+        padding: 5px;
+    }
+
+    /* =========================================
+       INLINE-BLOCK EXAMPLE
+       ========================================= */
+
+    .inline-block {
+        display: inline-block;
+        width: 150px;
+        height: 60px;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid black;
+    }
+
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>Div and Span</h1>
+
+
+<!-- =========================================
+     DIV
+     ========================================= -->
+
+<div class="box box1">
+
+    <h2>First Div</h2>
+
+    <p>
+        This content is grouped inside a div element.
+    </p>
+
+</div>
+
+
+<div class="box box2">
+
+    <h2>Second Div</h2>
+
+    <p>
+        This is another block-level div container.
+    </p>
+
+</div>
+
+
+<!-- =========================================
+     SPAN
+     ========================================= -->
+
+<h2>Span Example</h2>
+
+<p>
+    HTML is a
+    <span class="highlight">markup language</span>
+    used to structure webpages.
+</p>
+
+<p>
+    Product Price:
+    <span class="price">₹999</span>
+</p>
+
+
+<!-- =========================================
+     BLOCK-LEVEL ELEMENTS
+     ========================================= -->
+
+<h2>Block-Level Elements</h2>
+
+<div class="block">
+    Block Element 1
+</div>
+
+<div class="block">
+    Block Element 2
+</div>
+
+<div class="block">
+    Block Element 3
+</div>
+
+
+<!-- =========================================
+     INLINE ELEMENTS
+     ========================================= -->
+
+<h2>Inline Elements</h2>
+
+<p>
+    This is
+    <span class="inline">inline element 1</span>
+    and
+    <span class="inline">inline element 2</span>
+    on the same line.
+</p>
+
+
+<!-- =========================================
+     INLINE-BLOCK
+     ========================================= -->
+
+<h2>Inline-Block Elements</h2>
+
+<div class="inline-block">
+    Box 1
+</div>
+
+<div class="inline-block">
+    Box 2
+</div>
+
+<div class="inline-block">
+    Box 3
+</div>
+
+
+<!-- =========================================
+     DIV CONTAINING SPAN
+     ========================================= -->
+
+<div class="box">
+
+    <h2>Product Information</h2>
+
+    <p>
+        Product:
+        <span class="highlight">Wireless Headphones</span>
+    </p>
+
+    <p>
+        Price:
+        <span class="price">₹1,499</span>
+    </p>
+
+    <p>
+        Status:
+        <span class="highlight">Available</span>
+    </p>
+
+</div>
+```
+
+</body>
+</html>
+
+// ==================================================
+// QUESTIONS
+// ==================================================
+
+// Q1. What is <div> in HTML?
+// Q2. What is <span> in HTML?
+// Q3. Is <div> a block-level or inline element?
+// Q4. Is <span> a block-level or inline element?
+// Q5. What is a block-level element?
+// Q6. What is an inline element?
+// Q7. Give five examples of block-level elements.
+// Q8. Give five examples of inline elements.
+// Q9. What is the difference between <div> and <span>?
+// Q10. Can CSS change an element from block to inline?
+// Q11. What is display: inline-block?
+// Q12. Create a div containing a heading and paragraph.
+// Q13. Highlight one word using span.
+// Q14. Create three block-level div elements.
+// Q15. Create three inline elements.
+// Q16. Explain the difference between block and inline elements.
+
+// ==================================================
+// SOLUTIONS
+// ==================================================
+
+// Q1. What is <div>?
+//
+// <div> is a generic container used to group HTML
+// elements and apply CSS or JavaScript.
+//
+// It is block-level by default.
+//
+// Example:
+//
+// <div>
+//     <h2>Welcome</h2>
+//     <p>Hello!</p>
+// </div>
+
+// --------------------------------------------------
+
+// Q2. What is <span>?
+//
+// <span> is a generic inline container used mainly
+// for styling or manipulating a small part of content.
+//
+// Example:
+//
+// <p>
+//     This is <span>important</span> text.
+// </p>
+
+// --------------------------------------------------
+
+// Q3. Is <div> block-level or inline?
+//
+// <div> is block-level by default.
+
+// --------------------------------------------------
+
+// Q4. Is <span> block-level or inline?
+//
+// <span> is inline by default.
+
+// --------------------------------------------------
+
+// Q5. What is a block-level element?
+//
+// A block-level element normally starts on a new line
+// and takes the available width of its parent.
+//
+// Examples:
+//
+// <div>
+// <p>
+// <section>
+// <article>
+
+// --------------------------------------------------
+
+// Q6. What is an inline element?
+//
+// An inline element normally stays within the same line
+// and takes only the space needed by its content.
+//
+// Examples:
+//
+// <span>
+// <a>
+// <strong>
+// <em>
+
+// --------------------------------------------------
+
+// Q7. Five block-level elements:
+//
+// <div>
+// <p>
+// <section>
+// <article>
+// <header>
+
+// --------------------------------------------------
+
+// Q8. Five inline elements:
+//
+// <span>
+// <a>
+// <strong>
+// <em>
+// <label>
+
+// --------------------------------------------------
+
+// Q9. Difference between <div> and <span>:
+//
+// <div>:
+// - Block-level by default
+// - Used to group larger sections of content
+// - Normally starts on a new line
+//
+// <span>:
+// - Inline by default
+// - Used for smaller portions of content
+// - Normally stays on the same line
+
+// --------------------------------------------------
+
+// Q10. Can CSS change block to inline?
+//
+// Yes.
+//
+// Example:
+//
+// div {
+//     display: inline;
+// }
+//
+// An element's default display behavior can be changed
+// using CSS.
+
+// --------------------------------------------------
+
+// Q11. What is display: inline-block?
+//
+// inline-block combines features of inline and block.
+//
+// It:
+// - Appears on the same line as other inline-block elements
+// - Allows width and height to be set
+//
+// Example:
+//
+// .box {
+//     display: inline-block;
+//     width: 150px;
+//     height: 100px;
+// }
+
+// --------------------------------------------------
+
+// Q12. Div containing heading and paragraph:
+//
+// <div>
+//     <h2>About Us</h2>
+//     <p>Welcome to our website.</p>
+// </div>
+
+// --------------------------------------------------
+
+// Q13. Highlight one word:
+//
+// <p>
+//     HTML is a
+//     <span style="color: red;">
+//         markup
+//     </span>
+//     language.
+// </p>
+
+// --------------------------------------------------
+
+// Q14. Three block-level div elements:
+//
+// <div>Box 1</div>
+// <div>Box 2</div>
+// <div>Box 3</div>
+
+// --------------------------------------------------
+
+// Q15. Three inline elements:
+//
+// <span>One</span>
+// <span>Two</span>
+// <span>Three</span>
+
+// --------------------------------------------------
+
+// Q16. Difference between block and inline:
+//
+// Block-level:
+// - Starts on a new line by default
+// - Usually occupies available width
+// - Examples: div, p, section
+//
+// Inline:
+// - Does not normally start a new line
+// - Takes only required content width
+// - Examples: span, a, strong
+
+// ==================================================
+// FOR REFERENCE / QUICK REFERENCE
+// ==================================================
+//
+// DIV:
+// <div> -> Generic block-level container
+//
+// SPAN:
+// <span> -> Generic inline container
+//
+// BLOCK-LEVEL ELEMENTS:
+// - Start on a new line by default
+// - Usually take available width
+//
+// Examples:
+// <div>
+// <p>
+// <h1> - <h6>
+// <section>
+// <article>
+// <header>
+// <footer>
+// <main>
+// <nav>
+//
+// INLINE ELEMENTS:
+// - Stay in the same line by default
+// - Take only required width
+//
+// Examples:
+// <span>
+// <a>
+// <strong>
+// <em>
+// <b>
+// <i>
+// <label>
+//
+// CSS DISPLAY:
+//
+// display: block;
+// -> Block behavior
+//
+// display: inline;
+// -> Inline behavior
+//
+// display: inline-block;
+// -> Inline placement + block-like sizing
+//
+// IMPORTANT:
+//
+// <div> = Generic block container
+// <span> = Generic inline container
+//
+// <div> is generally used for grouping larger content,
+// while <span> is generally used for small inline content.
+//
+// Semantic elements such as <section>, <article>,
+// <header>, etc. should be preferred when they accurately
+// describe the meaning of the content.
+// ==================================================
