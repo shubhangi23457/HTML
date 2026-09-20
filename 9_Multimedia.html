@@ -1,0 +1,578 @@
+# 9. MULTIMEDIA
+
+// ==================================================
+// NOTES
+// ==================================================
+
+// 1. MULTIMEDIA IN HTML
+// HTML provides built-in elements for adding multimedia
+// such as audio and video to webpages.
+//
+// Main multimedia elements:
+// <audio>  -> Adds audio
+// <video>  -> Adds video
+// <source> -> Specifies media files
+// <track>  -> Adds subtitles/captions
+//
+// HTML5 allows multimedia to be played directly in the
+// browser without requiring external plugins.
+
+// ==================================================
+
+// 2. AUDIO
+// The <audio> element is used to embed sound/audio files.
+//
+// Basic syntax:
+//
+// <audio controls>
+//     <source src="song.mp3" type="audio/mpeg">
+// </audio>
+//
+// Common audio formats:
+// MP3  -> audio/mpeg
+// WAV  -> audio/wav
+// OGG  -> audio/ogg
+//
+// Important attributes:
+//
+// controls -> Displays play, pause, volume controls
+// autoplay -> Starts automatically
+// loop     -> Repeats the audio
+// muted    -> Starts muted
+// preload  -> Specifies how the browser should preload audio
+//
+// Example:
+//
+// <audio controls>
+//     <source src="audio/song.mp3" type="audio/mpeg">
+// </audio>
+
+// ==================================================
+
+// 3. VIDEO
+// The <video> element is used to embed video files.
+//
+// Basic syntax:
+//
+// <video controls width="500">
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+//
+// Common video formats:
+// MP4  -> video/mp4
+// WebM -> video/webm
+// OGG  -> video/ogg
+//
+// Common attributes:
+//
+// controls  -> Displays video controls
+// autoplay  -> Starts automatically
+// loop      -> Repeats the video
+// muted     -> Starts muted
+// poster    -> Displays an image before video starts
+// width     -> Sets width
+// height    -> Sets height
+//
+// Example:
+//
+// <video controls width="500" poster="poster.jpg">
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+
+// ==================================================
+
+// 4. SOURCE ELEMENT
+// The <source> element specifies different media files
+// for <audio> or <video>.
+//
+// It allows the browser to choose a supported format.
+//
+// Example:
+//
+// <video controls>
+//     <source src="video.mp4" type="video/mp4">
+//     <source src="video.webm" type="video/webm">
+//     Your browser does not support video.
+// </video>
+//
+// Multiple <source> elements provide fallback formats.
+//
+// The browser checks the sources from top to bottom
+// and uses the first supported format.
+
+// ==================================================
+
+// 5. TRACK ELEMENT
+// The <track> element provides text tracks for video.
+//
+// It can be used for:
+// - Subtitles
+// - Captions
+// - Descriptions
+// - Chapter information
+//
+// Track files normally use the WebVTT (.vtt) format.
+//
+// Basic syntax:
+//
+// <video controls>
+//     <source src="video.mp4" type="video/mp4">
+//     <track src="subtitles.vtt"
+//            kind="subtitles"
+//            srclang="en"
+//            label="English">
+// </video>
+//
+// Important attributes:
+//
+// src       -> Location of the .vtt file
+// kind      -> Type of text track
+// srclang   -> Language of the track
+// label     -> Name displayed to the user
+// default   -> Makes the track selected by default
+//
+// Common kind values:
+// subtitles
+// captions
+// descriptions
+// chapters
+// metadata
+
+// ==================================================
+
+// 6. EMBEDDING MULTIMEDIA
+// Multimedia can be embedded directly using <audio>
+// and <video>.
+//
+// External multimedia can also be embedded using
+// <iframe> when the service provides an embeddable player.
+//
+// Examples:
+// - YouTube videos
+// - Maps
+// - External media players
+//
+// Example:
+//
+// <iframe
+//     src="https://www.youtube.com/embed/VIDEO_ID"
+//     title="YouTube video"
+//     width="560"
+//     height="315"
+//     allowfullscreen>
+// </iframe>
+//
+// Important:
+// Use embedding only when the external service allows it.
+//
+// ==================================================
+// COMBINED CODE
+// ==================================================
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>HTML Multimedia</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+    }
+
+    section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 1px solid #ccc;
+    }
+
+    audio,
+    video {
+        margin-top: 10px;
+    }
+
+    iframe {
+        max-width: 100%;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>HTML Multimedia</h1>
+
+<!-- ==================================================
+     AUDIO
+     ================================================== -->
+
+<section>
+    <h2>Audio</h2>
+
+    <audio controls>
+        <source src="audio/song.mp3" type="audio/mpeg">
+        <source src="audio/song.ogg" type="audio/ogg">
+
+        Your browser does not support the audio element.
+    </audio>
+</section>
+
+
+<!-- ==================================================
+     AUDIO WITH LOOP AND MUTED
+     ================================================== -->
+
+<section>
+    <h2>Audio with Attributes</h2>
+
+    <audio controls loop muted>
+        <source src="audio/background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</section>
+
+
+<!-- ==================================================
+     VIDEO
+     ================================================== -->
+
+<section>
+    <h2>Video</h2>
+
+    <video controls width="500" poster="images/poster.jpg">
+
+        <source src="video/sample.mp4" type="video/mp4">
+        <source src="video/sample.webm" type="video/webm">
+
+        Your browser does not support the video element.
+    </video>
+</section>
+
+
+<!-- ==================================================
+     VIDEO WITH TRACK
+     ================================================== -->
+
+<section>
+    <h2>Video with Subtitles</h2>
+
+    <video controls width="500">
+
+        <source src="video/lesson.mp4" type="video/mp4">
+
+        <track
+            src="subtitles/english.vtt"
+            kind="subtitles"
+            srclang="en"
+            label="English"
+            default>
+
+        Your browser does not support the video element.
+    </video>
+</section>
+
+
+<!-- ==================================================
+     EMBEDDED MULTIMEDIA
+     ================================================== -->
+
+<section>
+    <h2>Embedded Video</h2>
+
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="Embedded YouTube Video"
+        allowfullscreen>
+    </iframe>
+</section>
+
+
+<!-- ==================================================
+     FALLBACK MESSAGE
+     ================================================== -->
+
+<section>
+    <h2>Multimedia Information</h2>
+
+    <p>
+        HTML5 provides built-in support for audio and video.
+        Multiple source formats can be provided for compatibility.
+    </p>
+</section>
+```
+
+</body>
+</html>
+
+// ==================================================
+// SAMPLE WEBVTT FILE
+// File: english.vtt
+// ==================================================
+//
+// WEBVTT
+//
+// 00:00:01.000 --> 00:00:04.000
+// Welcome to the HTML multimedia lesson.
+//
+// 00:00:05.000 --> 00:00:08.000
+// Today we are learning about audio and video.
+//
+// ==================================================
+// QUESTIONS
+// ==================================================
+
+// Q1. What is multimedia in HTML?
+// Q2. Which element is used to add audio?
+// Q3. Which element is used to add video?
+// Q4. What is the purpose of the controls attribute?
+// Q5. What is the purpose of the <source> element?
+// Q6. Why can multiple <source> elements be used?
+// Q7. What is the purpose of the <track> element?
+// Q8. What is a WebVTT file?
+// Q9. What is the difference between subtitles and captions?
+// Q10. What is the purpose of the poster attribute?
+// Q11. What is the purpose of autoplay, loop and muted?
+// Q12. How can a YouTube video be embedded in HTML?
+// Q13. Create an audio player with controls.
+// Q14. Create a video player with controls and a poster image.
+// Q15. Create a video with English subtitles.
+
+// ==================================================
+// SOLUTIONS
+// ==================================================
+
+// Q1. What is multimedia in HTML?
+// Multimedia means adding media such as audio, video,
+// subtitles and other media content to a webpage.
+//
+// HTML5 provides <audio> and <video> for multimedia.
+
+// --------------------------------------------------
+
+// Q2. Which element is used to add audio?
+//
+// The <audio> element is used.
+//
+// Example:
+//
+// <audio controls>
+//     <source src="song.mp3" type="audio/mpeg">
+// </audio>
+
+// --------------------------------------------------
+
+// Q3. Which element is used to add video?
+//
+// The <video> element is used.
+//
+// Example:
+//
+// <video controls>
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+
+// --------------------------------------------------
+
+// Q4. What is the purpose of controls?
+//
+// The controls attribute displays built-in media controls.
+//
+// Example:
+//
+// <audio controls>
+//     <source src="song.mp3" type="audio/mpeg">
+// </audio>
+
+// --------------------------------------------------
+
+// Q5. What is the purpose of <source>?
+//
+// <source> specifies the media file and its MIME type.
+//
+// Example:
+//
+// <source src="song.mp3" type="audio/mpeg">
+
+// --------------------------------------------------
+
+// Q6. Why use multiple <source> elements?
+//
+// Multiple sources allow the browser to choose a format
+// that it supports.
+//
+// Example:
+//
+// <video controls>
+//     <source src="video.mp4" type="video/mp4">
+//     <source src="video.webm" type="video/webm">
+// </video>
+
+// --------------------------------------------------
+
+// Q7. What is the purpose of <track>?
+//
+// <track> adds text tracks to video.
+//
+// It can provide:
+// - Subtitles
+// - Captions
+// - Descriptions
+// - Chapters
+
+// --------------------------------------------------
+
+// Q8. What is a WebVTT file?
+//
+// WebVTT stands for Web Video Text Tracks.
+//
+// It is a text file, usually with a .vtt extension,
+// that contains timed text such as subtitles or captions.
+//
+// Example:
+//
+// WEBVTT
+//
+// 00:00:01.000 --> 00:00:04.000
+// Welcome to the video.
+
+// --------------------------------------------------
+
+// Q9. Difference between subtitles and captions:
+//
+// Subtitles:
+// Usually provide spoken dialogue, often for viewers
+// who may not understand the language.
+//
+// Captions:
+// Include spoken dialogue plus relevant audio information,
+// such as [music] or [applause], and are designed for
+// accessibility.
+
+// --------------------------------------------------
+
+// Q10. What is the poster attribute?
+//
+// The poster attribute specifies an image displayed
+// before the video starts.
+//
+// Example:
+//
+// <video controls poster="poster.jpg">
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+
+// --------------------------------------------------
+
+// Q11. What are autoplay, loop and muted?
+//
+// autoplay -> Starts media automatically.
+// loop     -> Repeats the media.
+// muted    -> Starts the media without sound.
+//
+// Example:
+//
+// <video controls autoplay loop muted>
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+
+// --------------------------------------------------
+
+// Q12. How can YouTube be embedded?
+//
+// An external video can be embedded using <iframe>.
+//
+// Example:
+//
+// <iframe
+//     src="https://www.youtube.com/embed/VIDEO_ID"
+//     title="YouTube video"
+//     allowfullscreen>
+// </iframe>
+
+// --------------------------------------------------
+
+// Q13. Create an audio player:
+//
+// <audio controls>
+//     <source src="song.mp3" type="audio/mpeg">
+// </audio>
+
+// --------------------------------------------------
+
+// Q14. Create a video player:
+//
+// <video controls width="500" poster="poster.jpg">
+//     <source src="video.mp4" type="video/mp4">
+// </video>
+
+// --------------------------------------------------
+
+// Q15. Video with English subtitles:
+//
+// <video controls>
+//     <source src="video.mp4" type="video/mp4">
+//
+//     <track
+//         src="english.vtt"
+//         kind="subtitles"
+//         srclang="en"
+//         label="English"
+//         default>
+// </video>
+
+// ==================================================
+// FOR REFERENCE / QUICK REFERENCE
+// ==================================================
+//
+// <audio>       -> Embeds audio
+// <video>       -> Embeds video
+// <source>      -> Specifies media source
+// <track>       -> Adds subtitles/captions/text tracks
+// <iframe>      -> Embeds external content
+//
+// AUDIO ATTRIBUTES:
+// controls      -> Show controls
+// autoplay      -> Play automatically
+// loop          -> Repeat
+// muted         -> Start muted
+// preload       -> Preloading behavior
+//
+// VIDEO ATTRIBUTES:
+// controls      -> Show controls
+// autoplay      -> Play automatically
+// loop          -> Repeat
+// muted         -> Start muted
+// poster        -> Preview image
+// width         -> Video width
+// height        -> Video height
+//
+// TRACK ATTRIBUTES:
+// src           -> WebVTT file
+// kind          -> Type of track
+// srclang      -> Track language
+// label         -> Track name
+// default       -> Select by default
+//
+// COMMON MIME TYPES:
+//
+// Audio:
+// MP3  -> audio/mpeg
+// WAV  -> audio/wav
+// OGG  -> audio/ogg
+//
+// Video:
+// MP4  -> video/mp4
+// WebM -> video/webm
+// OGG  -> video/ogg
+//
+// ==================================================
