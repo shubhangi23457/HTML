@@ -1,0 +1,617 @@
+# 14. HTML LINKS & METADATA
+
+<!-- ====================================================== -->
+
+<!-- NOTES -->
+
+<!-- ====================================================== -->
+
+<!--
+============================================================
+1. FAVICON
+============================================================
+
+A favicon is the small icon displayed in the browser tab next
+to the webpage title.
+
+It is added using the <link> element inside <head>.
+
+Syntax:
+<link rel="icon" href="favicon.ico">
+
+Common formats:
+- .ico
+- .png
+- .svg
+
+Example:
+<link rel="icon" type="image/png" href="images/favicon.png">
+
+The favicon does not appear as normal content inside the page.
+-->
+
+<!--
+============================================================
+2. META TAGS
+============================================================
+
+<meta> tags provide information about an HTML document.
+
+They are placed inside the <head> section.
+
+Meta tags are not normally displayed on the webpage.
+
+Common uses:
+- Character encoding
+- Viewport settings
+- Page description
+- Keywords
+- Author information
+- Other metadata
+-->
+
+<!--
+============================================================
+3. CHARSET
+============================================================
+
+The charset attribute specifies the character encoding used
+by the HTML document.
+
+The commonly used encoding is UTF-8.
+
+Syntax:
+<meta charset="UTF-8">
+
+UTF-8 supports a very large range of characters, including:
+- English
+- Indian languages
+- Mathematical symbols
+- Currency symbols
+- Emojis
+
+It should normally be included near the beginning of <head>.
+-->
+
+<!--
+============================================================
+4. VIEWPORT
+============================================================
+
+The viewport meta tag controls how a webpage is displayed on
+different screen sizes, especially mobile devices.
+
+Common syntax:
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+Meaning:
+
+width=device-width
+- Makes the page width match the device's screen width.
+
+initial-scale=1.0
+- Sets the initial zoom level to 100%.
+
+This is important for responsive webpages.
+-->
+
+<!--
+============================================================
+5. DESCRIPTION
+============================================================
+
+The description meta tag provides a short description of the
+webpage.
+
+Syntax:
+
+<meta name="description"
+      content="Description of the webpage">
+
+Search engines may use this description as part of the search
+result snippet, although they decide what text to display.
+
+A good description should be:
+- Short
+- Relevant
+- Specific to the page
+-->
+
+<!--
+============================================================
+6. KEYWORDS
+============================================================
+
+The keywords meta tag was historically used to specify keywords
+related to a webpage.
+
+Example:
+
+<meta name="keywords"
+      content="HTML, CSS, JavaScript, web development">
+
+Modern major search engines generally do not use the keywords
+meta tag as a significant ranking factor.
+
+It can still be useful for learning HTML metadata, but it should
+not be relied upon for modern SEO.
+-->
+
+<!--
+============================================================
+7. AUTHOR
+============================================================
+
+The author meta tag identifies the author of the webpage.
+
+Syntax:
+
+<meta name="author"
+      content="Your Name">
+
+Example:
+<meta name="author" content="Shubhangi">
+-->
+
+<!--
+============================================================
+8. OPEN GRAPH METADATA
+============================================================
+
+Open Graph metadata is used to control how a webpage appears
+when its URL is shared on social media and other platforms that
+support Open Graph.
+
+Open Graph properties commonly use:
+
+<meta property="og:...">
+
+Important Open Graph tags:
+
+og:title
+- Title displayed when the page is shared.
+
+og:description
+- Description displayed with the shared page.
+
+og:image
+- Image displayed with the shared page.
+
+og:url
+- URL of the webpage.
+
+og:type
+- Type of content, such as website or article.
+
+Example:
+
+<meta property="og:title"
+      content="My Electronics Store">
+
+<meta property="og:description"
+      content="Shop for the latest electronic products.">
+
+<meta property="og:image"
+      content="https://example.com/images/store.jpg">
+
+<meta property="og:url"
+      content="https://example.com">
+
+<meta property="og:type"
+      content="website">
+-->
+
+<!--
+============================================================
+9. LINK ELEMENT VS META ELEMENT
+============================================================
+
+<link>
+- Used to define relationships between the current document
+  and external resources.
+- Commonly used for favicons and stylesheets.
+
+Example:
+<link rel="icon" href="favicon.ico">
+
+<meta>
+- Provides metadata about the HTML document.
+- Usually placed inside <head>.
+
+Example:
+<meta name="description"
+      content="My website">
+-->
+
+<!-- ====================================================== -->
+
+<!-- COMBINED CODE -->
+
+<!-- ====================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<!-- Charset -->
+<meta charset="UTF-8">
+
+<!-- Viewport -->
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<!-- Page Title -->
+<title>Electronics Store</title>
+
+<!-- Favicon -->
+<link rel="icon"
+      type="image/png"
+      href="images/favicon.png">
+
+<!-- Description -->
+<meta name="description"
+      content="Shop for electronics including phones, laptops, headphones and accessories.">
+
+<!-- Keywords -->
+<meta name="keywords"
+      content="electronics, phones, laptops, headphones, accessories">
+
+<!-- Author -->
+<meta name="author"
+      content="Shubhangi">
+
+<!-- Open Graph Metadata -->
+
+<meta property="og:title"
+      content="Electronics Store">
+
+<meta property="og:description"
+      content="Explore phones, laptops, headphones and other electronic products.">
+
+<meta property="og:image"
+      content="https://example.com/images/store.jpg">
+
+<meta property="og:url"
+      content="https://example.com">
+
+<meta property="og:type"
+      content="website">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    header {
+        padding: 20px;
+        background-color: lightgray;
+    }
+
+    section {
+        margin-top: 20px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+
+    <h1>Electronics Store</h1>
+
+    <p>
+        Find phones, laptops, headphones and accessories.
+    </p>
+
+</header>
+
+<section>
+
+    <h2>About This Website</h2>
+
+    <p>
+        This page demonstrates favicon and different
+        types of HTML metadata.
+    </p>
+
+</section>
+```
+
+</body>
+
+</html>
+
+<!-- ====================================================== -->
+
+<!-- QUESTIONS -->
+
+<!-- ====================================================== -->
+
+<!--
+Q1. What is a favicon?
+
+SOLUTION:
+A favicon is a small icon associated with a webpage. It is
+usually displayed in the browser tab.
+
+Example:
+<link rel="icon" href="favicon.ico">
+-->
+
+<!--
+Q2. Where is the favicon link placed?
+
+SOLUTION:
+The favicon <link> element is placed inside the <head> section.
+
+Example:
+<head>
+    <link rel="icon" href="favicon.ico">
+</head>
+-->
+
+<!--
+Q3. What are meta tags?
+
+SOLUTION:
+Meta tags provide information about an HTML document. They are
+placed inside the <head> section and are generally not displayed
+as page content.
+-->
+
+<!--
+Q4. What is the purpose of charset?
+
+SOLUTION:
+The charset attribute specifies the character encoding of the
+HTML document.
+
+Example:
+<meta charset="UTF-8">
+-->
+
+<!--
+Q5. Why is UTF-8 commonly used?
+
+SOLUTION:
+UTF-8 supports a very large range of characters, including
+different languages, symbols and emojis.
+-->
+
+<!--
+Q6. What is the purpose of the viewport meta tag?
+
+SOLUTION:
+It controls how the webpage is sized and displayed on different
+devices, especially mobile devices.
+
+Example:
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+-->
+
+<!--
+Q7. What does width=device-width mean?
+
+SOLUTION:
+It makes the webpage width match the width of the device screen.
+-->
+
+<!--
+Q8. What does initial-scale=1.0 mean?
+
+SOLUTION:
+It sets the initial zoom level of the webpage to 100%.
+-->
+
+<!--
+Q9. What is the description meta tag?
+
+SOLUTION:
+It provides a short description of the webpage.
+
+Example:
+<meta name="description"
+      content="Learn HTML and web development.">
+-->
+
+<!--
+Q10. What is the keywords meta tag?
+
+SOLUTION:
+The keywords meta tag was historically used to specify keywords
+related to a webpage.
+
+Example:
+<meta name="keywords"
+      content="HTML, CSS, JavaScript">
+
+Modern major search engines generally do not use this tag as
+a significant ranking factor.
+-->
+
+<!--
+Q11. What is the author meta tag?
+
+SOLUTION:
+It identifies the author of the webpage.
+
+Example:
+<meta name="author" content="Shubhangi">
+-->
+
+<!--
+Q12. What is Open Graph metadata?
+
+SOLUTION:
+Open Graph metadata controls how webpage information can appear
+when the webpage URL is shared on social media and other
+supporting platforms.
+-->
+
+<!--
+Q13. What is og:title?
+
+SOLUTION:
+og:title specifies the title that can be displayed when a webpage
+is shared.
+
+Example:
+<meta property="og:title"
+      content="Electronics Store">
+-->
+
+<!--
+Q14. What is og:description?
+
+SOLUTION:
+og:description provides the description that can accompany a
+shared webpage.
+
+Example:
+<meta property="og:description"
+      content="Shop for the latest electronics.">
+-->
+
+<!--
+Q15. What is og:image?
+
+SOLUTION:
+og:image specifies an image that can be displayed when the
+webpage is shared.
+
+Example:
+<meta property="og:image"
+      content="https://example.com/image.jpg">
+-->
+
+<!--
+Q16. What is og:url?
+
+SOLUTION:
+og:url specifies the canonical URL associated with the shared
+content.
+
+Example:
+<meta property="og:url"
+      content="https://example.com">
+-->
+
+<!--
+Q17. What is og:type?
+
+SOLUTION:
+og:type specifies the type of shared content.
+
+Example:
+<meta property="og:type" content="website">
+-->
+
+<!--
+Q18. Write the basic metadata for a webpage.
+
+SOLUTION:
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="My website description">
+
+    <meta name="author"
+          content="Your Name">
+
+    <title>My Website</title>
+
+</head>
+-->
+
+<!-- ====================================================== -->
+
+<!-- FOR REFERENCE -->
+
+<!-- ====================================================== -->
+
+<!--
+HTML LINKS & METADATA QUICK REFERENCE
+
+FAVICON
+------------------------------------------------------------
+<link rel="icon" href="favicon.ico">
+
+CHARSET
+------------------------------------------------------------
+<meta charset="UTF-8">
+
+VIEWPORT
+------------------------------------------------------------
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+DESCRIPTION
+------------------------------------------------------------
+<meta name="description"
+      content="Page description">
+
+KEYWORDS
+------------------------------------------------------------
+<meta name="keywords"
+      content="HTML, CSS, JavaScript">
+
+AUTHOR
+------------------------------------------------------------
+<meta name="author"
+      content="Author Name">
+
+OPEN GRAPH
+------------------------------------------------------------
+<meta property="og:title"
+      content="Page Title">
+
+<meta property="og:description"
+      content="Page description">
+
+<meta property="og:image"
+      content="https://example.com/image.jpg">
+
+<meta property="og:url"
+      content="https://example.com">
+
+<meta property="og:type"
+      content="website">
+
+IMPORTANT:
+
+<link>
+- Connects the HTML document with external resources.
+- Commonly used for favicon and CSS.
+
+<meta>
+- Provides metadata about the webpage.
+- Usually placed inside <head>.
+
+<title>
+- Sets the title shown in the browser tab.
+
+<meta charset="UTF-8">
+- Defines character encoding.
+
+<meta name="viewport"...>
+- Helps make the page display correctly on different devices.
+
+Open Graph:
+- Controls shared-page metadata on platforms that support it.
+-->
