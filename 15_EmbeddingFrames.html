@@ -1,0 +1,661 @@
+# 15. EMBEDDING & FRAMES
+
+<!-- ====================================================== -->
+
+<!-- NOTES -->
+
+<!-- ====================================================== -->
+
+<!--
+============================================================
+1. IFRAME
+============================================================
+
+The <iframe> element is used to embed another webpage or
+external content inside the current webpage.
+
+Syntax:
+
+<iframe src="URL"></iframe>
+
+Common attributes:
+- src       -> URL of the content
+- width     -> Width of the frame
+- height    -> Height of the frame
+- title     -> Accessible description
+- loading   -> Controls loading behavior
+- allow     -> Permissions for certain features
+- allowfullscreen -> Allows fullscreen mode
+
+Example:
+
+<iframe
+    src="https://example.com"
+    width="600"
+    height="400"
+    title="Example Website">
+</iframe>
+-->
+
+<!--
+============================================================
+2. EMBEDDED WEB PAGES
+============================================================
+
+An external webpage can be displayed inside an iframe.
+
+Example:
+
+<iframe
+    src="https://example.com"
+    width="600"
+    height="400"
+    title="Example website">
+</iframe>
+
+Important:
+- The external website may prevent iframe embedding.
+- This is controlled by the external website's security
+  policies.
+- Do not assume every website can be embedded.
+-->
+
+<!--
+============================================================
+3. GOOGLE MAPS EMBEDDING
+============================================================
+
+Google Maps can be embedded into a webpage using an iframe
+embed code.
+
+A typical Google Maps embed looks like:
+
+<iframe
+    src="GOOGLE_MAPS_EMBED_URL"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+The exact URL should normally be generated using the
+Google Maps "Share" or "Embed a map" option.
+
+Google Maps embed URLs can include a specific:
+- Place
+- Address
+- Location
+- Map view
+
+-->
+
+<!--
+============================================================
+4. YOUTUBE EMBEDDING
+============================================================
+
+YouTube videos can be embedded using an iframe.
+
+Example:
+
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="YouTube video"
+    allowfullscreen>
+</iframe>
+
+The /embed/ format is used for embedding a YouTube video.
+
+Example:
+
+Normal YouTube URL:
+https://www.youtube.com/watch?v=ABC123
+
+Embed URL:
+https://www.youtube.com/embed/ABC123
+
+The video ID is used in the embed URL.
+-->
+
+<!--
+============================================================
+5. EXTERNAL CONTENT
+============================================================
+
+External content means content hosted by another website or
+service that is displayed on your webpage.
+
+Examples:
+- YouTube videos
+- Google Maps
+- External webpages
+- Online documents
+- Social media widgets
+- Other supported external services
+
+The iframe is commonly used for this purpose.
+
+Important:
+External content can have restrictions such as:
+- Embedding disabled by the provider
+- Cross-origin security restrictions
+- Authentication requirements
+- Provider-specific permissions
+- Content Security Policy restrictions
+-->
+
+<!--
+============================================================
+6. IFRAME ATTRIBUTES
+============================================================
+
+src
+----
+Specifies the URL of the content to embed.
+
+width
+-----
+Specifies the width of the iframe.
+
+height
+------
+Specifies the height of the iframe.
+
+title
+-----
+Provides an accessible description of the iframe.
+
+loading
+-------
+Controls when the iframe is loaded.
+
+Common values:
+- lazy
+- eager
+
+allow
+-----
+Specifies permissions for features used by embedded content.
+
+allowfullscreen
+---------------
+Allows embedded content to use fullscreen mode when supported.
+
+referrerpolicy
+--------------
+Controls what referrer information is sent when loading the
+embedded resource.
+-->
+
+<!--
+============================================================
+7. IFRAME AND SECURITY
+============================================================
+
+Embedding external content can have security implications.
+
+The sandbox attribute can restrict what the embedded document
+is allowed to do.
+
+Example:
+
+<iframe
+    src="example.html"
+    sandbox>
+</iframe>
+
+Additional permissions can be specified when required:
+
+sandbox="allow-scripts"
+
+Only give an embedded document the permissions it actually needs.
+
+External websites can also prevent embedding using security
+headers such as Content-Security-Policy or X-Frame-Options.
+-->
+
+<!-- ====================================================== -->
+
+<!-- COMBINED CODE -->
+
+<!-- ====================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Embedding and Frames</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+
+    .box {
+        border: 1px solid #333;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    iframe {
+        max-width: 100%;
+        border: 1px solid #555;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>Embedding & Frames</h1>
+
+<!-- ================================================= -->
+<!-- Embedded Web Page -->
+<!-- ================================================= -->
+
+<div class="box">
+
+    <h2>1. Embedded Web Page</h2>
+
+    <iframe
+        src="https://example.com"
+        width="600"
+        height="300"
+        title="Example Website"
+        loading="lazy">
+    </iframe>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- Google Maps -->
+<!-- ================================================= -->
+
+<div class="box">
+
+    <h2>2. Google Maps Embedding</h2>
+
+    <!--
+    Replace the src value with the Google Maps embed URL
+    generated from Google Maps.
+
+    Example structure:
+
+    <iframe
+        src="GOOGLE_MAPS_EMBED_URL"
+        width="600"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+    -->
+
+    <p>
+        Google Maps can be embedded here using the
+        official Google Maps embed code.
+    </p>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- YouTube -->
+<!-- ================================================= -->
+
+<div class="box">
+
+    <h2>3. YouTube Embedding</h2>
+
+    <!--
+    Replace VIDEO_ID with the ID of a YouTube video.
+
+    Example:
+    https://www.youtube.com/embed/VIDEO_ID
+    -->
+
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="YouTube video player"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write;
+               encrypted-media; gyroscope; picture-in-picture;
+               web-share"
+        allowfullscreen>
+    </iframe>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- External Content -->
+<!-- ================================================= -->
+
+<div class="box">
+
+    <h2>4. External Content</h2>
+
+    <iframe
+        src="https://example.com"
+        width="600"
+        height="250"
+        title="External Content"
+        loading="lazy">
+    </iframe>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- Iframe with Sandbox -->
+<!-- ================================================= -->
+
+<div class="box">
+
+    <h2>5. Sandboxed Iframe</h2>
+
+    <iframe
+        srcdoc="<h2>Hello!</h2><p>This content is inside a sandboxed iframe.</p>"
+        width="600"
+        height="200"
+        title="Sandboxed Content"
+        sandbox>
+    </iframe>
+
+</div>
+```
+
+</body>
+
+</html>
+
+<!-- ====================================================== -->
+
+<!-- QUESTIONS -->
+
+<!-- ====================================================== -->
+
+<!--
+Q1. What is an iframe?
+
+SOLUTION:
+An iframe (inline frame) is an HTML element used to embed
+another webpage or external content inside the current webpage.
+
+Example:
+
+<iframe
+    src="https://example.com"
+    title="Example Website">
+</iframe>
+-->
+
+<!--
+Q2. Which HTML element is used to embed another webpage?
+
+SOLUTION:
+The <iframe> element is used.
+
+Example:
+<iframe src="https://example.com"></iframe>
+-->
+
+<!--
+Q3. What is the purpose of the src attribute in an iframe?
+
+SOLUTION:
+The src attribute specifies the URL of the webpage or content
+that should be loaded inside the iframe.
+-->
+
+<!--
+Q4. What is the purpose of width and height?
+
+SOLUTION:
+They specify the dimensions of the iframe.
+
+Example:
+
+<iframe
+    src="https://example.com"
+    width="600"
+    height="400">
+</iframe>
+-->
+
+<!--
+Q5. Why is the title attribute important for an iframe?
+
+SOLUTION:
+The title provides an accessible description of the iframe.
+It helps users of assistive technologies understand what the
+embedded content represents.
+-->
+
+<!--
+Q6. How can a YouTube video be embedded?
+
+SOLUTION:
+
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="YouTube video"
+    allowfullscreen>
+</iframe>
+-->
+
+<!--
+Q7. What is the difference between a normal YouTube URL and
+an embed URL?
+
+SOLUTION:
+
+Normal URL:
+https://www.youtube.com/watch?v=VIDEO_ID
+
+Embed URL:
+https://www.youtube.com/embed/VIDEO_ID
+
+The embed URL is designed to be used inside an iframe.
+-->
+
+<!--
+Q8. How can Google Maps be embedded?
+
+SOLUTION:
+Google Maps provides an iframe embed code through its
+"Share" / "Embed a map" option.
+
+General structure:
+
+<iframe
+    src="GOOGLE_MAPS_EMBED_URL"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+</iframe>
+-->
+
+<!--
+Q9. What is external content?
+
+SOLUTION:
+External content is content hosted by another website or
+service and displayed inside the current webpage.
+
+Examples:
+- YouTube videos
+- Google Maps
+- External webpages
+- Online documents
+-->
+
+<!--
+Q10. What does loading="lazy" do?
+
+SOLUTION:
+It tells the browser that the iframe can be loaded when it
+is close to becoming visible, which can reduce unnecessary
+initial loading.
+-->
+
+<!--
+Q11. What does allowfullscreen do?
+
+SOLUTION:
+It allows supported embedded content to enter fullscreen mode.
+
+Example:
+
+<iframe
+    src="..."
+    allowfullscreen>
+</iframe>
+-->
+
+<!--
+Q12. What is the sandbox attribute?
+
+SOLUTION:
+The sandbox attribute places restrictions on the content loaded
+inside an iframe.
+
+Example:
+
+<iframe
+    src="example.html"
+    sandbox>
+</iframe>
+
+Additional permissions can be explicitly allowed when needed.
+-->
+
+<!--
+Q13. Can every external website be embedded using an iframe?
+
+SOLUTION:
+No.
+
+An external website can prevent iframe embedding through its
+security policies or headers.
+-->
+
+<!--
+Q14. Write an iframe to embed example.com.
+
+SOLUTION:
+
+<iframe
+    src="https://example.com"
+    width="600"
+    height="400"
+    title="Example Website">
+</iframe>
+-->
+
+<!--
+Q15. Write an iframe for a YouTube video.
+
+SOLUTION:
+
+<iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="YouTube video"
+    allowfullscreen>
+</iframe>
+-->
+
+<!-- ====================================================== -->
+
+<!-- FOR REFERENCE -->
+
+<!-- ====================================================== -->
+
+<!--
+EMBEDDING & FRAMES QUICK REFERENCE
+
+IFRAME
+------------------------------------------------------------
+<iframe src="URL"></iframe>
+
+BASIC IFRAME
+------------------------------------------------------------
+<iframe
+    src="https://example.com"
+    width="600"
+    height="400"
+    title="Example Website">
+</iframe>
+
+YOUTUBE
+------------------------------------------------------------
+<iframe
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    width="560"
+    height="315"
+    title="YouTube video"
+    allowfullscreen>
+</iframe>
+
+GOOGLE MAPS
+------------------------------------------------------------
+<iframe
+    src="GOOGLE_MAPS_EMBED_URL"
+    width="600"
+    height="450"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy">
+</iframe>
+
+IMPORTANT IFRAME ATTRIBUTES
+------------------------------------------------------------
+src              -> URL of embedded content
+width            -> Width of iframe
+height           -> Height of iframe
+title            -> Accessible description
+loading          -> Loading behavior
+allow            -> Permissions for embedded features
+allowfullscreen  -> Allows fullscreen
+sandbox          -> Restricts iframe capabilities
+referrerpolicy   -> Controls referrer information
+
+COMMON EXTERNAL CONTENT
+------------------------------------------------------------
+- YouTube videos
+- Google Maps
+- External webpages
+- Online documents
+- Other supported external services
+
+IMPORTANT:
+- Not every website allows iframe embedding.
+- External content may have security restrictions.
+- Use a meaningful title for accessibility.
+- Use sandbox restrictions when appropriate.
+- Use loading="lazy" when suitable for below-the-fold content.
+-->
