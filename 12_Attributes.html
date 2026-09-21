@@ -1,0 +1,545 @@
+# 12. HTML ATTRIBUTES
+
+<!-- ====================================================== -->
+
+<!-- NOTES -->
+
+<!-- ====================================================== -->
+
+<!--
+============================================================
+1. GLOBAL ATTRIBUTES
+============================================================
+
+Global attributes are attributes that can be used on most HTML
+elements.
+
+Common global attributes:
+- id
+- class
+- style
+- title
+- lang
+- data-*
+- hidden
+- contenteditable
+-->
+
+<!--
+============================================================
+2. id ATTRIBUTE
+============================================================
+
+The id attribute gives an element a unique identifier.
+
+Syntax:
+<element id="uniqueName">Content</element>
+
+Important:
+- An id should normally be unique within a page.
+- Used with CSS using #id.
+- Used with JavaScript using getElementById().
+- Can be used as a bookmark/section target.
+
+Example:
+<h1 id="mainHeading">Welcome</h1>
+-->
+
+<!--
+============================================================
+3. class ATTRIBUTE
+============================================================
+
+The class attribute assigns one or more class names to an element.
+
+Syntax:
+<element class="className">Content</element>
+
+Important:
+- Multiple elements can have the same class.
+- One element can have multiple classes.
+- Used heavily with CSS and JavaScript.
+- CSS selects a class using a dot (.).
+
+Example:
+<p class="highlight">Important text</p>
+
+Multiple classes:
+<p class="highlight large">Text</p>
+-->
+
+<!--
+============================================================
+4. style ATTRIBUTE
+============================================================
+
+The style attribute applies CSS directly to an element.
+
+Syntax:
+<element style="property:value;">Content</element>
+
+Example:
+<p style="color: blue; font-size: 20px;">
+    Hello
+</p>
+
+This is called inline CSS.
+
+Note:
+For large websites, external or internal CSS is usually easier
+to maintain than using many style attributes.
+-->
+
+<!--
+============================================================
+5. title ATTRIBUTE
+============================================================
+
+The title attribute provides additional information about an
+element.
+
+In many browsers, it appears as a tooltip when the user hovers
+over the element.
+
+Example:
+<button title="Click to submit the form">Submit</button>
+-->
+
+<!--
+============================================================
+6. lang ATTRIBUTE
+============================================================
+
+The lang attribute specifies the language of the element's content.
+
+Syntax:
+<html lang="en">
+
+Common values:
+- en = English
+- hi = Hindi
+- fr = French
+- es = Spanish
+
+It helps browsers, search engines and assistive technologies
+understand the language of the content.
+
+Usually, lang is placed on the <html> element.
+-->
+
+<!--
+============================================================
+7. data-* ATTRIBUTE
+============================================================
+
+The data-* attribute stores custom data on an HTML element.
+
+Syntax:
+<element data-name="value">Content</element>
+
+Example:
+<button data-product-id="101">Buy Now</button>
+
+JavaScript can access it using:
+element.dataset.productId
+
+Important:
+- The name must start with data-.
+- It is useful for storing custom information associated
+  with an element.
+-->
+
+<!--
+============================================================
+8. hidden ATTRIBUTE
+============================================================
+
+The hidden attribute hides an element from normal display.
+
+Example:
+<p hidden>This text is hidden.</p>
+
+JavaScript can later show it by changing:
+element.hidden = false;
+
+It is a boolean attribute, so it does not need a value.
+
+Example:
+<div hidden>Hidden content</div>
+-->
+
+<!--
+============================================================
+9. contenteditable ATTRIBUTE
+============================================================
+
+The contenteditable attribute makes an element's content editable
+by the user.
+
+Example:
+<p contenteditable="true">
+    You can edit this text.
+</p>
+
+Values:
+- true = editable
+- false = not editable
+
+It is useful for simple editable areas, notes and content
+editing interfaces.
+-->
+
+<!-- ====================================================== -->
+
+<!-- COMBINED CODE -->
+
+<!-- ====================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>HTML Global Attributes</title>
+
+<style>
+    .highlight {
+        background-color: yellow;
+        padding: 5px;
+    }
+
+    .box {
+        border: 2px solid black;
+        padding: 15px;
+        margin: 10px 0;
+    }
+
+    .product {
+        border: 1px solid gray;
+        padding: 15px;
+        margin: 10px 0;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- id -->
+<h1 id="mainHeading">HTML Global Attributes</h1>
+
+<!-- class -->
+<p class="highlight">
+    This paragraph uses the class attribute.
+</p>
+
+<p class="highlight">
+    The same class can be used by multiple elements.
+</p>
+
+<!-- style -->
+<p style="color: blue; font-size: 20px;">
+    This paragraph uses the style attribute.
+</p>
+
+<!-- title -->
+<button title="Click this button to display a message">
+    Hover over this button
+</button>
+
+<br><br>
+
+<!-- lang -->
+<p lang="hi">
+    यह हिंदी भाषा में लिखा गया टेक्स्ट है।
+</p>
+
+<!-- data-* -->
+<div class="product"
+     data-product-id="101"
+     data-category="electronics">
+
+    <h2>Wireless Headphones</h2>
+
+    <p>Price: ₹1999</p>
+
+    <button onclick="showProduct(this)">
+        Show Product ID
+    </button>
+</div>
+
+<!-- hidden -->
+<p id="hiddenText" hidden>
+    This text is hidden using the hidden attribute.
+</p>
+
+<button onclick="showHiddenText()">
+    Show Hidden Text
+</button>
+
+<!-- contenteditable -->
+<div class="box" contenteditable="true">
+    You can edit this text directly in the browser.
+</div>
+
+<script>
+    // Accessing an element using id
+    const heading = document.getElementById("mainHeading");
+
+    // Using data-* attributes
+    function showProduct(button) {
+        const product = button.parentElement;
+
+        const productId = product.dataset.productId;
+        const category = product.dataset.category;
+
+        alert(
+            "Product ID: " + productId +
+            "\nCategory: " + category
+        );
+    }
+
+    // Showing an element hidden using the hidden attribute
+    function showHiddenText() {
+        const text = document.getElementById("hiddenText");
+
+        text.hidden = false;
+    }
+</script>
+```
+
+</body>
+</html>
+
+<!-- ====================================================== -->
+
+<!-- QUESTIONS -->
+
+<!-- ====================================================== -->
+
+<!--
+Q1. What are global attributes in HTML?
+
+SOLUTION:
+Global attributes are attributes that can be used on most HTML
+elements. Examples include id, class, style, title, lang,
+data-*, hidden and contenteditable.
+-->
+
+<!--
+Q2. What is the purpose of the id attribute?
+
+SOLUTION:
+The id attribute gives an element a unique identifier.
+
+Example:
+<p id="intro">Hello</p>
+-->
+
+<!--
+Q3. What is the difference between id and class?
+
+SOLUTION:
+
+id:
+- Identifies one specific element.
+- Normally unique on a page.
+- CSS selector: #id
+
+class:
+- Groups multiple elements.
+- Can be reused.
+- CSS selector: .class
+-->
+
+<!--
+Q4. What is the style attribute?
+
+SOLUTION:
+The style attribute applies inline CSS directly to an HTML element.
+
+Example:
+<p style="color: red;">Hello</p>
+-->
+
+<!--
+Q5. What is the purpose of the title attribute?
+
+SOLUTION:
+The title attribute provides additional information about an
+element and commonly appears as a tooltip when the user hovers
+over the element.
+-->
+
+<!--
+Q6. Why is the lang attribute used?
+
+SOLUTION:
+The lang attribute specifies the language of the content.
+
+Example:
+<html lang="en">
+-->
+
+<!--
+Q7. What are data-* attributes?
+
+SOLUTION:
+data-* attributes allow developers to store custom data on HTML
+elements.
+
+Example:
+<div data-product-id="101"></div>
+
+JavaScript:
+element.dataset.productId
+-->
+
+<!--
+Q8. What does the hidden attribute do?
+
+SOLUTION:
+The hidden attribute hides an element from normal display.
+
+Example:
+<p hidden>Hidden text</p>
+-->
+
+<!--
+Q9. What is contenteditable?
+
+SOLUTION:
+contenteditable makes the content of an HTML element editable
+by the user.
+
+Example:
+<p contenteditable="true">
+    Edit this text.
+</p>
+-->
+
+<!--
+Q10. Write HTML to create an editable paragraph.
+
+SOLUTION:
+<p contenteditable="true">
+    You can edit this paragraph.
+</p>
+-->
+
+<!--
+Q11. Write HTML using id, class and title attributes.
+
+SOLUTION:
+<p id="message"
+   class="highlight"
+   title="Important message">
+   Hello World
+</p>
+-->
+
+<!--
+Q12. How can JavaScript access a data-* attribute?
+
+SOLUTION:
+
+HTML:
+<div data-product-id="101"></div>
+
+JavaScript:
+const element = document.querySelector("div");
+console.log(element.dataset.productId);
+-->
+
+<!--
+Q13. How can a hidden element be displayed using JavaScript?
+
+SOLUTION:
+
+HTML:
+<p id="message" hidden>Hello</p>
+
+JavaScript:
+document.getElementById("message").hidden = false;
+-->
+
+<!--
+Q14. Can multiple elements have the same class?
+
+SOLUTION:
+Yes. A class can be shared by multiple elements.
+
+Example:
+<p class="highlight">One</p>
+<p class="highlight">Two</p>
+-->
+
+<!--
+Q15. Can an element have multiple classes?
+
+SOLUTION:
+Yes.
+
+Example:
+<div class="box highlight large">
+    Content
+</div>
+-->
+
+<!-- ====================================================== -->
+
+<!-- FOR REFERENCE -->
+
+<!-- ====================================================== -->
+
+<!--
+GLOBAL ATTRIBUTES QUICK REFERENCE
+
+Attribute          Purpose
+------------------------------------------------------------
+id                 Unique identifier for an element
+class              Groups elements for CSS/JS
+style              Applies inline CSS
+title              Provides additional information/tooltip
+lang               Specifies content language
+data-*             Stores custom data
+hidden             Hides an element
+contenteditable    Makes content editable
+
+COMMON CSS SELECTORS
+
+#id                Selects an element by id
+.class             Selects elements by class
+
+EXAMPLES
+
+id:
+<h1 id="heading">Hello</h1>
+
+class:
+<p class="text">Hello</p>
+
+style:
+<p style="color:red;">Hello</p>
+
+title:
+<button title="Submit the form">Submit</button>
+
+lang:
+<p lang="hi">नमस्ते</p>
+
+data-*:
+<div data-id="101"></div>
+
+hidden:
+<p hidden>Hidden content</p>
+
+contenteditable:
+<p contenteditable="true">Edit me</p>
+-->
