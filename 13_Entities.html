@@ -1,0 +1,621 @@
+# 13. HTML ENTITIES
+
+<!-- ====================================================== -->
+
+<!-- NOTES -->
+
+<!-- ====================================================== -->
+
+<!--
+============================================================
+1. CHARACTER ENTITIES
+============================================================
+
+HTML entities are special codes used to display characters that
+have a special meaning in HTML or characters that are difficult
+to type directly.
+
+An entity usually starts with & and ends with ;
+
+Syntax:
+&entity_name;
+OR
+&#entity_number;
+
+Examples:
+&amp;      -> &
+&lt;       -> <
+&gt;       -> >
+&copy;     -> ©
+-->
+
+<!--
+============================================================
+2. SPECIAL CHARACTERS
+============================================================
+
+HTML entities can be used to display special characters and
+symbols safely in an HTML document.
+
+Examples:
+
+&copy;       -> ©
+&reg;        -> ®
+&trade;      -> ™
+&euro;       -> €
+&pound;      -> £
+&yen;        -> ¥
+&cent;       -> ¢
+&deg;        -> °
+&plusmn;     -> ±
+-->
+
+<!--
+============================================================
+3. RESERVED CHARACTERS
+============================================================
+
+Some characters are reserved in HTML because they are used as
+part of HTML syntax.
+
+Important reserved characters:
+
+<   -> &lt;
+>   -> &gt;
+&   -> &amp;
+"   -> &quot;
+'   -> &apos;
+
+For example, if we want to display:
+
+5 < 10
+
+we can write:
+
+5 &lt; 10
+
+Similarly:
+
+5 > 3
+
+can be written as:
+
+5 &gt; 3
+-->
+
+<!--
+============================================================
+4. SYMBOLS
+============================================================
+
+HTML entities can also be used to display mathematical,
+currency, legal and other symbols.
+
+Examples:
+
+&copy;       -> ©
+&reg;        -> ®
+&trade;      -> ™
+&euro;       -> €
+&pound;      -> £
+&yen;        -> ¥
+&cent;       -> ¢
+&plusmn;     -> ±
+&times;      -> ×
+&divide;     -> ÷
+&ne;         -> ≠
+&le;         -> ≤
+&ge;         -> ≥
+&infin;      -> ∞
+&hearts;     -> ♥
+&star;       -> ★
+-->
+
+<!--
+============================================================
+5. NON-BREAKING SPACE
+============================================================
+
+&nbsp; represents a non-breaking space.
+
+Normally, multiple spaces in HTML are collapsed into a single
+space.
+
+Example:
+
+Hello     World
+
+will normally appear as:
+
+Hello World
+
+Using &nbsp;:
+
+Hello&nbsp;&nbsp;&nbsp;World
+
+creates additional spaces that are not collapsed in the
+normal way.
+
+Non-breaking spaces also prevent a line break between words.
+-->
+
+<!--
+============================================================
+6. NUMERIC CHARACTER REFERENCES
+============================================================
+
+Characters can also be represented using numeric codes.
+
+Decimal:
+&#169;
+
+Hexadecimal:
+&#x00A9;
+
+Both represent:
+©
+
+Examples:
+
+&#169;    -> ©
+&#174;    -> ®
+&#8364;   -> €
+&#8377;   -> ₹
+
+Hexadecimal examples:
+
+&#x00A9;   -> ©
+&#x20B9;   -> ₹
+-->
+
+<!-- ====================================================== -->
+
+<!-- COMBINED CODE -->
+
+<!-- ====================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>HTML Entities</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+    }
+
+    .box {
+        border: 1px solid #333;
+        padding: 15px;
+        margin: 15px 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 80%;
+    }
+
+    th,
+    td {
+        border: 1px solid black;
+        padding: 8px;
+    }
+
+    th {
+        background-color: lightgray;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>HTML Entities</h1>
+
+<!-- Character Entities -->
+<div class="box">
+    <h2>Character Entities</h2>
+
+    <p>Ampersand: &amp;</p>
+    <p>Less than: &lt;</p>
+    <p>Greater than: &gt;</p>
+    <p>Quotation mark: &quot;</p>
+    <p>Apostrophe: &apos;</p>
+</div>
+
+<!-- Reserved Characters -->
+<div class="box">
+    <h2>Reserved Characters</h2>
+
+    <p>5 &lt; 10</p>
+    <p>10 &gt; 5</p>
+    <p>Tom &amp; Jerry</p>
+    <p>He said &quot;Hello&quot;</p>
+    <p>&apos;HTML&apos; is easy to learn.</p>
+</div>
+
+<!-- Special Characters -->
+<div class="box">
+    <h2>Special Characters</h2>
+
+    <p>Copyright: &copy;</p>
+    <p>Registered: &reg;</p>
+    <p>Trademark: &trade;</p>
+    <p>Degree: 25&deg;C</p>
+    <p>Plus or Minus: &plusmn;</p>
+</div>
+
+<!-- Currency Symbols -->
+<div class="box">
+    <h2>Currency Symbols</h2>
+
+    <p>Indian Rupee: &#8377;</p>
+    <p>Dollar: &dollar;</p>
+    <p>Euro: &euro;</p>
+    <p>Pound: &pound;</p>
+    <p>Yen: &yen;</p>
+    <p>Cent: &cent;</p>
+</div>
+
+<!-- Mathematical Symbols -->
+<div class="box">
+    <h2>Mathematical Symbols</h2>
+
+    <p>5 &times; 5 = 25</p>
+    <p>10 &divide; 2 = 5</p>
+    <p>5 &ne; 10</p>
+    <p>5 &le; 10</p>
+    <p>10 &ge; 5</p>
+    <p>Infinity: &infin;</p>
+</div>
+
+<!-- Other Symbols -->
+<div class="box">
+    <h2>Other Symbols</h2>
+
+    <p>Heart: &hearts;</p>
+    <p>Star: &star;</p>
+    <p>Copyright: &copy;</p>
+    <p>Registered: &reg;</p>
+    <p>Trademark: &trade;</p>
+</div>
+
+<!-- Non-breaking Space -->
+<div class="box">
+    <h2>Non-Breaking Space</h2>
+
+    <p>Hello&nbsp;&nbsp;&nbsp;World</p>
+
+    <p>
+        HTML&nbsp;Entities&nbsp;are&nbsp;useful.
+    </p>
+</div>
+
+<!-- Numeric References -->
+<div class="box">
+    <h2>Numeric Character References</h2>
+
+    <p>Decimal Copyright: &#169;</p>
+    <p>Hexadecimal Copyright: &#x00A9;</p>
+
+    <p>Decimal Rupee: &#8377;</p>
+    <p>Hexadecimal Rupee: &#x20B9;</p>
+</div>
+
+<!-- Entity Table -->
+<div class="box">
+
+    <h2>Common HTML Entities</h2>
+
+    <table>
+
+        <tr>
+            <th>Entity</th>
+            <th>Output</th>
+            <th>Purpose</th>
+        </tr>
+
+        <tr>
+            <td>&amp;lt;</td>
+            <td>&lt;</td>
+            <td>Less than</td>
+        </tr>
+
+        <tr>
+            <td>&amp;gt;</td>
+            <td>&gt;</td>
+            <td>Greater than</td>
+        </tr>
+
+        <tr>
+            <td>&amp;amp;</td>
+            <td>&amp;</td>
+            <td>Ampersand</td>
+        </tr>
+
+        <tr>
+            <td>&amp;quot;</td>
+            <td>&quot;</td>
+            <td>Quotation mark</td>
+        </tr>
+
+        <tr>
+            <td>&amp;copy;</td>
+            <td>&copy;</td>
+            <td>Copyright</td>
+        </tr>
+
+        <tr>
+            <td>&amp;reg;</td>
+            <td>&reg;</td>
+            <td>Registered trademark</td>
+        </tr>
+
+        <tr>
+            <td>&amp;trade;</td>
+            <td>&trade;</td>
+            <td>Trademark</td>
+        </tr>
+
+        <tr>
+            <td>&amp;nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Non-breaking space</td>
+        </tr>
+
+    </table>
+
+</div>
+```
+
+</body>
+</html>
+
+<!-- ====================================================== -->
+
+<!-- QUESTIONS -->
+
+<!-- ====================================================== -->
+
+<!--
+Q1. What are HTML entities?
+
+SOLUTION:
+HTML entities are special codes used to display characters that
+have a special meaning in HTML or characters that may be difficult
+to type directly.
+
+Example:
+&lt; displays <
+-->
+
+<!--
+Q2. Why are HTML entities used?
+
+SOLUTION:
+They are used to:
+- Display reserved HTML characters.
+- Display special symbols.
+- Display characters using numeric codes.
+- Represent characters safely in HTML.
+-->
+
+<!--
+Q3. How do you display < in HTML?
+
+SOLUTION:
+Use:
+
+&lt;
+
+Example:
+<p>5 &lt; 10</p>
+-->
+
+<!--
+Q4. How do you display > in HTML?
+
+SOLUTION:
+Use:
+
+&gt;
+
+Example:
+<p>10 &gt; 5</p>
+-->
+
+<!--
+Q5. How do you display an ampersand (&)?
+
+SOLUTION:
+Use:
+
+&amp;
+
+Example:
+<p>Tom &amp; Jerry</p>
+-->
+
+<!--
+Q6. What is &nbsp;?
+
+SOLUTION:
+&nbsp; represents a non-breaking space.
+
+Example:
+<p>Hello&nbsp;&nbsp;&nbsp;World</p>
+-->
+
+<!--
+Q7. Write HTML entities for the following:
+
+<    >    &    "    '
+
+SOLUTION:
+
+<  = &lt;
+>  = &gt;
+&  = &amp;
+"  = &quot;
+'  = &apos;
+-->
+
+<!--
+Q8. Write entities for copyright, registered and trademark symbols.
+
+SOLUTION:
+
+Copyright: &copy;
+Registered: &reg;
+Trademark: &trade;
+-->
+
+<!--
+Q9. Write HTML entities for common currency symbols.
+
+SOLUTION:
+
+Rupee: &#8377;
+Dollar: &dollar;
+Euro: &euro;
+Pound: &pound;
+Yen: &yen;
+Cent: &cent;
+-->
+
+<!--
+Q10. What is a numeric character reference?
+
+SOLUTION:
+A numeric character reference represents a character using its
+numeric Unicode code.
+
+Decimal example:
+&#169;
+
+Hexadecimal example:
+&#x00A9;
+
+Both display:
+©
+-->
+
+<!--
+Q11. Write HTML to display the expression:
+5 × 5 = 25
+
+SOLUTION:
+<p>5 &times; 5 = 25</p>
+-->
+
+<!--
+Q12. Write HTML to display:
+10 ÷ 2 = 5
+
+SOLUTION:
+<p>10 &divide; 2 = 5</p>
+-->
+
+<!--
+Q13. Write HTML to display:
+Temperature is 25°C
+
+SOLUTION:
+<p>Temperature is 25&deg;C</p>
+-->
+
+<!--
+Q14. What are reserved characters in HTML?
+
+SOLUTION:
+Reserved characters are characters that have a special meaning
+in HTML syntax.
+
+Examples:
+<  >  &  "  '
+
+They can be displayed using entities such as:
+&lt; &gt; &amp; &quot; &apos;
+-->
+
+<!--
+Q15. Write HTML to display:
+Tom & Jerry
+
+SOLUTION:
+<p>Tom &amp; Jerry</p>
+-->
+
+<!-- ====================================================== -->
+
+<!-- FOR REFERENCE -->
+
+<!-- ====================================================== -->
+
+<!--
+HTML ENTITIES QUICK REFERENCE
+
+CHARACTER              ENTITY
+---------------------------------------------
+<                      &lt;
+>                      &gt;
+&                      &amp;
+"                      &quot;
+'                      &apos;
+Space                  &nbsp;
+
+SPECIAL SYMBOLS
+---------------------------------------------
+©                      &copy;
+®                      &reg;
+™                      &trade;
+°                      &deg;
+±                      &plusmn;
+×                      &times;
+÷                      &divide;
+≠                      &ne;
+≤                      &le;
+≥                      &ge;
+∞                      &infin;
+♥                      &hearts;
+★                      &star;
+
+CURRENCY
+---------------------------------------------
+₹                      &#8377; / &#x20B9;
+$                      &dollar;
+€                      &euro;
+£                      &pound;
+¥                      &yen;
+¢                      &cent;
+
+NUMERIC REFERENCES
+---------------------------------------------
+Decimal:
+&#169;
+
+Hexadecimal:
+&#x00A9;
+
+Both display:
+©
+
+IMPORTANT:
+Entity syntax:
+&name;
+
+Numeric decimal:
+&#number;
+
+Numeric hexadecimal:
+&#xhexadecimal;
+-->
