@@ -1,0 +1,898 @@
+# 16. ACCESSIBILITY
+
+<!-- ====================================================== -->
+
+<!-- NOTES -->
+
+<!-- ====================================================== -->
+
+<!--
+============================================================
+1. SEMANTIC ELEMENTS
+============================================================
+
+Semantic HTML elements clearly describe the meaning and purpose
+of their content.
+
+Examples:
+- <header>
+- <nav>
+- <main>
+- <section>
+- <article>
+- <aside>
+- <footer>
+- <button>
+- <form>
+- <label>
+
+Semantic elements help:
+- Screen readers understand page structure.
+- Keyboard users navigate the page.
+- Search engines understand the content.
+- Developers maintain the webpage.
+
+Example:
+
+<header>
+    <h1>My Website</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+</nav>
+
+<main>
+    <section>
+        <h2>About</h2>
+        <p>About the website.</p>
+    </section>
+</main>
+
+<footer>
+    Copyright information
+</footer>
+-->
+
+<!--
+============================================================
+2. ALT TEXT
+============================================================
+
+The alt attribute provides alternative text for an image.
+
+Example:
+
+<img src="laptop.jpg"
+     alt="Silver laptop on a desk">
+
+Alt text is useful when:
+- The image cannot be loaded.
+- A screen reader is being used.
+- The user cannot see the image.
+
+Good alt text should:
+- Describe the meaningful content of the image.
+- Be concise.
+- Convey the purpose of the image when appropriate.
+
+Decorative images can use an empty alt attribute:
+
+<img src="decoration.png" alt="">
+
+Do not use unnecessary phrases such as:
+"Image of..."
+because the screen reader already knows it is an image.
+-->
+
+<!--
+============================================================
+3. LABELS
+============================================================
+
+The <label> element provides a text description for a form
+control.
+
+A label should be associated with its input.
+
+Method 1: Using for and id
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+
+The value of label's "for" must match the input's "id".
+
+Method 2: Wrapping the input
+
+<label>
+    Name:
+    <input type="text" name="name">
+</label>
+
+Labels help:
+- Screen readers identify form controls.
+- Users understand what information to enter.
+- Users click the label to focus/select the associated control.
+-->
+
+<!--
+============================================================
+4. ARIA ATTRIBUTES
+============================================================
+
+ARIA stands for Accessible Rich Internet Applications.
+
+ARIA attributes provide additional accessibility information
+when normal HTML semantics are not enough.
+
+Common ARIA attributes:
+
+aria-label
+-----------
+Provides an accessible name.
+
+Example:
+<button aria-label="Close">
+    X
+</button>
+
+aria-labelledby
+---------------
+Uses another element's text as the accessible name.
+
+Example:
+<h2 id="title">Settings</h2>
+
+<div aria-labelledby="title">
+    ...
+</div>
+
+aria-describedby
+----------------
+Associates additional descriptive information.
+
+Example:
+<input
+    type="password"
+    aria-describedby="passwordHelp">
+
+<p id="passwordHelp">
+    Password must contain at least 8 characters.
+</p>
+
+aria-hidden
+-----------
+Hides an element from assistive technologies.
+
+Example:
+<span aria-hidden="true">★</span>
+
+Important:
+ARIA should supplement proper HTML semantics, not replace them
+when a native HTML element can provide the required behavior.
+-->
+
+<!--
+============================================================
+5. KEYBOARD ACCESSIBILITY
+============================================================
+
+A webpage should be usable without requiring a mouse.
+
+Important keyboard interactions include:
+- Tab -> Move to the next focusable element.
+- Shift + Tab -> Move to the previous focusable element.
+- Enter -> Activate links/buttons in appropriate contexts.
+- Space -> Activate buttons and certain controls.
+- Arrow keys -> Used by some widgets and controls.
+
+Use native interactive elements whenever possible:
+
+<button>Click Me</button>
+
+<a href="about.html">About</a>
+
+Avoid using:
+
+<div onclick="doSomething()">Click Me</div>
+
+A div does not automatically provide the same keyboard behavior
+or semantics as a button.
+
+The tabindex attribute can control focus behavior.
+
+Example:
+<button tabindex="0">Button</button>
+
+Avoid using positive tabindex values such as tabindex="5"
+unless there is a specific reason, because they can create
+confusing keyboard navigation order.
+-->
+
+<!--
+============================================================
+6. ACCESSIBLE FORMS
+============================================================
+
+Forms should be designed so that users with different abilities
+can understand and operate them.
+
+Important practices:
+
+1. Use labels.
+2. Use appropriate input types.
+3. Use required when a field is required.
+4. Provide clear instructions.
+5. Group related controls.
+6. Provide meaningful error messages.
+7. Do not rely only on color to communicate errors.
+8. Use fieldset and legend for related controls.
+9. Use autocomplete where appropriate.
+10. Make controls keyboard accessible.
+
+Example:
+
+<label for="email">Email:</label>
+<input
+    type="email"
+    id="email"
+    name="email"
+    autocomplete="email"
+    required>
+
+For related radio buttons:
+
+<fieldset>
+    <legend>Select your gender</legend>
+
+    <label>
+        <input type="radio" name="gender" value="male">
+        Male
+    </label>
+
+    <label>
+        <input type="radio" name="gender" value="female">
+        Female
+    </label>
+</fieldset>
+-->
+
+<!--
+============================================================
+7. ACCESSIBLE ERROR MESSAGES
+============================================================
+
+Form errors should clearly explain what went wrong and how
+the user can fix it.
+
+Example:
+
+<label for="email">Email:</label>
+<input
+    type="email"
+    id="email"
+    aria-describedby="emailError"
+    required>
+
+<p id="emailError">
+    Enter a valid email address.
+</p>
+
+aria-describedby connects the input with its additional
+description or error message.
+-->
+
+<!-- ====================================================== -->
+
+<!-- COMBINED CODE -->
+
+<!-- ====================================================== -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Accessible HTML Page</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+    }
+
+    header,
+    nav,
+    main,
+    section,
+    footer {
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        margin-right: 15px;
+    }
+
+    form {
+        max-width: 500px;
+    }
+
+    label {
+        display: block;
+        margin-top: 12px;
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+        margin-top: 5px;
+        padding: 8px;
+    }
+
+    fieldset {
+        margin-top: 15px;
+        padding: 15px;
+    }
+
+    .error {
+        margin-top: 5px;
+    }
+
+    button:focus,
+    a:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: 3px solid black;
+        outline-offset: 2px;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<!-- ================================================= -->
+<!-- SEMANTIC ELEMENTS -->
+<!-- ================================================= -->
+
+<header>
+
+    <h1>Electronics Store</h1>
+
+    <nav aria-label="Main navigation">
+
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- ================================================= -->
+    <!-- ALT TEXT -->
+    <!-- ================================================= -->
+
+    <section id="home">
+
+        <h2>Welcome</h2>
+
+        <img
+            src="laptop.jpg"
+            alt="Silver laptop placed on a desk"
+            width="300">
+
+        <p>
+            Browse our collection of electronic products.
+        </p>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- ARIA -->
+    <!-- ================================================= -->
+
+    <section id="products">
+
+        <h2>Products</h2>
+
+        <!-- aria-label gives the button an accessible name -->
+        <button aria-label="Add laptop to shopping cart">
+            +
+        </button>
+
+        <!-- Decorative icon hidden from screen readers -->
+        <span aria-hidden="true">★</span>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- ACCESSIBLE FORM -->
+    <!-- ================================================= -->
+
+    <section id="contact">
+
+        <h2>Contact Form</h2>
+
+        <form>
+
+            <!-- Name -->
+            <label for="name">
+                Full Name:
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required>
+
+
+            <!-- Email -->
+            <label for="email">
+                Email:
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                aria-describedby="emailHelp"
+                required>
+
+            <p id="emailHelp">
+                Enter a valid email address.
+            </p>
+
+
+            <!-- Password -->
+            <label for="password">
+                Password:
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                name="password"
+                aria-describedby="passwordHelp"
+                minlength="8"
+                required>
+
+            <p id="passwordHelp">
+                Password must contain at least 8 characters.
+            </p>
+
+
+            <!-- Radio Buttons -->
+            <fieldset>
+
+                <legend>
+                    Select your preferred contact method
+                </legend>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="contact"
+                        value="email"
+                        checked>
+                    Email
+                </label>
+
+                <label>
+                    <input
+                        type="radio"
+                        name="contact"
+                        value="phone">
+                    Phone
+                </label>
+
+            </fieldset>
+
+
+            <!-- Select -->
+            <label for="category">
+                Product Category:
+            </label>
+
+            <select
+                id="category"
+                name="category">
+
+                <option value="">
+                    Select a category
+                </option>
+
+                <option value="laptop">
+                    Laptop
+                </option>
+
+                <option value="phone">
+                    Phone
+                </option>
+
+                <option value="headphones">
+                    Headphones
+                </option>
+
+            </select>
+
+
+            <!-- Message -->
+            <label for="message">
+                Message:
+            </label>
+
+            <textarea
+                id="message"
+                name="message"
+                rows="5"
+                aria-describedby="messageHelp">
+            </textarea>
+
+            <p id="messageHelp">
+                Tell us how we can help you.
+            </p>
+
+
+            <!-- Submit -->
+            <button type="submit">
+                Submit Form
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 Electronics Store
+    </p>
+
+</footer>
+```
+
+</body>
+
+</html>
+
+<!-- ====================================================== -->
+
+<!-- QUESTIONS -->
+
+<!-- ====================================================== -->
+
+<!--
+Q1. What is web accessibility?
+
+SOLUTION:
+Web accessibility means designing websites so that people with
+different abilities can access, understand, navigate and interact
+with the content.
+-->
+
+<!--
+Q2. Why are semantic HTML elements important for accessibility?
+
+SOLUTION:
+Semantic elements communicate the meaning and structure of
+content to browsers and assistive technologies such as screen
+readers.
+
+Examples:
+<header>, <nav>, <main>, <section>, <article>, <footer>
+-->
+
+<!--
+Q3. What is alt text?
+
+SOLUTION:
+The alt attribute provides alternative text for an image.
+
+Example:
+
+<img src="phone.jpg"
+     alt="Black smartphone">
+
+It helps users who cannot see the image.
+-->
+
+<!--
+Q4. What should be used for a decorative image?
+
+SOLUTION:
+Use an empty alt attribute:
+
+<img src="decoration.png" alt="">
+
+This tells assistive technologies that the image does not add
+meaningful information.
+-->
+
+<!--
+Q5. Why are labels important in forms?
+
+SOLUTION:
+Labels identify form controls and help users, including screen
+reader users, understand what information is required.
+
+Example:
+
+<label for="email">Email:</label>
+<input type="email" id="email">
+-->
+
+<!--
+Q6. What is ARIA?
+
+SOLUTION:
+ARIA stands for Accessible Rich Internet Applications.
+
+It provides additional accessibility information for dynamic
+or custom interfaces when normal HTML semantics are not enough.
+-->
+
+<!--
+Q7. What is aria-label?
+
+SOLUTION:
+aria-label provides an accessible name for an element.
+
+Example:
+
+<button aria-label="Close">
+    X
+</button>
+-->
+
+<!--
+Q8. What is aria-describedby?
+
+SOLUTION:
+aria-describedby connects an element to another element that
+provides additional information or instructions.
+
+Example:
+
+<input
+    id="password"
+    aria-describedby="passwordHelp">
+
+<p id="passwordHelp">
+    Password must contain at least 8 characters.
+</p>
+-->
+
+<!--
+Q9. What is aria-hidden?
+
+SOLUTION:
+aria-hidden="true" removes an element from the accessibility
+tree, so assistive technologies generally do not announce it.
+
+Example:
+
+<span aria-hidden="true">★</span>
+-->
+
+<!--
+Q10. What is keyboard accessibility?
+
+SOLUTION:
+Keyboard accessibility means users can navigate and operate
+the webpage using a keyboard without requiring a mouse.
+
+Common keys:
+- Tab
+- Shift + Tab
+- Enter
+- Space
+- Arrow keys where appropriate
+-->
+
+<!--
+Q11. Why should buttons be used instead of clickable divs?
+
+SOLUTION:
+A <button> is a native interactive element with built-in
+semantics and keyboard behavior.
+
+A <div> does not automatically provide the same interaction
+or accessibility features.
+
+Preferred:
+
+<button>Submit</button>
+-->
+
+<!--
+Q12. What is the purpose of tabindex?
+
+SOLUTION:
+tabindex controls whether an element can receive keyboard focus
+and can influence its focus order.
+
+Example:
+
+<button tabindex="0">Submit</button>
+
+Avoid unnecessarily using positive tabindex values because
+they can create confusing keyboard navigation.
+-->
+
+<!--
+Q13. How can radio buttons be made accessible?
+
+SOLUTION:
+Use labels and group related radio buttons inside a fieldset
+with a legend.
+
+Example:
+
+<fieldset>
+    <legend>Choose a payment method</legend>
+
+    <label>
+        <input type="radio" name="payment">
+        Card
+    </label>
+
+    <label>
+        <input type="radio" name="payment">
+        Cash
+    </label>
+</fieldset>
+-->
+
+<!--
+Q14. What is the purpose of fieldset and legend?
+
+SOLUTION:
+
+<fieldset>
+- Groups related form controls.
+
+<legend>
+- Provides a caption or name for that group.
+
+They are especially useful for groups of radio buttons and
+checkboxes.
+-->
+
+<!--
+Q15. How can form errors be made accessible?
+
+SOLUTION:
+- Clearly explain the problem.
+- Tell the user how to fix it.
+- Associate the error/help text with the form control.
+- Do not rely only on color.
+
+Example:
+
+<input
+    id="email"
+    aria-describedby="emailError">
+
+<p id="emailError">
+    Enter a valid email address.
+</p>
+-->
+
+<!--
+Q16. Write an accessible email input.
+
+SOLUTION:
+
+<label for="email">Email:</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    autocomplete="email"
+    required>
+-->
+
+<!--
+Q17. What is the difference between semantic HTML and ARIA?
+
+SOLUTION:
+
+Semantic HTML:
+- Uses elements with built-in meaning.
+- Example: <button>, <nav>, <main>.
+
+ARIA:
+- Adds accessibility information or states/relationships
+  when native HTML alone is not sufficient.
+
+Native semantic HTML should generally be preferred when it
+provides the required behavior.
+-->
+
+<!-- ====================================================== -->
+
+<!-- FOR REFERENCE -->
+
+<!-- ====================================================== -->
+
+<!--
+ACCESSIBILITY QUICK REFERENCE
+
+SEMANTIC ELEMENTS
+------------------------------------------------------------
+<header>       -> Header content
+<nav>          -> Navigation
+<main>         -> Main content
+<section>      -> Thematic section
+<article>      -> Independent content
+<aside>        -> Related/secondary content
+<footer>       -> Footer
+<button>       -> Interactive button
+<form>         -> Form
+
+ALT TEXT
+------------------------------------------------------------
+<img src="phone.jpg" alt="Black smartphone">
+
+Decorative image:
+<img src="decoration.png" alt="">
+
+LABEL
+------------------------------------------------------------
+<label for="email">Email:</label>
+<input type="email" id="email">
+
+ARIA
+------------------------------------------------------------
+aria-label
+aria-labelledby
+aria-describedby
+aria-hidden
+
+KEYBOARD
+------------------------------------------------------------
+Tab          -> Next focusable element
+Shift + Tab  -> Previous focusable element
+Enter        -> Activate appropriate controls
+Space        -> Activate buttons and certain controls
+
+ACCESSIBLE FORMS
+------------------------------------------------------------
+- Use <label>.
+- Use appropriate input types.
+- Use required when necessary.
+- Use fieldset + legend for related controls.
+- Provide clear instructions.
+- Provide accessible error messages.
+- Use autocomplete where appropriate.
+- Ensure controls are keyboard accessible.
+
+IMPORTANT:
+Prefer native semantic HTML over adding ARIA when native HTML
+already provides the required semantics and behavior.
+-->
