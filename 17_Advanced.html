@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<!-- =========================================================
+     ADVANCED HTML
+     Topics:
+     1. Canvas
+     2. SVG
+     3. Web Storage
+     4. Drag and Drop
+     5. Web Workers
+     6. Server-Sent Events
+     7. Custom Data Attributes
+========================================================= -->
+
+
+<!-- =========================================================
+     1. CANVAS
+========================================================= -->
+
+<!--
+Canvas:
+- <canvas> is used to draw graphics using JavaScript.
+- It creates a pixel-based drawing area.
+- Canvas itself does not draw anything; JavaScript is used to draw.
+- Common uses:
+  - Shapes
+  - Lines
+  - Text
+  - Images
+  - Games
+  - Charts
+  - Animations
+
+Basic syntax:
+<canvas id="myCanvas" width="400" height="200"></canvas>
+
+JavaScript:
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+Important methods:
+- fillRect()
+- strokeRect()
+- clearRect()
+- beginPath()
+- moveTo()
+- lineTo()
+- stroke()
+- fill()
+- arc()
+- fillText()
+
+Canvas is pixel-based, so it is suitable for dynamic drawings.
+-->
+
+
+<!-- =========================================================
+     2. SVG
+========================================================= -->
+
+<!--
+SVG:
+- SVG stands for Scalable Vector Graphics.
+- It is used to create vector-based graphics.
+- SVG graphics can be scaled without losing quality.
+- SVG uses XML-based markup.
+
+Common SVG elements:
+- <svg>       -> container
+- <rect>      -> rectangle
+- <circle>    -> circle
+- <line>      -> line
+- <ellipse>   -> ellipse
+- <polygon>   -> polygon
+- <polyline>  -> connected lines
+- <text>      -> text
+
+Example:
+<svg width="200" height="100">
+    <circle cx="50" cy="50" r="40"></circle>
+</svg>
+
+Canvas vs SVG:
+- Canvas -> pixel-based
+- SVG -> vector-based
+- Canvas is good for games and frequent drawing.
+- SVG is good for scalable icons, diagrams and graphics.
+-->
+
+
+<!-- =========================================================
+     3. WEB STORAGE
+========================================================= -->
+
+<!--
+Web Storage allows websites to store data in the browser.
+
+Two types:
+
+1. localStorage
+   - Data remains after browser is closed.
+   - Data remains until manually removed.
+   - Useful for preferences, themes, etc.
+
+2. sessionStorage
+   - Data exists only for the current browser tab/session.
+   - Data is removed when the session ends.
+
+Important methods:
+- setItem(key, value)
+- getItem(key)
+- removeItem(key)
+- clear()
+
+Example:
+localStorage.setItem("username", "Shubhangi");
+
+let name = localStorage.getItem("username");
+
+localStorage.removeItem("username");
+
+localStorage.clear();
+
+IMPORTANT:
+Web Storage stores values as strings.
+
+For objects/arrays:
+JSON.stringify() -> object to string
+JSON.parse()    -> string to object
+-->
+
+
+<!-- =========================================================
+     4. DRAG AND DROP
+========================================================= -->
+
+<!--
+HTML Drag and Drop API allows elements to be dragged
+and dropped.
+
+Important events:
+- dragstart
+- drag
+- dragend
+- dragover
+- drop
+
+Important:
+An element normally needs:
+draggable="true"
+
+Example:
+<div draggable="true">Drag Me</div>
+
+For dropping:
+- dragover -> preventDefault()
+- drop -> handle dropped data
+
+Important methods:
+dataTransfer.setData()
+dataTransfer.getData()
+-->
+
+
+<!-- =========================================================
+     5. WEB WORKERS
+========================================================= -->
+
+<!--
+Web Workers allow JavaScript to run in the background
+without blocking the main webpage.
+
+Normally JavaScript runs on the main thread.
+
+A Web Worker runs JavaScript in a separate background thread.
+
+Benefits:
+- Keeps UI responsive
+- Useful for heavy calculations
+- Useful for large data processing
+
+Create Worker:
+const worker = new Worker("worker.js");
+
+Send data:
+worker.postMessage("Hello");
+
+Receive data:
+worker.onmessage = function(event) {
+    console.log(event.data);
+};
+
+Inside worker.js:
+self.onmessage = function(event) {
+    self.postMessage("Received: " + event.data);
+};
+
+IMPORTANT:
+Web Workers do not directly access the DOM.
+-->
+
+
+<!-- =========================================================
+     6. SERVER-SENT EVENTS (SSE)
+========================================================= -->
+
+<!--
+Server-Sent Events allow a server to send updates
+to a web page automatically.
+
+SSE is one-way communication:
+Server -> Browser
+
+JavaScript:
+const source = new EventSource("events.php");
+
+source.onmessage = function(event) {
+    console.log(event.data);
+};
+
+Important methods/events:
+- EventSource()
+- onmessage
+- onopen
+- onerror
+- close()
+
+SSE is useful for:
+- Live notifications
+- News updates
+- Stock updates
+- Live scores
+- Server status updates
+
+Difference:
+SSE:
+Server -> Client
+
+WebSocket:
+Client <-> Server
+
+NOTE:
+A real SSE connection requires a server that sends
+data using the text/event-stream format.
+-->
+
+
+<!-- =========================================================
+     7. CUSTOM DATA ATTRIBUTES
+========================================================= -->
+
+<!--
+Custom data attributes allow developers to store
+custom information inside HTML elements.
+
+Syntax:
+data-name="value"
+
+Examples:
+data-id
+data-price
+data-category
+
+Example:
+<button
+    data-product-id="101"
+    data-price="49999">
+    Buy
+</button>
+
+JavaScript can access them using dataset.
+
+Example:
+const button = document.querySelector("button");
+
+console.log(button.dataset.productId);
+console.log(button.dataset.price);
+
+HTML:
+data-product-id
+
+JavaScript:
+dataset.productId
+
+Custom data attributes are useful for passing
+small pieces of information from HTML to JavaScript.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Advanced HTML</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+
+        .drag-item {
+            width: 120px;
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: lightblue;
+            cursor: grab;
+            text-align: center;
+        }
+
+        .drop-zone {
+            width: 250px;
+            height: 100px;
+            border: 2px dashed black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Advanced HTML</h1>
+
+
+    <!-- =====================================================
+         CANVAS
+    ====================================================== -->
+
+    <section>
+        <h2>1. Canvas</h2>
+
+        <canvas id="myCanvas" width="400" height="200"></canvas>
+
+        <script>
+            const canvas = document.getElementById("myCanvas");
+            const ctx = canvas.getContext("2d");
+
+            // Rectangle
+            ctx.fillStyle = "blue";
+            ctx.fillRect(20, 20, 100, 60);
+
+            // Circle
+            ctx.beginPath();
+            ctx.arc(200, 60, 30, 0, 2 * Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
+
+            // Line
+            ctx.beginPath();
+            ctx.moveTo(20, 130);
+            ctx.lineTo(350, 130);
+            ctx.strokeStyle = "black";
+            ctx.stroke();
+
+            // Text
+            ctx.font = "20px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Canvas Example", 120, 180);
+        </script>
+    </section>
+
+
+    <!-- =====================================================
+         SVG
+    ====================================================== -->
+
+    <section>
+        <h2>2. SVG</h2>
+
+        <svg width="400" height="200">
+
+            <!-- Rectangle -->
+            <rect
+                x="20"
+                y="20"
+                width="100"
+                height="60"
+                fill="blue">
+            </rect>
+
+            <!-- Circle -->
+            <circle
+                cx="200"
+                cy="50"
+                r="30"
+                fill="red">
+            </circle>
+
+            <!-- Line -->
+            <line
+                x1="20"
+                y1="120"
+                x2="350"
+                y2="120"
+                stroke="black"
+                stroke-width="3">
+            </line>
+
+            <!-- Text -->
+            <text
+                x="120"
+                y="170"
+                font-size="20">
+                SVG Example
+            </text>
+
+        </svg>
+    </section>
+
+
+    <!-- =====================================================
+         WEB STORAGE
+    ====================================================== -->
+
+    <section>
+        <h2>3. Web Storage</h2>
+
+        <input
+            type="text"
+            id="username"
+            placeholder="Enter your name">
+
+        <button onclick="saveName()">Save</button>
+        <button onclick="showName()">Show</button>
+        <button onclick="removeName()">Remove</button>
+
+        <p id="storageResult"></p>
+
+        <script>
+            function saveName() {
+                const name =
+                    document.getElementById("username").value;
+
+                localStorage.setItem("username", name);
+
+                document.getElementById("storageResult")
+                    .textContent = "Name saved!";
+            }
+
+            function showName() {
+                const name =
+                    localStorage.getItem("username");
+
+                document.getElementById("storageResult")
+                    .textContent = "Stored Name: " + name;
+            }
+
+            function removeName() {
+                localStorage.removeItem("username");
+
+                document.getElementById("storageResult")
+                    .textContent = "Name removed!";
+            }
+        </script>
+    </section>
+
+
+    <!-- =====================================================
+         DRAG AND DROP
+    ====================================================== -->
+
+    <section>
+        <h2>4. Drag and Drop</h2>
+
+        <div
+            id="dragItem"
+            class="drag-item"
+            draggable="true">
+            Drag Me
+        </div>
+
+        <div
+            id="dropZone"
+            class="drop-zone">
+            Drop Here
+        </div>
+
+        <script>
+            const dragItem =
+                document.getElementById("dragItem");
+
+            const dropZone =
+                document.getElementById("dropZone");
+
+            dragItem.addEventListener("dragstart", function(event) {
+                event.dataTransfer.setData(
+                    "text/plain",
+                    event.target.id
+                );
+            });
+
+            dropZone.addEventListener("dragover", function(event) {
+                event.preventDefault();
+            });
+
+            dropZone.addEventListener("drop", function(event) {
+                event.preventDefault();
+
+                const id =
+                    event.dataTransfer.getData("text/plain");
+
+                const element =
+                    document.getElementById(id);
+
+                dropZone.appendChild(element);
+            });
+        </script>
+    </section>
+
+
+    <!-- =====================================================
+         WEB WORKERS
+    ====================================================== -->
+
+    <section>
+        <h2>5. Web Workers</h2>
+
+        <button onclick="startWorker()">
+            Start Worker
+        </button>
+
+        <p id="workerResult"></p>
+
+        <script>
+            /*
+            A real Web Worker normally uses a separate
+            JavaScript file.
+
+            Example:
+
+            const worker = new Worker("worker.js");
+
+            worker.postMessage("Hello Worker");
+
+            worker.onmessage = function(event) {
+                document.getElementById("workerResult")
+                    .textContent = event.data;
+            };
+            */
+
+            document.getElementById("workerResult")
+                .textContent =
+                "Web Worker example requires a separate worker.js file.";
+        </script>
+    </section>
+
+
+    <!-- =====================================================
+         SERVER-SENT EVENTS
+    ====================================================== -->
+
+    <section>
+        <h2>6. Server-Sent Events</h2>
+
+        <p id="sseResult">
+            SSE requires a server-side event stream.
+        </p>
+
+        <script>
+            /*
+            Example:
+
+            const source = new EventSource("events.php");
+
+            source.onmessage = function(event) {
+                document.getElementById("sseResult")
+                    .textContent = event.data;
+            };
+
+            source.onerror = function() {
+                console.log("Connection error");
+            };
+            */
+        </script>
+    </section>
+
+
+    <!-- =====================================================
+         CUSTOM DATA ATTRIBUTES
+    ====================================================== -->
+
+    <section>
+        <h2>7. Custom Data Attributes</h2>
+
+        <button
+            class="product"
+            data-product-id="101"
+            data-product-name="Laptop"
+            data-price="59999"
+            onclick="showProduct(this)">
+            View Product
+        </button>
+
+        <p id="productResult"></p>
+
+        <script>
+            function showProduct(button) {
+
+                const id =
+                    button.dataset.productId;
+
+                const name =
+                    button.dataset.productName;
+
+                const price =
+                    button.dataset.price;
+
+                document.getElementById("productResult")
+                    .textContent =
+                    "ID: " + id +
+                    " | Product: " + name +
+                    " | Price: ₹" + price;
+            }
+        </script>
+    </section>
+
+
+    <!-- =====================================================
+         QUESTIONS
+    ====================================================== -->
+
+    <!--
+    Q1. What is Canvas?
+    Q2. What is SVG?
+    Q3. Differentiate between Canvas and SVG.
+    Q4. What is localStorage?
+    Q5. What is sessionStorage?
+    Q6. Name the methods used with Web Storage.
+    Q7. What is HTML Drag and Drop API?
+    Q8. What is the purpose of draggable="true"?
+    Q9. What is a Web Worker?
+    Q10. Can a Web Worker directly manipulate the DOM?
+    Q11. What are Server-Sent Events?
+    Q12. What is the direction of communication in SSE?
+    Q13. What is EventSource?
+    Q14. What are custom data attributes?
+    Q15. How are data-* attributes accessed using JavaScript?
+    Q16. Write an example of localStorage.
+    Q17. Write an example of a custom data attribute.
+    Q18. What is the difference between localStorage and sessionStorage?
+    Q19. What is the difference between SSE and WebSocket?
+    Q20. What is the purpose of dataTransfer in Drag and Drop?
+    -->
+
+
+    <!-- =====================================================
+         SOLUTIONS
+    ====================================================== -->
+
+    <!--
+    Q1. What is Canvas?
+    Solution:
+    Canvas is an HTML element used to create graphics
+    using JavaScript. It is pixel-based.
+
+    Q2. What is SVG?
+    Solution:
+    SVG stands for Scalable Vector Graphics. It is used
+    to create vector-based graphics.
+
+    Q3. Canvas vs SVG:
+    Solution:
+    Canvas is pixel-based while SVG is vector-based.
+    Canvas is commonly used for games and dynamic graphics.
+    SVG is commonly used for scalable graphics, icons and diagrams.
+
+    Q4. What is localStorage?
+    Solution:
+    localStorage stores data in the browser that remains
+    available even after the browser is closed.
+
+    Q5. What is sessionStorage?
+    Solution:
+    sessionStorage stores data for the current browser
+    tab/session.
+
+    Q6. Web Storage methods:
+    Solution:
+    - setItem()
+    - getItem()
+    - removeItem()
+    - clear()
+
+    Q7. What is Drag and Drop API?
+    Solution:
+    It allows users to drag an element and drop it
+    into another location or container.
+
+    Q8. Purpose of draggable="true":
+    Solution:
+    It makes an HTML element draggable.
+
+    Q9. What is a Web Worker?
+    Solution:
+    A Web Worker executes JavaScript in a background thread
+    so that heavy processing does not block the main page.
+
+    Q10. Can Web Workers directly manipulate the DOM?
+    Solution:
+    No. Web Workers cannot directly access the DOM.
+
+    Q11. What are Server-Sent Events?
+    Solution:
+    SSE allows a server to continuously send updates
+    to a browser over a single HTTP connection.
+
+    Q12. Direction of SSE:
+    Solution:
+    Server → Client
+
+    Q13. What is EventSource?
+    Solution:
+    EventSource is a JavaScript API used by the browser
+    to connect to an SSE server.
+
+    Q14. What are custom data attributes?
+    Solution:
+    They are developer-defined attributes beginning with
+    "data-" used to store custom information in HTML.
+
+    Q15. How are data-* attributes accessed?
+    Solution:
+    They are accessed using the dataset property.
+
+    Example:
+    element.dataset.productId
+
+    Q16. localStorage example:
+    Solution:
+    localStorage.setItem("name", "John");
+
+    Q17. Custom data attribute:
+    Solution:
+    <button data-id="101">Product</button>
+
+    Q18. localStorage vs sessionStorage:
+    Solution:
+    localStorage remains until removed.
+    sessionStorage normally lasts only for the current
+    browser tab/session.
+
+    Q19. SSE vs WebSocket:
+    Solution:
+    SSE:
+    Server → Client
+
+    WebSocket:
+    Client ↔ Server
+
+    Q20. dataTransfer:
+    Solution:
+    dataTransfer is used to store and retrieve information
+    during drag-and-drop operations.
+    -->
+
+
+    <!-- =====================================================
+         FOR REFERENCE
+    ====================================================== -->
+
+    <!--
+    ADVANCED HTML QUICK REFERENCE
+
+    CANVAS
+    ---------------------------------------------------------
+    <canvas id="canvas" width="400" height="200"></canvas>
+
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillRect(x, y, width, height);
+    ctx.strokeRect(x, y, width, height);
+    ctx.arc(x, y, radius, startAngle, endAngle);
+    ctx.fillText("Text", x, y);
+
+
+    SVG
+    ---------------------------------------------------------
+    <svg width="300" height="200">
+        <rect x="10" y="10" width="100" height="50"/>
+        <circle cx="150" cy="50" r="30"/>
+        <line x1="10" y1="100" x2="250" y2="100"/>
+        <text x="50" y="150">Hello</text>
+    </svg>
+
+
+    WEB STORAGE
+    ---------------------------------------------------------
+    localStorage.setItem("key", "value");
+    localStorage.getItem("key");
+    localStorage.removeItem("key");
+    localStorage.clear();
+
+    sessionStorage.setItem("key", "value");
+
+
+    DRAG AND DROP
+    ---------------------------------------------------------
+    draggable="true"
+
+    dragstart
+    dragover
+    drop
+    dragend
+
+    event.dataTransfer.setData();
+    event.dataTransfer.getData();
+
+
+    WEB WORKER
+    ---------------------------------------------------------
+    const worker = new Worker("worker.js");
+
+    worker.postMessage("Hello");
+
+    worker.onmessage = function(event) {
+        console.log(event.data);
+    };
+
+
+    SERVER-SENT EVENTS
+    ---------------------------------------------------------
+    const source = new EventSource("events.php");
+
+    source.onmessage = function(event) {
+        console.log(event.data);
+    };
+
+    source.close();
+
+
+    CUSTOM DATA ATTRIBUTES
+    ---------------------------------------------------------
+    HTML:
+    <div data-id="101" data-price="500"></div>
+
+    JavaScript:
+    element.dataset.id;
+    element.dataset.price;
+
+
+    IMPORTANT DIFFERENCES
+    ---------------------------------------------------------
+
+    Canvas:
+    Pixel-based graphics
+
+    SVG:
+    Vector-based graphics
+
+    localStorage:
+    Persistent browser storage
+
+    sessionStorage:
+    Current session/tab storage
+
+    SSE:
+    Server → Client
+
+    WebSocket:
+    Client ↔ Server
+
+    Web Worker:
+    Background JavaScript execution
+
+    data-*:
+    Custom information stored in HTML
+    -->
+</body>
+</html>
