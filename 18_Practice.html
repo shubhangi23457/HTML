@@ -1,0 +1,1016 @@
+```html
+<!-- =========================================================
+     HTML BEST PRACTICES
+     
+     Topics:
+     1. Proper Document Structure
+     2. Proper Nesting
+     3. Semantic HTML
+     4. Clean Formatting
+     5. Accessibility
+     6. SEO-Friendly HTML
+     7. Responsive HTML Structure
+     8. Valid HTML
+========================================================= -->
+
+
+<!-- =========================================================
+     1. PROPER DOCUMENT STRUCTURE
+========================================================= -->
+
+<!--
+A proper HTML document should follow a standard structure.
+
+Basic structure:
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+</head>
+
+<body>
+    Page content
+</body>
+</html>
+
+Important:
+- <!DOCTYPE html> tells the browser to use modern HTML.
+- <html> is the root element.
+- <head> contains metadata.
+- <body> contains visible page content.
+- <title> provides the page title.
+- UTF-8 supports a wide range of characters.
+- Viewport makes the page suitable for mobile devices.
+-->
+
+
+<!-- =========================================================
+     2. PROPER NESTING
+========================================================= -->
+
+<!--
+HTML elements should be properly nested.
+
+CORRECT:
+
+<p>
+    This is <strong>important</strong> text.
+</p>
+
+INCORRECT:
+
+<p>
+    This is <strong>important</p>
+</strong>
+
+The element opened last should normally be closed first.
+
+Correct nesting improves:
+- Readability
+- Browser interpretation
+- Accessibility
+- Maintainability
+-->
+
+
+<!-- =========================================================
+     3. SEMANTIC HTML
+========================================================= -->
+
+<!--
+Semantic HTML uses elements according to their meaning.
+
+Examples:
+
+<header>   -> Header/introduction
+<nav>      -> Navigation
+<main>     -> Main page content
+<section>  -> Thematic section
+<article>  -> Independent content
+<aside>    -> Related/secondary content
+<footer>   -> Footer information
+
+Prefer:
+
+<nav>
+    ...
+</nav>
+
+instead of using:
+
+<div class="navigation">
+    ...
+</div>
+
+Benefits:
+- Better accessibility
+- Better SEO
+- Easier code understanding
+- Better maintainability
+-->
+
+
+<!-- =========================================================
+     4. CLEAN FORMATTING
+========================================================= -->
+
+<!--
+Clean HTML should be:
+- Properly indented
+- Consistently formatted
+- Easy to read
+- Organized into logical sections
+- Free from unnecessary code
+
+Example:
+
+<header>
+    <h1>My Website</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+Instead of putting everything on one line.
+
+Good formatting makes debugging and maintenance easier.
+-->
+
+
+<!-- =========================================================
+     5. ACCESSIBILITY
+========================================================= -->
+
+<!--
+Accessibility means making websites usable by as many
+people as possible, including people using assistive
+technologies.
+
+Important practices:
+
+1. Use semantic elements.
+2. Provide alt text for meaningful images.
+3. Use labels for form controls.
+4. Make interactive elements keyboard accessible.
+5. Use buttons for actions.
+6. Use links for navigation.
+7. Provide meaningful headings.
+8. Do not rely only on color to communicate information.
+9. Use ARIA only when necessary.
+10. Make forms understandable.
+
+Example:
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email">
+
+For images:
+
+<img src="laptop.jpg"
+     alt="Silver laptop on a desk">
+
+Decorative image:
+
+<img src="decoration.png" alt="">
+-->
+
+
+<!-- =========================================================
+     6. SEO-FRIENDLY HTML
+========================================================= -->
+
+<!--
+SEO = Search Engine Optimization.
+
+SEO-friendly HTML helps search engines understand
+the content and structure of a webpage.
+
+Important practices:
+
+1. Use a meaningful <title>.
+2. Add a useful meta description.
+3. Use headings logically.
+4. Use semantic HTML.
+5. Use descriptive link text.
+6. Add alt text to meaningful images.
+7. Use clean and descriptive URLs.
+8. Use appropriate language declaration.
+9. Avoid unnecessary duplicate content.
+10. Create meaningful page content.
+
+Example:
+
+<title>Best Electronics and Gadgets</title>
+
+<meta name="description"
+      content="Explore laptops, smartphones,
+      headphones and other electronics.">
+
+Good link:
+<a href="laptops.html">View Laptops</a>
+
+Less descriptive:
+<a href="laptops.html">Click Here</a>
+-->
+
+
+<!-- =========================================================
+     7. RESPONSIVE HTML STRUCTURE
+========================================================= -->
+
+<!--
+Responsive HTML allows a webpage to work properly
+on different screen sizes.
+
+Important practices:
+
+1. Use the viewport meta tag.
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+2. Avoid fixed layouts when possible.
+
+3. Use responsive CSS.
+
+4. Use flexible containers.
+
+5. Use responsive images.
+
+Example:
+
+<img src="product.jpg"
+     alt="Laptop"
+     class="product-image">
+
+CSS:
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+Responsive HTML usually works together with
+responsive CSS and JavaScript.
+-->
+
+
+<!-- =========================================================
+     8. VALID HTML
+========================================================= -->
+
+<!--
+Valid HTML follows the rules of the HTML standard.
+
+Good practices:
+- Close elements where required.
+- Use properly nested elements.
+- Use valid attributes.
+- Quote attribute values.
+- Avoid duplicate IDs.
+- Use the correct HTML element.
+- Avoid obsolete elements.
+- Keep the document structure correct.
+
+Example:
+
+CORRECT:
+<img src="photo.jpg" alt="A mountain">
+
+INCORRECT:
+<img src=photo.jpg>
+
+Another example:
+
+CORRECT:
+<label for="name">Name</label>
+<input id="name" name="name">
+
+Avoid:
+- Duplicate id values
+- Unknown attributes
+- Incorrect nesting
+- Unnecessary deprecated tags
+
+HTML validation tools can be used to find
+structural and syntax errors.
+-->
+
+
+<!-- =========================================================
+     COMBINED BEST-PRACTICES EXAMPLE
+========================================================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO-friendly title -->
+    <title>Electronics Store | Laptops and Gadgets</title>
+
+    <!-- SEO-friendly description -->
+    <meta name="description"
+          content="Shop laptops, smartphones,
+          headphones and other electronics.">
+
+    <style>
+
+        /* Clean and simple responsive CSS */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 0 10px;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .products {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        article {
+            flex: 1 1 250px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        form {
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header>
+
+        <h1>Electronics Store</h1>
+
+        <!-- Semantic navigation -->
+        <nav aria-label="Main navigation">
+
+            <a href="#home">Home</a>
+
+            <a href="#products">Products</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main id="home">
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section>
+
+            <h2>Welcome to Our Store</h2>
+
+            <p>
+                Find laptops, smartphones and other
+                electronic products.
+            </p>
+
+        </section>
+
+
+        <!-- =================================================
+             PRODUCTS
+        ================================================== -->
+
+        <section id="products">
+
+            <h2>Featured Products</h2>
+
+            <div class="products">
+
+                <!-- Independent product article -->
+                <article>
+
+                    <h3>Laptop</h3>
+
+                    <img
+                        src="laptop.jpg"
+                        alt="Silver laptop on a desk">
+
+                    <p>
+                        Powerful laptop for work and study.
+                    </p>
+
+                    <a href="laptop.html">
+                        View Laptop Details
+                    </a>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Headphones</h3>
+
+                    <img
+                        src="headphones.jpg"
+                        alt="Wireless black headphones">
+
+                    <p>
+                        Wireless headphones with clear sound.
+                    </p>
+
+                    <a href="headphones.html">
+                        View Headphones
+                    </a>
+
+                </article>
+
+
+                <article>
+
+                    <h3>Smartphone</h3>
+
+                    <img
+                        src="phone.jpg"
+                        alt="Modern smartphone">
+
+                    <p>
+                        Smartphone with a high-resolution display.
+                    </p>
+
+                    <a href="phone.html">
+                        View Smartphone
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT FORM
+        ================================================== -->
+
+        <section id="contact">
+
+            <h2>Contact Us</h2>
+
+            <form action="/submit" method="post">
+
+                <label for="name">
+                    Name:
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required>
+
+
+                <label for="email">
+                    Email:
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required>
+
+
+                <label for="message">
+                    Message:
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required></textarea>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Electronics Store.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+
+
+<!-- =========================================================
+     QUESTIONS
+========================================================= -->
+
+<!--
+
+Q1. What is the correct basic structure of an HTML document?
+
+Q2. Why is <!DOCTYPE html> used?
+
+Q3. What is proper nesting in HTML?
+
+Q4. Give two benefits of semantic HTML.
+
+Q5. What is clean HTML formatting?
+
+Q6. What is HTML accessibility?
+
+Q7. Why is the alt attribute important?
+
+Q8. Why should labels be used with form controls?
+
+Q9. What is SEO-friendly HTML?
+
+Q10. Why is the <title> element important for SEO?
+
+Q11. What is the purpose of a meta description?
+
+Q12. What is responsive HTML?
+
+Q13. What is the purpose of the viewport meta tag?
+
+Q14. What does max-width: 100% do for an image?
+
+Q15. What is valid HTML?
+
+Q16. Why should duplicate IDs be avoided?
+
+Q17. Difference between semantic and non-semantic HTML?
+
+Q18. Write an accessible image element.
+
+Q19. Write an accessible email input.
+
+Q20. Give three practices for SEO-friendly HTML.
+
+Q21. Give three practices for responsive HTML.
+
+Q22. Give three practices for writing valid HTML.
+
+*/
+
+
+<!-- =========================================================
+     SOLUTIONS
+========================================================= -->
+
+<!--
+
+Q1. Correct HTML structure:
+
+<!DOCTYPE html>
+<html>
+<head>
+    ...
+</head>
+<body>
+    ...
+</body>
+</html>
+
+
+Q2. Purpose of <!DOCTYPE html>:
+
+It tells the browser that the document uses
+modern HTML and helps the browser render the page
+using standards mode.
+
+
+Q3. Proper nesting:
+
+Proper nesting means closing elements in the reverse
+order in which they were opened.
+
+Example:
+
+<p>
+    This is <strong>important</strong>.
+</p>
+
+
+Q4. Benefits of semantic HTML:
+
+- Improves accessibility.
+- Helps search engines understand the page.
+- Makes code easier to maintain.
+
+
+Q5. Clean HTML formatting:
+
+Clean formatting means using proper indentation,
+consistent spacing and logical organization.
+
+
+Q6. HTML accessibility:
+
+Accessibility means designing webpages so they can
+be used by people with different abilities and
+assistive technologies.
+
+
+Q7. Importance of alt:
+
+The alt attribute provides alternative text for an image.
+It helps screen-reader users and is also useful when
+an image cannot be displayed.
+
+
+Q8. Importance of labels:
+
+Labels identify form controls and make forms easier
+to understand and use, especially with screen readers.
+
+Example:
+
+<label for="email">Email</label>
+<input id="email" type="email">
+
+
+Q9. SEO-friendly HTML:
+
+SEO-friendly HTML uses meaningful structure and content
+that helps search engines understand the webpage.
+
+
+Q10. Importance of <title>:
+
+The title identifies the webpage and is commonly used
+as the page title in browser tabs and search results.
+
+
+Q11. Meta description:
+
+It provides a short description of the page.
+Search engines may use it when generating search
+result snippets.
+
+
+Q12. Responsive HTML:
+
+Responsive HTML is structured so the page can adapt
+to different screen sizes when combined with responsive
+CSS.
+
+
+Q13. Viewport meta tag:
+
+It tells mobile browsers how to control the page's
+viewport and helps the layout scale correctly.
+
+Example:
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+
+Q14. max-width: 100%:
+
+It prevents an image from becoming wider than its
+containing element.
+
+
+Q15. Valid HTML:
+
+Valid HTML follows the rules and syntax defined by
+the HTML standard.
+
+
+Q16. Duplicate IDs:
+
+An ID is intended to identify one unique element.
+Duplicate IDs can cause problems with CSS, JavaScript,
+accessibility and links.
+
+
+Q17. Semantic vs non-semantic HTML:
+
+Semantic:
+<header>, <nav>, <main>, <article>, <footer>
+
+These elements describe the meaning of their content.
+
+Non-semantic:
+<div>, <span>
+
+They do not describe the specific meaning of their content.
+
+
+Q18. Accessible image:
+
+<img src="laptop.jpg"
+     alt="Silver laptop on a desk">
+
+
+Q19. Accessible email input:
+
+<label for="email">Email:</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    autocomplete="email"
+    required>
+
+
+Q20. SEO practices:
+
+- Use meaningful titles.
+- Use logical headings.
+- Use semantic HTML.
+- Add useful meta descriptions.
+- Use descriptive links.
+- Add appropriate alt text.
+
+
+Q21. Responsive HTML practices:
+
+- Use the viewport meta tag.
+- Use flexible layouts.
+- Make images responsive.
+- Avoid unnecessary fixed-width layouts.
+
+
+Q22. Valid HTML practices:
+
+- Properly nest elements.
+- Use valid attributes.
+- Avoid duplicate IDs.
+- Quote attribute values.
+- Avoid obsolete elements.
+- Close elements correctly where required.
+
+*/
+
+
+<!-- =========================================================
+     FOR REFERENCE / QUICK REFERENCE
+========================================================= -->
+
+<!--
+
+HTML BEST PRACTICES
+=========================================================
+
+1. PROPER DOCUMENT STRUCTURE
+---------------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Page Title</title>
+</head>
+
+<body>
+    Content
+</body>
+</html>
+
+
+2. PROPER NESTING
+---------------------------------------------------------
+Correct:
+
+<p>
+    Hello <strong>World</strong>
+</p>
+
+Wrong:
+
+<p>
+    Hello <strong>World</p>
+</strong>
+
+
+3. SEMANTIC HTML
+---------------------------------------------------------
+<header>
+<nav>
+<main>
+<section>
+<article>
+<aside>
+<footer>
+<figure>
+<figcaption>
+
+
+4. CLEAN FORMATTING
+---------------------------------------------------------
+- Use indentation.
+- Use consistent spacing.
+- Organize sections.
+- Use meaningful names.
+- Avoid unnecessary code.
+
+
+5. ACCESSIBILITY
+---------------------------------------------------------
+- Use semantic elements.
+- Add alt text.
+- Use labels.
+- Make controls keyboard accessible.
+- Use meaningful headings.
+- Use native HTML controls.
+- Use ARIA when necessary.
+
+
+6. SEO-FRIENDLY HTML
+---------------------------------------------------------
+<title>Page Title</title>
+
+<meta name="description"
+      content="Page description">
+
+Use:
+- Logical headings
+- Semantic HTML
+- Descriptive links
+- Meaningful alt text
+- Useful content
+
+
+7. RESPONSIVE HTML
+---------------------------------------------------------
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+CSS:
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+8. VALID HTML
+---------------------------------------------------------
+- Proper nesting
+- Valid attributes
+- Unique IDs
+- Correct element usage
+- Proper document structure
+- Avoid obsolete elements
+
+
+IMPORTANT EXAM DIFFERENCES
+=========================================================
+
+Semantic HTML:
+Describes the meaning of content.
+
+Example:
+<article>, <nav>, <header>
+
+
+Non-semantic HTML:
+Does not describe specific meaning.
+
+Example:
+<div>, <span>
+
+
+Accessibility:
+Makes websites usable by people with different abilities.
+
+
+SEO:
+Helps search engines understand and discover webpage
+content.
+
+
+Responsive:
+Allows the webpage to adapt to different screen sizes.
+
+
+Valid HTML:
+Follows HTML syntax and standards.
+
+
+FINAL BEST-PRACTICES CHECKLIST
+=========================================================
+
+✓ <!DOCTYPE html>
+✓ lang attribute
+✓ UTF-8 charset
+✓ viewport meta tag
+✓ Meaningful <title>
+✓ Useful meta description
+✓ Semantic elements
+✓ Proper nesting
+✓ Proper indentation
+✓ Unique IDs
+✓ Labels for forms
+✓ alt text for meaningful images
+✓ Keyboard-accessible controls
+✓ Responsive images/layout
+✓ Valid HTML syntax
+✓ Descriptive links
+✓ Avoid obsolete elements
+
+-->
+```
